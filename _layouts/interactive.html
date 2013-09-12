@@ -1,0 +1,39 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+{% include dochead.html %}
+</head>
+<body class='interactive'>
+<div class='interactive-heading'>
+  <div class='globals'>
+    <div class='limiter'>
+      <a href='#' class='close'>&times;</a>
+      <a href='#' id='toggle' class='icon toggle'>Toggle Nav</a>
+      <div class='nav clearfix'>
+        <a href='{{site.baseurl}}/cities' {% if page.url == "/cities" %}class='active'{% endif %}>All Cities</a>
+        <a href='{{site.baseurl}}/about' {% if page.url == "/about" %}class='active'{% endif %}>About</a>
+      </div>
+      <a href='{{site.baseurl}}/' class='title icon logo'>Open Cities</a><a href='{{site.baseurl}}/cities/{{page.city}}'>in {{page.city | capitalize}}</a>
+    </div>
+  </div>
+
+  <div class='limiter'>
+    <div class='title-block'>
+      <h2>
+        {{page.title}}
+        {% if page.subtitle %}
+          <span class='subtitle'>{{page.subtitle}}</span>
+        {% endif %}
+      </h2>
+      <div class='prose'>{{content}}</div>
+    </div>
+  </div>
+</div>
+
+<div class='map-containment'>
+  <div id='map' class='map'></div>
+</div>
+</body>
+</html>

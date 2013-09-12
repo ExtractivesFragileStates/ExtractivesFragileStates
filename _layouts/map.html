@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+  <title>Extractives and Fragile States {% if page.url != '/index.html' %}| {{page.title}}{% endif %}</title>
+	<link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.4/mapbox.css' rel='stylesheet' />
+	<!--[if lte IE 8]>
+	<link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.4/mapbox.ie.css' rel='stylesheet' />
+	<![endif]-->
+	<link rel="stylesheet" href="{{site.baseurl}}/tmp/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="{{site.baseurl}}/tmp/style.css" type="text/css" />
+	<link rel="stylesheet" href="{{site.baseurl}}/tmp/mapbox.share.css" type="text/css" />
+	<link rel="shortcut icon" href="img/mine.ico" type="image/x-icon" />
+  
+	<script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.4/mapbox.js'></script>
+    <script src="{{site.baseurl}}/tmp/jquery.min.js"></script> -->
+    <script src="{{site.baseurl}}/tmp/mapbox.jquery.js"></script>
+    <script src="{{site.baseurl}}/tmp/mapbox.share.js"></script>
+<script>
+  $(function() {
+    extractives.global();
+  });
+</script>
+</head>
+<body>
+
+<div id='map'></div>
+
+<div id='header'><span class='refresher'>{{page.title}}</span>
+ {% for layer in page.layers %}
+  {% if layer.class == "permanentMenu" %}
+    	<span class='permanentMenu'>
+		    <a href="#" id="{{layer.id}}" tyle='padding: 4px 0 2px 0; line-height: 1.3em;'>{{layer.label}}</a>
+	    </span>
+  {% endif %}
+ {% endfor %}
+</div>
+
+<div id="content">
+
+  {% assign switcher_class = 'four-wide' %}
+	<div id="map-ui" class="{{switcher_class}} switcher-box">
+    {% for layer in page.layers %}{% unless layer.class == "permanentMenu" %}<a href="#" id="{{layer.id}}" class="dropdown">{{layer.label}}</a>{% endunless %}{% endfor %}
+	</div>	
+
+  <!-- Layers -->
+  {% for layer in page.layers %}
+    {% unless layer.class == "permanentMenu" %}
+      {% if layer.dropdowns %}
+        {% if layer.dropdowns.size == 2 %}
+          {% assign dropdown_class = 'two-wide' %}
+        {% elsif layer.dropdowns.size == 4 %}
+          {% assign dropdown_class = 'four-wide' %}
+        {% endif %}
+
+        <div id="{{layer.id}}-dropdown" class="{{dropdown_class}} switcher-box dropdownMenu">
+        {% for dropdown in layer.dropdowns %}
+          {% if dropdown.class %}
+            {% assign dropdown_layer_class = dropdown.class %}
+          {% else %}
+            {% assign dropdown_layer_class = "panelLayerSwitcher" %}
+          {% endif %}
+	        <a href="#" id="{{dropdown.id}}" class="{{dropdown_layer_class}}">{{dropdown.label}}</a>
+        {% endfor %}
+      	</div>
+        
+        {% for dropdown in layer.dropdowns %} <!-- map menu buttons -->
+          {% if dropdown.class == "addMapMenu" %}
+	          <div id='{{dropdown.id}}-menu' class='menu layerMenu' style='top:130px'>
+            {% for map in dropdown.maps %}    
+          		<a href="#" id="{{map.htmlid}}" class="mapRadioMenu">{{map.label}}</a>
+            {% endfor %}
+        	  </div>
+          {% endif %}
+        {% endfor %}
+
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+
+	<!-- Text -->
+	<div id='text'></div>
+
+	<div class='attribution' style='display:none'>
+		<div>...</div>
+	</div>
+
+	<div class='source' style='display:none'>
+		<div>...</div>
+	</div>
+
+</div>
+  {{content}}
+
+  {% include parse_layers.html %}
+	<script src="{{site.baseurl}}/tmp/script.js"></script>
+
+	</body>
+</html>

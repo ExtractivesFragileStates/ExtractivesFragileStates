@@ -1,0 +1,34 @@
+---
+layout: interactive
+city: 'dhaka'
+title: 'Structure Survey Images'
+subtitle: 'Building condition, inhabitants, and associated risks'
+preview: 'dhaka.png'
+map: 'helsinki.afghanistan_hyperspectal_a'
+center: 
+  - lat: 34.053
+    lon: 67.709
+    zoom: 10
+tags:
+- dhaka
+- featured
+---
+
+Although the view from above is always useful, ground-level photos of structures provide useful information to users about a building’s condition, inhabitants, and associated risks. 
+
+<script>
+
+var opts = {
+  lat: {{ page.center[0].lat }},
+  lon: {{ page.center[0].lon }},
+  zoom: {
+    defaultZoom:{{ page.center[0].zoom }},
+    max:17,
+    min:10
+    }
+  };
+
+$(function() {
+  eafs.generateMap('{{page.map}}', opts);
+});
+</script>

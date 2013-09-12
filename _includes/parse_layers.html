@@ -1,0 +1,79 @@
+  <script>
+    var page_data = {}
+
+    page_data.baseLayer = {
+	    latlon:	[{{page.center.lat}}, {{page.center.lon}}],
+	    zoom: {{page.center.zoom}},
+	    id: [
+      {% for layer in page.center.layers %}
+        ['{{ layer.id }}',{{layer.z}}]{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+		  ],
+	    text: document.getElementById('{{page.center.introText}}').innerHTML
+    }
+
+    page_data.mapLayers = {
+    {% for layer in page.layers %}
+    "{{layer.id}}": {
+      "label": "{{layer.label}}",
+      "class": "{{layer.class}}",
+      "dropdowns": {
+        {% for dropdown in layer.dropdowns %}
+        "{{dropdown.id}}": {
+          "label": "{{dropdown.label}}",
+          "maps": [
+            {% for map in dropdown.maps %}
+            {
+            "mapid": "{{map.mapid}}",
+            "text": document.getElementById('{{map.text}}').innerHTML,
+            "legend": document.getElementById('{{map.legend}}').innerHTML,
+            "htmlid": "{{map.htmlid}}",
+            "label": "{{map.label}}"
+            },
+            {% endfor %}
+          ],
+        },
+        {% endfor %}
+      }
+    },
+  {% endfor %}
+  }
+
+  page_data.mapboxLayers = {
+    {% for layer in page.layers %}
+      {% for dropdown in layer.dropdowns %}
+      {% if dropdown.class == "addMapMenu" %}
+        {% for map in dropdown.maps %}
+        {{ map.htmlid }} : {
+            "id": "{{map.mapid}}",
+            "text": document.getElementById('{{map.text}}').innerHTML,
+            "legend": document.getElementById('{{map.legend}}').innerHTML
+        },
+        {% endfor %}
+      {% else %}
+        {{ dropdown.id }} : {
+        {% for map in dropdown.maps %}
+            "id": "{{map.mapid}}",
+            "text": document.getElementById('{{map.text}}').innerHTML,
+            "legend": document.getElementById('{{map.legend}}').innerHTML
+        {% endfor %}
+        },
+      {% endif %}
+      {% endfor %}
+    {% endfor %}
+    }
+
+  page_data.checkboxButtons = [
+    {% for layer in page.layers %}
+      {% if layer.class == "permanentMenu" %}
+        {%  for map in layer.maps %}
+        	{
+         		mapId: '{{map.mapid}}',
+         		elementId: '{{layer.id}}',
+         		zIndex: {{map.z}}
+         	},
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+    ]
+  </script>

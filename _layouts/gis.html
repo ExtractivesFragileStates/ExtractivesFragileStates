@@ -1,0 +1,7 @@
+{% for item in site.categories.countries %}
+  {% if page.country-ref == item.city %}
+    {% for layer in item.layers %}
+     {{layer.id}}
+    {% endfor %}
+  {% endif %}
+{% endfor %}

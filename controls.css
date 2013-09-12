@@ -1,0 +1,188 @@
+.marker-tooltip {
+  z-index:999999;
+  position:absolute;
+  }
+.marker-popup {
+  position:relative;
+  left:-50%;
+  max-width:400px;
+  background:#fff;
+  border:2px solid #4D4D4D;
+  color:#202020;
+  padding:10px;
+  -webkit-user-select:auto;
+     -moz-user-select:auto;
+          user-select:auto;
+  -webkit-box-shadow:2px 2px 5px -2px black;
+          box-shadow:2px 2px 5px -2px black;
+  -webkit-border-radius:3px;
+          border-radius:3px;
+  }
+  .marker-popup:after,
+  .marker-popup:before {
+    top:100%;
+    border:solid transparent;
+    content:'';
+    height:0;
+    width:0;
+    left:50%;
+    position:absolute;
+    pointer-events:none;
+    }
+  .marker-popup:after {
+    border-top-color:#fff;
+    border-width:15px;
+    margin-left:-15px;
+    }
+  .marker-popup:before {
+    border-top-color:#4d4d4d;
+    border-width:18px;
+    margin-left:-18px;
+    }
+.zoomer,
+.map-legends,
+.map-tooltip,
+.map-fullscreen {
+  position:absolute;
+  box-sizing:border-box;
+  background:#fff;
+  }
+.map-legends,
+.map-tooltip {
+  -webkit-box-shadow:0 1px 2px rgba(0,0,0,0.15);
+          box-shadow:0 1px 2px rgba(0,0,0,0.15);
+  }
+
+.zoomer,
+.map-fullscreen,
+.map-tooltip .close {
+  text-indent:-999em;
+  background: #4d4d4d url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAAeCAYAAADnydqVAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF3SURBVGiB7ZlNboMwEEa/Qd3bPgEchZuVdNFz5SjkAjEcIJpucGqRVsKEJGT0vRUg2R7xND8COZ/PIHapXh0AeSwUbBwKNg4FG4eCjUPBxqFg41CwcSjYOB+vDqAU730PAMMwNK+N5Hk45zoR+cyfDcMgS9YWCU4vV0TaGGMPACGERlWP06FNyX4rqZ9wxq4Yx7FzzmEueQlrMrhW1WMIoQWASW4N4LRiL/JgigSLSJuEpqzFJFdE2m1DI4lUolX1UFXVRVW/lq4tEhxj7EMIbZa1wCQ3leytmdrCTVn23mt2e9q6Pfx37ozNz52Tyx3HsQOAEMJl6XpO0TvDOdfl13O5ABBj/F66n5T8D84GqrznXkv0o7I4J2Xu0iny3fDeq6oeAOAvuaUUlehcbuq5s57crA2E/JKm5XvlAutK9DVbY4z9JJoT9E4pKtF7wPqHjtnweHcWv51gUganaONQsHEo2DgUbBwKNg4FG4eCjUPBxqFg4/wAqTqvwsGZjK4AAAAASUVORK5CYII=) no-repeat 0 0;
+  overflow:hidden;
+  display:block;
+  }
+  .map-tooltip .close:active,
+  .zoomer:active,
+  .map-fullscreen:active {
+    border-color:#101010;
+    background-color:#404040;
+    -webkit-box-shadow:inset 0 1px 3px rgba(0,0,0,0.15);
+            box-shadow:inset 0 1px 3px rgba(0,0,0,0.15);
+    }
+
+.map-tooltip .close {
+  top:4px;
+  right:4px;
+  width:20px;
+  height:20px;
+  background-position:-5px -5px;
+  }
+
+.zoomer {
+  width:30px;
+  height:30px;
+  top:10px;
+  left:10px;
+  z-index:2;
+  border:1px solid #202020;
+  }
+
+.zoomin {
+  background-position:-31px -1px;
+  -webkit-border-radius:3px 3px 0 0;
+          border-radius:3px 3px 0 0;
+  }
+
+.zoomout {
+  top:39px;
+  background-position:-61px -1px;
+  -webkit-border-radius:0 0 3px 3px;
+          border-radius:0 0 3px 3px;
+  }
+
+.zoomdisabled {
+  background-color:#707070;
+  }
+
+.map-fullscreen {
+  width:30px;
+  height:30px;
+  background-position:-91px -1px;
+  position:absolute;
+  top:10px;
+  left:74px;
+  z-index:2;
+  }
+
+.map-fullscreen-map {
+  position:fixed!important;
+  width:auto!important;
+  height:auto!important;
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  bottom:0!important;
+  z-index:99999999999;
+  }
+
+.map-legends {
+  position:absolute;
+  right:10px;
+  bottom:10px;
+  z-index:10;
+  width:340px;
+  }
+  .map-legends .map-legend {
+    padding:10px;
+    height:240px;
+    height:auto!important;
+    max-height:240px;
+    }
+
+.map-tooltip {
+  z-index:999999;
+  padding:10px;
+  bottom:10px;
+  left:10px;
+  max-width:300px;
+  opacity:1;
+  -webkit-transition:opacity 150ms;
+     -moz-transition:opacity 150ms;
+      -ms-transition:opacity 150ms;
+       -o-transition:opacity 150ms;
+          transition:opacity 150ms;
+  -webkit-user-select:auto;
+     -moz-user-select:auto;
+          user-select:auto;
+  }
+
+.map-tooltip .close {
+  display:block;
+  position:absolute;
+  top:0;
+  right:0;
+  }
+
+.map-attribution {
+  position:absolute;
+  background-color:rgba(255,255,255,0.7);
+  color:#333;
+  font-size:11px;
+  line-height:20px;
+  z-index:99999;
+  text-align:center;
+  padding:0 5px;
+  bottom:0;
+  left:0;
+  }
+
+.map-fade { opacity:0; }
+
+@media
+  only screen and (-webkit-min-device-pixel-ratio : 2),
+  only screen and (min-device-pixel-ratio : 2) {
+    .zoomer,
+    .map-fullscreen,
+    .map-tooltip .close {
+      }
+  }
