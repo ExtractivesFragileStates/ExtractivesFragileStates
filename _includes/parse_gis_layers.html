@@ -1,0 +1,86 @@
+  <script>
+    var page_data = {}
+
+    {% for item in site.categories.countries %}
+      {% if page.country-ref == item.city %}
+
+    page_data.baseLayer = {
+	    latlon:	[{{item.center.lat}}, {{item.center.lon}}],
+	    zoom: {{item.center.zoom}},
+	    id: [
+      {% for layer in item.center.layers %}
+        ['{{ layer.id }}',{{layer.z}}]{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+		  ],
+	    text: ""
+    }
+
+    page_data.mapLayers = {
+    {% for layer in item.layers %}
+    "{{layer.id}}": {
+      "label": "{{layer.label}}",
+      "class": "{{layer.class}}",
+      "dropdowns": {
+        {% for dropdown in layer.dropdowns %}
+        "{{dropdown.id}}": {
+          "label": "{{dropdown.label}}",
+          "maps": [
+            {% for map in dropdown.maps %}
+            {
+            "mapid": "{{map.mapid}}",
+            "text": "",
+            "legend":"",
+            "htmlid": "{{map.htmlid}}",
+            "label": "{{map.label}}"
+            },
+            {% endfor %}
+          ],
+        },
+        {% endfor %}
+      }
+    },
+  {% endfor %}
+  }
+
+  page_data.mapboxLayers = {
+    {% for layer in item.layers %}
+      {% for dropdown in layer.dropdowns %}
+      {% if dropdown.class == "addMapMenu" %}
+        {% for map in dropdown.maps %}
+        {{ map.htmlid }} : {
+            "id": "{{map.mapid}}",
+            "text": "",
+            "legend": ""
+        },
+        {% endfor %}
+      {% else %}
+        {{ dropdown.id }} : {
+        {% for map in dropdown.maps %}
+            "id": "{{map.mapid}}",
+            "text": "",
+            "legend": ""
+        {% endfor %}
+        },
+      {% endif %}
+      {% endfor %}
+    {% endfor %}
+    }
+
+  page_data.checkboxButtons = [
+    {% for layer in item.layers %}
+      {% if layer.class == "permanentMenu" %}
+        {%  for map in layer.maps %}
+        	{
+         		mapId: '{{map.mapid}}',
+         		elementId: '{{layer.id}}',
+         		zIndex: {{map.z}}
+         	},
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+    ]
+
+
+      {% endif %}
+    {% endfor %}
+  </script>

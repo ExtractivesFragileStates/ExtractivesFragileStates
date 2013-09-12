@@ -1,7 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+  <title>Extractives and Fragile States {% if page.url != '/index.html' %}| {{page.title}}{% endif %}</title>
+	<link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.4/mapbox.css' rel='stylesheet' />
+	<!--[if lte IE 8]>
+	<link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.4/mapbox.ie.css' rel='stylesheet' />
+	<![endif]-->
+	<link rel="stylesheet" href="{{site.baseurl}}/tmp/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="{{site.baseurl}}/tmp/style.css" type="text/css" />
+	<link rel="stylesheet" href="{{site.baseurl}}/tmp/mapbox.share.css" type="text/css" />
+  <link rel='shortcut icon' href='{{site.baseurl}}/img/favicon.ico' type='image/x-icon' />
+  
+	<script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.4/mapbox.js'></script>
+    <script src="{{site.baseurl}}/tmp/jquery.min.js"></script> -->
+    <script src="{{site.baseurl}}/tmp/mapbox.jquery.js"></script>
+    <script src="{{site.baseurl}}/tmp/mapbox.share.js"></script>
+<script>
+  $(function() {
+    extractives.global();
+  });
+</script>
+</head>
+<body>
+
+<div id='map'></div>
+
+<div id='header'>
+  <span><a href="{{site.baseurl}}/">Home</a></span> >> 
+  <span><a href="{{site.baseurl}}/countries/{{page.country-ref}}">{{page.title}}</a></span> >>
+  <span class='refresher'>GIS</span>
+ {% for layer in page.layers %}
+  {% if layer.class == "permanentMenu" %}
+    	<span class='permanentMenu'>
+		    <a href="#" id="{{layer.id}}" tyle='padding: 4px 0 2px 0; line-height: 1.3em;'>{{layer.label}}</a>
+	    </span>
+  {% endif %}
+ {% endfor %}
+     
+    
+</div>
+
+<div id="content">
+
 {% for item in site.categories.countries %}
   {% if page.country-ref == item.city %}
     {% for layer in item.layers %}
-     {{layer.id}}
+      {% for dropdown in layer.dropdowns %} 
+        {% assign label = dropdown.label %}
+        {% for map in dropdown.maps %}
+          {% if map.label %}{% assign label = map.label %}{% endif %}
+          <a href="#" class="gisMenu" mapid="{{map.mapid}}">{{label}}</a><br/>
+        {% endfor %}
+      {% endfor %}
     {% endfor %}
   {% endif %}
 {% endfor %}
+ 
+</div>
+  {{content}}
+
+  {% include parse_gis_layers.html %}
+	<script src="{{site.baseurl}}/tmp/script.js"></script>
+
+	</body>
+</html>
