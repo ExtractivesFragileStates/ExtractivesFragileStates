@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="{{site.baseurl}}/tmp/fonts.css" type="text/css" />
 	<link rel="stylesheet" href="{{site.baseurl}}/tmp/style.css" type="text/css" />
 	<link rel="stylesheet" href="{{site.baseurl}}/tmp/mapbox.share.css" type="text/css" />
-	<link rel="shortcut icon" href="img/mine.ico" type="image/x-icon" />
+  <link rel='shortcut icon' href='{{site.baseurl}}/img/favicon.ico' type='image/x-icon' />
   
 	<script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.4/mapbox.js'></script>
     <script src="{{site.baseurl}}/tmp/jquery.min.js"></script> -->
@@ -26,7 +26,10 @@
 
 <div id='map'></div>
 
-<div id='header'><span class='refresher'>{{page.title}}</span>
+<div id='header'>
+  <span><a href="{{site.baseurl}}/">Home</a></span> >> 
+  <span class='refresher'>{{page.title}}</span> >>
+  <span><a href="{{site.baseurl}}{{page.permalink}}">GIS</a>
  {% for layer in page.layers %}
   {% if layer.class == "permanentMenu" %}
     	<span class='permanentMenu'>
@@ -34,6 +37,8 @@
 	    </span>
   {% endif %}
  {% endfor %}
+     
+    
 </div>
 
 <div id="content">
