@@ -19,74 +19,74 @@ center:
       - id: 'helsinki.afghanistan_labels'
         z: 1000
     introText: introText
-layers:
-  - id: demographics
+sections:
+  - sectionid: demographics
     label: DEMOGRAPHICS
-    dropdowns:
-    - id: population
+    layers:
+    - layerid: population
       label: Population Density
       maps:
         - mapid: 'helsinki.seadc_gpw'
           text: 'artisanalMinesText'
           legend: 'populationLegend'
-    - id: ethno
+    - layerid: ethno
       label: Ethnicity
       maps:
         - mapid: 'helsinki.afghanistan_ethnicity'
           text: 'artisanalMinesText'
           legend: 'ethnoLegend'
-  - id: development
+  - sectionid: development
     label: DEVELOPMENT
-    dropdowns:
-      - id: unemployment
+    layers:
+      - layerid: unemployment
         label: Employment
         maps:
           - mapid: 'helsinki.afg_unemployment'
             text: 'unemploymentText'
             legend: 'unemploymentLegend'
-      - id: poverty
+      - layerid: poverty
         label: Poverty
         maps:
           - mapid: 'helsinki.afg_poverty'
             text: 'unemploymentText'
             legend: 'povertyLegend'
-      - id: education
+      - layerid: education
         label: Education
         maps:
           - mapid: 'helsinki.afg_edu'
             text: 'unemploymentText'
             legend: 'educationLegend'
-      - id: watsan
+      - layerid: watsan
         label: Health
         maps:
           - mapid: 'helsinki.afg_watsan'
             text: 'unemploymentText'
             legend: 'healthLegend'
-  - id: extractives
+  - sectionid: extractives
     label: EXTRACTIVES
-    dropdowns:
-      - id: mineralogy
+    layers:
+      - layerid: mineralogy
         label: Mineralogy
         maps:
           - mapid: 'helsinki.afghanistan_hyperspectal_a'
             text: 'mineralogyText'
             legend: 'hyMapLegend'
-      - id: aoi
+      - layerid: aoi
         label: Mineralized Areas    
         maps:
           - mapid: 'helsinki.afg_area_of_interest'
             text: 'artisanalMinesText'
             legend: 'aoiLegend'
-  - id: conflict
+  - sectionid: conflict
     label: STRESSES
-    dropdowns:
-      - id: acled
+    layers:
+      - layerid: acled
         label: Security
         maps:
           - mapid: 'helsinki.afghanistan_acled'
             text: 'conflictText'
             legend: 'acledLegend'
-      - id: idps
+      - layerid: idps
         label: IDPs
         class: addMapMenu
         maps:
@@ -100,12 +100,14 @@ layers:
             legend: 'idpLegend'
             htmlid: 'idps_origin_12'
             label: 'Origin 12'
-  - id: checkboxMineConcessions
+  - sectionid: checkboxMineConcessions
     label: Mineral Concessions
     class: permanentMenu
-    maps:   
-      - z: 998
-        mapid: helsinki.afg_mineral_concessions
+    layers:
+      - layerid: mineral_concessions
+        maps:   
+          - z: 998
+            mapid: helsinki.afg_mineral_concessions
 ---
 	
 <!-- Legend -->

@@ -45,10 +45,10 @@
 
 {% for item in site.categories.countries %}
   {% if page.country-ref == item.city %}
-    {% for layer in item.layers %}
-      {% for dropdown in layer.dropdowns %} 
-        {% assign label = dropdown.label %}
-        {% for map in dropdown.maps %}
+    {% for section in item.sections %}
+      {% for layer in section.layers %} 
+        {% assign label = layer.label %}
+        {% for map in layer.maps %}
           {% if map.label %}{% assign label = map.label %}{% endif %}
           <a href="#" class="gisMenu" mapid="{{map.mapid}}">{{label}}</a><br/>
         {% endfor %}
@@ -60,6 +60,12 @@
 </div>
   {{content}}
 
+   {% for item in site.categories.countries %}
+      {% if page.country-ref == item.city %}
+        {% assign sections = item.sections %}
+        {% assign center = item.center %}
+      {% endif %}
+   {% endfor %}
   {% include parse_gis_layers.html %}
 	<script src="{{site.baseurl}}/tmp/script.js"></script>
 
