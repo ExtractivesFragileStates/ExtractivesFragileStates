@@ -4,8 +4,9 @@
       <a href='#' id='toggle' class='icon toggle'>Toggle Nav</a>
     {% endunless %}
     <div class='nav clearfix'>
-      <a href='{{site.baseurl}}/about' {% if page.url == "/about" %}class='active'{% endif %}>About</a>
       <a href='{{site.baseurl}}/countries' {% if page.url == "/cities" %}class='active'{% endif %}>All Countries</a>
+      <a href='{{site.baseurl}}/about' {% if page.url == "/about" %}class='active'{% endif %}>About</a>
+      <a href='{{site.baseurl}}/open' {% if page.url == "/open" %}class='active'{% endif %}>Open</a>
     </div>
     <a href='{{site.baseurl}}/' class='title icon logo'>Extractives and Fragile States</a>
   </div>
