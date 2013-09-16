@@ -12,6 +12,7 @@
 	    text: document.getElementById('{{center.introText}}').innerHTML
     }
 
+/*
     page_data.mapLayers = {
     {% for section in sections %}
     "{{section.sectionid}}": {
@@ -38,6 +39,7 @@
     },
   {% endfor %}
   }
+*/
 
   page_data.mapboxLayers = {
     {% for section in sections %}
@@ -47,26 +49,12 @@
           {{ htmlid }} : {
             "id": "{{map.mapid}}",
             "text": {% if map.text %}document.getElementById('{{map.text}}').innerHTML{% else %}''{% endif %},
-            "legend": {% if map.legend %}document.getElementById('{{map.legend}}').innerHTML{% else %}''{% endif %}
+            "legend": {% if map.legend %}document.getElementById('{{map.legend}}').innerHTML{% else %}''{% endif %},
+            "zIndex": {% if map.z %}{{map.z}}{% else %}''{% endif %}
           },
        {% endfor %}
       {% endfor %}
     {% endfor %}
     }
 
-  page_data.checkboxButtons = [
-    {% for section in sections %}
-      {% if section.class == "permanentMenu" %}
-        {% for layer in section.layers %}
-          {% for map in layer.maps %}
-        	{
-         		mapId: '{{map.mapid}}',
-         		elementId: '{{layer.layerid}}',
-         		zIndex: {{map.z}}
-         	},
-          {% endfor %}
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
-    ]
   </script>

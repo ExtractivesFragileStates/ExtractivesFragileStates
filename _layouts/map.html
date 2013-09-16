@@ -16,6 +16,7 @@
     <script src="{{site.baseurl}}/tmp/jquery.min.js"></script> -->
     <script src="{{site.baseurl}}/tmp/mapbox.jquery.js"></script>
     <script src="{{site.baseurl}}/tmp/mapbox.share.js"></script>
+   <script src="{{site.baseurl}}/map.js"></script>
 <script>
   $(function() {
     extractives.global();
@@ -30,29 +31,26 @@
   <span><a href="{{site.baseurl}}/">Home</a></span> >> 
   <span class='refresher'>{{page.title}}</span> >>
   <span><a href="{{site.baseurl}}/gis/{{page.city}}">GIS</a></span>
- {% for section in page.sections %}
-  {% if section.class == "permanentMenu" %}
-    {% for layer in section.layers %}
-    	<span class='permanentMenu'>
-		    <a href="#" id="{{layer.layerid}}" tyle='padding: 4px 0 2px 0; line-height: 1.3em;'>{{section.label}}</a>
+  {% for section in page.sections %}
+    {% if section.class == "headerSection" %}
+      {% for layer in section.layers %}
+    	<span class='headerSection'>
+		    <a href="#" id="{{layer.layerid}}" class="maplink headerLayer" tyle='padding: 4px 0 2px 0; line-height: 1.3em;'>{{section.label}}</a>
 	    </span>
-    {% endfor %}
-  {% endif %}
- {% endfor %}
-     
-    
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
 </div>
 
 <div id="content">
 
   {% assign switcher_class = 'four-wide' %}
 	<div id="map-ui" class="{{switcher_class}} switcher-box">
-    {% for section in page.sections %}{% unless section.class == "permanentMenu" %}<a href="#" id="{{section.sectionid}}" class="dropdown">{{section.label}}</a>{% endunless %}{% endfor %}
+    {% for section in page.sections %}{% unless section.class == "headerSection" %}<a href="#" id="{{section.sectionid}}" class="section">{{section.label}}</a>{% endunless %}{% endfor %}
 	</div>	
 
-  <!-- Layers -->
   {% for section in page.sections %}
-    {% unless section.class == "permanentMenu" %}
+    {% unless section.class == "headerSection" %}
       {% if section.layers %}
         {% if section.layers.size == 2 %}
           {% assign layer_class = 'two-wide' %}
@@ -60,22 +58,22 @@
           {% assign layer_class = 'four-wide' %}
         {% endif %}
 
-        <div id="{{section.sectionid}}-dropdown" class="{{layer_class}} switcher-box dropdownMenu">
+        <div id="{{section.sectionid}}-layer" class="{{layer_class}} switcher-box dropdownMenu">
         {% for layer in section.layers %}
-          {% if layer.class %}
-            {% assign layer_class = layer.class %}
+          {% if layer.maps.size > 1 %}
+            {% assign layer_class = "multimap" %}
           {% else %}
-            {% assign layer_class = "panelLayerSwitcher" %}
+            {% assign layer_class = "" %}
           {% endif %}
-	        <a href="#" id="{{layer.layerid}}" class="{{layer_class}}">{{layer.label}}</a>
+	        <a href="#" id="{{layer.layerid}}" class="maplink {{layer_class}}">{{layer.label}}</a>
         {% endfor %}
       	</div>
         
         {% for layer in section.layers %} <!-- map menu buttons -->
-          {% if layer.class == "addMapMenu" %}
+          {% if layer.maps.size > 1 %}
 	          <div id='{{layer.layerid}}-menu' class='menu layerMenu' style='top:130px'>
             {% for map in layer.maps %}    
-          		<a href="#" id="{{map.htmlid}}" class="mapRadioMenu">{{map.label}}</a>
+          		<a href="#" id="{{map.htmlid}}" class="maplink">{{map.label}}</a>
             {% endfor %}
         	  </div>
           {% endif %}
@@ -96,13 +94,12 @@
 		<div>...</div>
 	</div>
 
-</div>
   {{content}}
 
+  </div>
   {% assign sections = page.sections %}
   {% assign center = page.center %}
   {% include parse_layers.html %}
-	<script src="{{site.baseurl}}/tmp/script.js"></script>
 
 	</body>
 </html>
