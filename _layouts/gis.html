@@ -16,6 +16,7 @@
     <script src="{{site.baseurl}}/tmp/jquery.min.js"></script> -->
     <script src="{{site.baseurl}}/tmp/mapbox.jquery.js"></script>
     <script src="{{site.baseurl}}/tmp/mapbox.share.js"></script>
+	<script src="{{site.baseurl}}/map.js"></script>
 <script>
   $(function() {
     extractives.global();
@@ -29,20 +30,12 @@
 <div id='header'>
   <span><a href="{{site.baseurl}}/">Home</a></span> >> 
   <span><a href="{{site.baseurl}}/countries/{{page.country-ref}}">{{page.title}}</a></span> >>
-  <span class='refresher'>GIS</span>
- {% for layer in page.layers %}
-  {% if layer.class == "permanentMenu" %}
-    	<span class='permanentMenu'>
-		    <a href="#" id="{{layer.id}}" tyle='padding: 4px 0 2px 0; line-height: 1.3em;'>{{layer.label}}</a>
-	    </span>
-  {% endif %}
- {% endfor %}
-     
-    
+  <span class='refresher'>GIS</span>    
 </div>
 
 <div id="content">
 
+<div class="gisMenu">
 {% for item in site.categories.countries %}
   {% if page.country-ref == item.city %}
     {% for section in item.sections %}
@@ -50,24 +43,27 @@
         {% assign label = layer.label %}
         {% for map in layer.maps %}
           {% if map.label %}{% assign label = map.label %}{% endif %}
-          <a href="#" class="gisMenu" mapid="{{map.mapid}}">{{label}}</a><br/>
+          <div>
+          <a href="#" class="gisMenu" mapid="{{map.mapid}}">{{label}}</a> <a href="#" class="gisMenu grid" mapid="{{map.mapid}}">I</a>
+          </div>
         {% endfor %}
       {% endfor %}
     {% endfor %}
   {% endif %}
 {% endfor %}
- 
-</div>
+</div> 
+
   {{content}}
+  </div>
 
    {% for item in site.categories.countries %}
       {% if page.country-ref == item.city %}
         {% assign sections = item.sections %}
         {% assign center = item.center %}
+        {% assign gis = true %}
       {% endif %}
    {% endfor %}
-  {% include parse_gis_layers.html %}
-	<script src="{{site.baseurl}}/tmp/script.js"></script>
+  {% include parse_layers.html %}
 
 	</body>
 </html>

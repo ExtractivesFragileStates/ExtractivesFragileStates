@@ -31,15 +31,15 @@
   <span><a href="{{site.baseurl}}/">Home</a></span> >> 
   <span class='refresher'>{{page.title}}</span> >>
   <span><a href="{{site.baseurl}}/gis/{{page.city}}">GIS</a></span>
+  <span class='headerSection'>
   {% for section in page.sections %}
     {% if section.class == "headerSection" %}
       {% for layer in section.layers %}
-    	<span class='headerSection'>
 		    <a href="#" id="{{layer.layerid}}" class="maplink headerLayer" tyle='padding: 4px 0 2px 0; line-height: 1.3em;'>{{section.label}}</a>
-	    </span>
       {% endfor %}
     {% endif %}
   {% endfor %}
+	</span>
 </div>
 
 <div id="content">

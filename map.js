@@ -31,7 +31,9 @@
       new L.Control.Zoom({ position: 'topleft' }).addTo(this.map);
 
       this.group = L.layerGroup().addTo(this.map);
+      this.group.setZIndex(0);
       this.headerGroup = L.layerGroup().addTo(this.map);
+      this.group.setZIndex(998);
       $('.layerMenu').hide();
     },
 
@@ -63,9 +65,6 @@
 	    	extractives.switchLayer(switcherElement, layer_group);
 	    	$('#text').html(page_data.mapboxLayers[switcherElement.attr('id')]["text"])
       }
-
-
-
 	  },
     section: function(e) {
 		  e.preventDefault();
@@ -85,11 +84,28 @@
       e.preventDefault();
 	  	e.stopPropagation();	
       var mapid = this.getAttribute('mapid');
-		  extractives.clearLayersLegends();
-      extractives.group.addLayer(L.mapbox.tileLayer(mapid));
-      var gridLayer = L.mapbox.gridLayer(mapid);
-      extractives.group.addLayer(gridLayer);
-      extractives.map.addControl(L.mapbox.gridControl(gridLayer));
+		  //extractives.clearLayersLegends();
+      var grid = $(this).hasClass('grid');
+      if (grid) {
+        if ($(this).prev().hasClass('active')) {
+          extractives.removeGrids('group');
+          var gridLayer = L.mapbox.gridLayer(mapid);
+          extractives.group.addLayer(gridLayer);
+          extractives.map.addControl(L.mapbox.gridControl(gridLayer));
+          $('.grid').removeClass('active');
+          $(this).addClass('active');
+        }
+      } else {
+        if ($(this).hasClass('active')) {
+          $(this).removeClass('active');
+          $(this).next().removeClass('possible');
+          extractives.removeLayer('group',mapid);
+        } else {
+          $(this).addClass('active');
+          $(this).next().addClass('possible');
+          extractives.group.addLayer(L.mapbox.tileLayer(mapid));
+        }
+      }
     },
 
 	  navigate: function(e) {
@@ -114,13 +130,14 @@
   		extractives.map.setView(page_data.baseLayer["latlon"], page_data.baseLayer["zoom"]);
   	},
 
-
-
-
-
 	  switchLayer: function(layer, layer_group) {
 		  layerId = layer.attr('id');
-		  this[layer_group].addLayer(L.mapbox.tileLayer(page_data.mapboxLayers[layerId]["id"]));
+     // if (page_data.mapboxLayers[layerId]["zIndex"] != "") {
+  		//  this[layer_group].addLayer(L.mapbox.tileLayer(page_data.mapboxLayers[layerId]["id"]), {zIndex: page_data.mapboxLayers[layerId]["zIndex"]} );
+      //} else {
+  		  this[layer_group].addLayer(L.mapbox.tileLayer(page_data.mapboxLayers[layerId]["id"])); //, {zIndex: 0 });
+      //}
+
 	  	var gridLayer = L.mapbox.gridLayer(page_data.mapboxLayers[layerId]["id"]);
       if (layer_group == 'group') {
   		  this.group.addLayer(gridLayer);
@@ -131,9 +148,27 @@
 		  var mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(legendHtml)
 		  this.map.addControl(mapLegend);
 	  },
+    removeLayer: function(g, mapid) {
+      this[g].eachLayer(function (layer) {
+        if (layer._tilejson.id == mapid) {
+          extractives[g].removeLayer(layer);
+        }
+      });
+    },
+    removeGrids: function(g) {
+      this[g].eachLayer(function (layer) {
+        if (layer.options['grids']) {
+          extractives[g].removeLayer(layer);
+        }
+      });
+    },
 	  removeAll: function(g) {
 		  extractives.clearLayersLegends(g);
-		  $('.active').removeClass('active'); //TODO remove only on g class?
+      if (g == "group") {
+  		  $('.active:not(.headerLayer)').removeClass('active');
+      } else {
+        $('.active').removeClass('active'); 
+      }
 	  },
     clearLayersLegends: function(g) {
       if (g) {

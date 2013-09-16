@@ -9,7 +9,7 @@
         ['{{ layer.id }}',{{layer.z}}]{% unless forloop.last %},{% endunless %}
       {% endfor %}
 		  ],
-	    text: document.getElementById('{{center.introText}}').innerHTML
+	    text: {% if gis %}''{% else %}document.getElementById('{{center.introText}}').innerHTML{% endif %}
     }
 
 /*
@@ -48,9 +48,11 @@
           {% if map.htmlid %}{% assign htmlid = map.htmlid %}{% else %}{% assign htmlid = layer.layerid %}{% endif %}
           {{ htmlid }} : {
             "id": "{{map.mapid}}",
+            {% if gis %}{% else %}
             "text": {% if map.text %}document.getElementById('{{map.text}}').innerHTML{% else %}''{% endif %},
             "legend": {% if map.legend %}document.getElementById('{{map.legend}}').innerHTML{% else %}''{% endif %},
             "zIndex": {% if map.z %}{{map.z}}{% else %}''{% endif %}
+            {% endif %}
           },
        {% endfor %}
       {% endfor %}
