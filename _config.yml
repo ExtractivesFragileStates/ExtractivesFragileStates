@@ -1,2 +1,4 @@
 baseurl: /ExtractivesFragileStates
 permalink: /:categories/:title
+prose:
+  rooturl: '_posts'
