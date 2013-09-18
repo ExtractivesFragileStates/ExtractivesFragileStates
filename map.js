@@ -177,7 +177,7 @@
         this['group'].clearLayers();
         this['headerGroup'].clearLayers();
       }
-      $('.map-tooltip').each( function() { $(this).remove(); } );
+      $('.map-tooltip').each( function() { $(this).remove(); } ); // might need to clear gridControl
 	  	$('.layerMenu').hide();
   		$('.layerMenu').children().removeClass('active');
 		  $('.map-legends').remove();
