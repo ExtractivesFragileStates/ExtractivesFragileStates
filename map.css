@@ -1,0 +1,924 @@
+/*    --  DRC  --    */ 
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	overflow: hidden;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+/******************************* Typography *******************************/
+
+body,
+input,
+textarea {
+    font: 14px/20px 'Opensans', sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+}
+
+pre,
+code { font:normal 12px/20px monospace; }
+
+h1, h2, h3, h4, h5, h6 { 
+    margin: 0;
+}
+    
+h1 {
+    font-family: 'Opensans', sans-serif;
+    line-height: 1em;
+    font-size: 1.5em;
+}
+
+strong {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+sup, sub {
+   vertical-align: baseline;
+   position: relative;
+   top: -0.4em;
+   font-size: 0.8em;
+}
+
+sub { top: 0.4em; }
+
+em { font-style: italic; }
+
+a {
+    cursor: pointer;
+    color:#17C3E0;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:hover {
+	color: #A3DAE4;
+}
+
+
+
+
+
+
+
+
+/******************************* Layout *******************************/
+
+h1 {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 14px;
+}
+
+body > div {
+    position: relative;
+    z-index: 1;
+}
+
+body { margin:0; padding:0; }
+
+.clear { clear: both; }
+
+#map { 
+	position:absolute; 
+	top:0; 
+	bottom:0; 
+	width:100%;
+	z-index: 0;
+	background: rgb(250,247,243); /* set background for load */
+}
+
+#branding {
+	position: absolute;
+    height: 145px;
+    width: 150px;
+    left: 0;
+    float: left;
+    background: url(../img/logo.png) 30px 60px no-repeat;
+}
+
+#content {
+	position: absolute;
+	top: 56px;
+	left: 0;
+	bottom:0;
+	width:360px;
+	background:rgb(250,247,243);
+	background:rgba(250,247,243,0.9);
+    border-right: 4px solid #cbc4b3;
+    z-index: 2;
+}
+
+
+#map-header {
+	background: rgb(250,247,243);
+	position: absolute;
+	top: 0; 
+	left: 0;
+	width: 100%;
+	padding-top: 17px;
+	padding-bottom: 19px;
+  padding-left: 10px;
+	font-size: 18pt;
+	font-weight: 800;
+	/* text-align: center; */
+	color: #333;
+	cursor: pointer;
+}
+	
+.switcher-box {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0px;
+    z-index: 10;
+}
+
+.switcher-box a, .menu a {
+	font-family: 'OswaldBook',  "Arial Narrow", sans-serif;
+	font-weight: normal;
+    float: left;
+    padding: 11px 0 11px 0; 
+    border: 1px solid #BBB;
+    border-right-width: 0;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+	background: #fff;
+}
+
+.switcher-box a:first-child {
+	border-left-width: 0;
+}
+
+#map-ui a {
+	font-size: 0.8em;
+	background: #555;/* #E7E2D6; */
+	color: #fff;
+}
+
+#map-ui a:first-letter {
+	font-size: 1.3em;
+}
+
+#map-header:hover, .dropdownMenu a:hover, .menu a:hover, #map-ui a:hover {
+	color: #000;
+	background: #efedea;
+}
+
+#map-ui a.active {
+	color: #333;
+	background: #fff;
+	border-bottom-color: #ddd;
+}
+
+.dropdownMenu a.active, .menu a.active, .menu a.checkboxActive, .gisMenu a.active {
+    color: orange;
+}
+
+.gisMenu {
+  font-size: 16px;
+}
+.gisMenu div {
+  padding: 10px;
+}
+/*.gisMenu a {
+  text-decoration: none;
+  cursor: default; 
+}
+.gisMenu a.possible {
+	text-decoration: underline;
+  cursor: pointer;
+}*/
+.gisMenu.grid {
+  float: right;
+  display: none;
+}
+.gisMenu.grid.possible {
+  display: block;
+  font-weight: bold;
+}
+#map-ui a:active, .dropdownMenu a:active, .menu a:active {
+	color: orange;
+	background: #fff;
+}
+
+.dropdownMenu {
+	z-index: 1;
+}
+
+
+
+#content .two-wide > a {
+	width: 179px; 
+}
+
+#content .two-wide > a:last-child {
+	width: 180px; 
+}
+
+#content .three-wide > a {
+	width: 119px;
+}
+
+#content .three-wide > a:last-child {
+	width: 120px;
+}
+
+#content .four-wide > a {
+	width: 89px;
+}
+
+#content .four-wide > a:last-child {
+	width: 90px;
+}
+
+
+
+/******************************* Text *******************************/
+    
+#text {
+	position: absolute;
+	overflow-x:hidden;
+	overflow-y:auto;
+	top: 44px;
+	left: 0;
+	bottom: 10px;
+	width: auto;
+	padding: 10px;
+	font-size: 9pt;
+	z-index: 2;
+}
+	
+#text .heading {
+	padding-left: 8px;
+	font-weight: bold;
+	font-size: 11pt;
+}
+
+#text .emphasis {
+	font-weight: bold;
+	color: orange;
+}
+
+#text .navigate {
+	cursor: pointer;
+	font-weight: bold;
+	color: #ffa500;
+}
+
+#text .navigate:hover {
+	color: #EECD8E;
+}
+
+.cmBox {
+	margin-left: 12px;
+	border-left: 2px solid #555;
+	padding-left: 8px;
+}
+
+.cmInitiative {
+	position: relative;
+}
+
+.cmInitiative img {
+	position: absolute;
+	top: 0.5em;
+	left: -1.05em;
+}
+
+.cmDescription {
+	font-size: 0.9em;
+	line-height: 1.5em;
+}
+
+.rotate {
+-webkit-transform: rotate(-90deg);
+-moz-transform: rotate(-90deg);
+-ms-transform: rotate(-90deg);
+-o-transform: rotate(-90deg);
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.upstream {
+	position: absolute;
+	left: -2.5em;
+	top: 2em;
+}
+
+.downstream {
+	position: absolute;
+	left: -3.5em;
+	top: 26em;
+}
+
+
+/******************************* Dashboard *******************************/
+.dashboard {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.dashboard li {
+	position: relative;
+	border-bottom: 1px solid #ccc;
+}
+
+.dashboard li .key {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-weight: bold;
+}
+
+.dashboard li .val {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+	/* GDP/HDI & World Bank Stats */
+.majorStats, .wbStats {
+	height: 120px; 
+	float: left;
+}
+
+.majorStats {
+	width: 45%;
+	padding-right: 4px;
+	border-right: 1px solid #ccc;
+	margin-right: 4px;
+}
+
+.wbStats {
+	width: 52%;
+}
+
+.majorStats li {
+	height: 50%;
+}
+
+.wbStats li {
+	height: 25%;
+}
+
+.majorStats li .key {
+	font-size: 3.2em;
+	bottom: 11px;
+	letter-spacing: -0.1em;
+}
+
+	/* EITI Stats */
+.eitiStats span.title {
+	letter-spacing: -0.1em;
+	bottom: -6px;
+}
+
+.eitiStats span.key.title {
+	font-size: 1.6em;
+}
+
+.eitiStats {
+	clear: both;
+	height: 192px; /* 30 * n of li + bottom margin */
+}
+
+.eitiStats li {
+	height: 15%;
+}
+
+
+
+
+/******************************* Menus: displayed on map, not in content bar *******************************/
+
+.menu{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* position:absolute;
+    top:40px;
+    left: 366px; */
+    z-index: 1001;
+}
+
+.menu > a {
+    padding: 10px 0 10px 0; /* check! */
+    border: 1px solid #cbc4b3;
+    border-bottom-width: 0;
+    width: 106px;
+    float: left;
+    margin-right: 8px;
+    margin-left: 5px;
+}
+
+.menu a:last-child {
+    border-bottom-width: 1px;
+    -webkit-border-radius: 0 0 2px 2px;
+    border-radius: 0 0 2px 2px;
+}
+
+.menu a:first-child {
+    -webkit-border-radius: 2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
+}
+
+
+
+
+/******************************* Tooltips *******************************/
+
+.leaflet-top {
+    top: 50px;
+}
+
+.map-tooltip {
+    border:none;
+    background:none;
+    border-radius:none;
+    -moz-border-radius:none;
+    -webkit-border-radius:none;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    left: auto;
+    top: auto;
+    right: 10px;
+    border: none;
+    width: 280px;
+    font: 11px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    background-color: #faf7f3;
+    margin-left: -100px;
+    line-height: 16px;
+    margin-bottom: 20px;
+    overflow: visible;
+    }
+
+.map-tooltip .name {
+    padding: 0 0 4px 4px;
+    border-bottom: 2px solid #cbc4b3;
+    color: #624d15;
+    /* line-height: 2em; */
+}
+
+.map-tooltip .title {
+	font-weight: normal;
+    font-size: 17pt;
+    color: #624d15;
+    line-height: 1em;
+}
+
+.map-tooltip .subtitle {
+	font-weight: lighter;
+    font-size: 12pt;
+    padding-top: 6px;
+    color: #897a4f;
+    line-height: 1em;
+}
+
+.map-tooltip .emphasis {
+	font-weight: 600;
+	color: orange;
+}
+
+	/* column template I */
+.map-tooltip .details {
+    padding: 4px 0 4px 8px;
+    color: #666666;
+    font-size: 11pt;
+}
+
+.map-tooltip .col {
+	float: left;
+	margin-bottom: 4px;
+}
+
+.map-tooltip .col > div {
+	padding-bottom: 2px;
+}
+
+.map-tooltip .key {
+    padding-right: 4px;
+    font-weight: 600;
+}
+
+	/* column template II */
+.map-tooltip ul {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+
+.map-tooltip ul li {
+	font-weight: bold;
+	list-style: none;
+	padding-bottom: 2px;
+}
+
+.map-tooltip .value {
+	font-weight: normal;
+	padding-left: 8px;
+}
+
+	/* free text template */
+.map-tooltip .text {
+    padding: 4px 0 12px 4px;
+    font-size: 10pt;
+    line-height: 120%;
+}
+
+
+
+
+
+
+/******************************* Legends *******************************/
+
+.map-legend {
+	font: 10pt "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #faf7f3;
+	color: #333;
+	/* width: 265px;  Delete */
+}
+
+.map-legend .legend-name {
+	text-align: center;
+	line-height: 1.7em;
+	color: #624d15;
+	padding-bottom: 4px;
+	border-bottom: 2px solid #cbc4b3;
+	margin-bottom: 4px;
+}
+
+.map-legend .legend-title {
+	font-size: 18pt;
+}
+
+.map-legend .legend-subtitle {
+	font-size: 13pt;
+}
+
+.map-legend .legend-description {
+	font-size: 9pt;
+	padding: 0px 0px 4px 4px;
+	clear: both;
+}
+
+.map-legend .legend-source {
+	font-size: 8pt;
+	color: #555;
+	clear: both;
+}
+
+.map-legend a {
+	color: #74A9CF;
+	font-weight: normal;
+}
+
+.map-legend a:hover{
+	text-decoration: underline;
+	color: #AAAAAA;
+}
+
+.map-legend .emphasis {
+	font-weight: 600;
+	color: orange;
+}
+
+
+/*  Table Legend  */
+.map-legendTable .legend-scale ul {
+	margin: 0;
+	margin-bottom: 5px;
+	margin-left: 4px;
+	padding: 0;
+	float: left;
+	text-align:right;
+	list-style: none;
+}
+
+.map-legendTable .legend-scale ul li {
+	list-style: none;
+	margin-left: 0;
+	line-height: 18px;
+}
+
+.map-legendTable ul.legend-labels li .type {
+	display: block;
+	float: right;
+	height: 18px;
+	width: 70px;
+	font-size: 90%;
+	text-align: center;
+}
+
+.map-legendTable ul.legend-labels li img {
+	display: block;
+	float: right;
+	height: 18px;
+	width: 70px;
+}
+
+.map-legendTable ul.legend-labels li .mineral {
+	margin-right: 4px;
+	font-size: 90%;
+}
+
+
+/*  Horizontal Graduated Legend  */
+.map-legendGraduated .legend-scale ul {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+.map-legendGraduated .legend-scale ul li {
+	display: block;
+	float: left;
+	width: 50px;
+	margin-bottom: 6px;
+	text-align: center;
+	font-size: 80%;
+	list-style: none;
+}
+.map-legendGraduated ul.legend-labels li span {
+	display: block;
+	float: left;
+	height: 15px;
+	width: 50px;
+}
+
+
+/*  Vertical Categorized Legend  */
+.map-legendVerticalCategorized .legend-scale ul {
+	margin: 0 0 0 8px;
+	margin-bottom: 5px;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+
+.map-legendVerticalCategorized .legend-scale ul li {
+	list-style: none;
+	margin-left: 0;
+	line-height: 18px;
+	margin-bottom: 2px;
+}
+
+.map-legendVerticalCategorized ul.legend-labels li span {
+	display: block;
+	float: left;
+	height: 16px;
+	width: 30px;
+	margin-right: 5px;
+	margin-left: 0;
+	border: 1px solid #999;
+}
+
+
+/*  Vertical Graduated Legend  */
+.map-legendVerticalGraduated .legend-scale ul {
+	margin: 0 0 0 8px;
+	margin-bottom: 5px;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+
+.map-legendVerticalGraduated .legend-scale ul li {
+	list-style: none;
+	margin-left: 0;
+	line-height: 20px;
+	font-size: 90%;
+}
+
+.map-legendVerticalGraduated ul.legend-labels li span {
+	display: block;
+	float: left;
+	height: 20px;
+	width: 30px;
+	margin-right: 5px;
+	margin-left: 0;
+}
+
+
+
+
+
+
+
+
+/******************************* Zoom Control *******************************/
+.leaflet-control-zoom{
+	top: -4px;
+	left: 360px;
+	}
+	
+.leaflet-control-zoom a:hover{
+	color: orange;
+	}
+	
+.leaflet-control-zoom-in{
+	float: left;
+	-webkit-border-top-left-radius: 2px !important;
+	border-top-left-radius: 2px !important;
+	-webkit-border-bottom-left-radius: 2px !important;
+	border-bottom-left-radius: 2px !important;
+	-webkit-border-top-right-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	-webkit-border-bottom-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+	border-bottom: 0 !important;
+	border-right: 0px solid #ccc;
+}
+	
+.leaflet-control-zoom-out{
+	float: left;
+	-webkit-border-top-right-radius: 2px !important;
+	border-top-right-radius: 2px !important;
+	-webkit-border-bottom-right-radius: 2px !important;
+	border-bottom-right-radius: 2px !important;
+	-webkit-border-top-left-radius: 0px !important;
+	border-top-left-radius: 0px !important;
+	-webkit-border-bottom-left-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
+	border-bottom: 0 !important;
+	border-left: 1px solid #ccc;
+}
+
+
+
+
+
+
+
+
+/******************************* Share Button *******************************/
+
+.map-share h3 {
+    margin: 0px 0px 10px;
+    font-size: 16px;
+    font-weight: normal;
+    }
+
+.map-share strong {
+    font-weight: 700;
+    }
+
+.map-share small {
+    font-size: 11px;
+    color: #999;
+    display: block;
+    margin-top: 0.5em;
+    }
+
+.share {
+    top: 6px !important; /*45px;*/
+    left: 345px !important;
+    z-index: 2;
+    }
+    
+.mmg-default {
+    width: 20px;
+    height: 40px;
+    background: url(../img/map.png) -120px -30px;
+    left: -10px;
+    top: -30px;
+    }
+    
+/* embed */
+
+.embed .map {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: white;
+    z-index: 1000;
+    }
+
+.embed #map-header, .embed #content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10001;
+    visibility: hidden;
+    overflow: hidden;
+    }
+
+.embed a.zoomer {
+    top: 10px;
+    }
+
+.embed .map-tooltip {
+    top: 10px;
+    right: 10px;
+    }
+
+.embed .map-legends {
+    right: 10px;
+    bottom: 10px;
+    }
+
+.embed .share {
+    top: 45px;
+    z-index: 1001;
+    }
+
+.embed .layers {
+    position: absolute	;
+    top: 90px;
+    left: 0;
+    z-index: 1001;
+    visibility: visible;
+    }
+
+.embed .layer {
+    width: 100px;
+    text-align: center;
+    border: 1px solid #ccc;
+    }
+
+
+
+
+
+
+
+/******************************* Animation *******************************/
+
+.map-tile-loaded {
+    -webkit-animation-name:               fade-in;
+    -moz-animation-name:                  fade-in;
+    -ms-animation-name:                   fade-in;
+    -o-animation-name:                    fade-in;
+    -webkit-animation-timing-function:    linear;
+    -moz-animation-timing-function:       linear;
+    -ms-animation-timing-function:        linear;
+    -o-animation-timing-function:         linear;
+    -webkit-animation-duration:           .2s;
+    -moz-animation-duration:              .2s;
+    -ms-animation-duration:               .2s;
+    -o-animation-duration:                .2s;
+}
+
+@-webkit-keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@-moz-keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@-ms-keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@-o-keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }

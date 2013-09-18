@@ -1,3 +1,7 @@
+---
+---
+{% include ext/jquery.min.js %}
+
 ;(function(context) {
   var extractives = {
 

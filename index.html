@@ -13,7 +13,7 @@ slideshow:
     subtitle: Slide Subtitle
 ---
 
-<div class='section dark'>
+<div class='section grey'>
   <div class='limiter'>
     <h4 class='title centered'>Select Case Studies<br /> <span class='subtitle'>Discover innovative uses of open data to reveal connections </span></h4>
     <ul class='activities grid clearfix'>
@@ -36,6 +36,7 @@ slideshow:
       {% endfor %}
     </ul>
 
+    {% if site.categories.casestudy.size > 3 %}
     <div class='centered'>
       <a href='#' class='button toggle'>Load More</a>
     </div>
@@ -60,5 +61,7 @@ slideshow:
       </li>
       {% endfor %}
     </ul>
+
+    {% endif %}
   </div>
 </div>

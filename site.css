@@ -42,6 +42,7 @@ table { border-collapse: collapse; border-spacing:0; }
 /* ------------------------------------------
   Typography ♥
 ---------------------------------------------*/
+
 @font-face {
   font-family:'Opensans';
   src: url('fonts/opensans/opensans-regular.eot') format('eot');
@@ -53,10 +54,10 @@ table { border-collapse: collapse; border-spacing:0; }
 @font-face {
   font-family:'Opensans';
   font-weight:bold;
-  src: url('fonts/opensans/opensans-bold.eot') format('eot');
-  src: url('fonts/opensans/opensans-bold.eot?#iefix') format('embedded-opentype'),
-       url('fonts/opensans/opensans-bold.woff') format('woff'),
-       url('fonts/opensans/opensans-bold.ttf') format('truetype');
+  src: url('fonts/opensans/OpenSans-Semibold-webfont.eot') format('eot');
+  src: url('fonts/opensans/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/opensans/OpenSans-Semibold-webfont.woff') format('woff'),
+       url('fonts/opensans/OpenSans-Semibold-webfont.ttf') format('truetype');
   }
 
 @font-face {
@@ -69,6 +70,17 @@ table { border-collapse: collapse; border-spacing:0; }
   }
 
 @font-face {
+    font-family: 'Opensans';
+    src: url('fonts/opensans/OpenSans-SemiboldItalic-webfont.eot');
+    src: url('fonts/opensans/OpenSans-SemiboldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/opensans/OpenSans-SemiboldItalic-webfont.woff') format('woff'),
+         url('fonts/opensans/OpenSans-SemiboldItalic-webfont.ttf') format('truetype'),
+         url('fonts/opensans/OpenSans-SemiboldItalic-webfont.svg#OpenSansSemiboldItalic') format('svg');
+    font-style: italic;
+    font-weight: bold;
+}
+
+@font-face {
   font-family:'Bitter';
   font-style:normal;
   font-weight:700;
@@ -77,6 +89,19 @@ table { border-collapse: collapse; border-spacing:0; }
        url('fonts/bitter/bitter-bold.woff') format('woff'),
        url('fonts/bitter/bitter-bold.ttf') format('truetype');
   }
+
+
+@font-face {
+    font-family: 'OswaldBook';
+    src: url('fonts/oswald/Oswald-Regular-webfont.eot');
+    src: url('fonts/oswald/Oswald-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/oswald/Oswald-Regular-webfont.woff') format('woff'),
+         url('fonts/oswald/Oswald-Regular-webfont.ttf') format('truetype'),
+         url('fonts/oswald/Oswald-Regular-webfont.svg#OswaldBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 /* ------------------------------------------
   Inline Element Styling ♥
@@ -99,7 +124,8 @@ body {
     }
 
 h1, h2, h3, h4, h5, h6, .case-title {
-  font-family:'Bitter', 'Georgia', 'Times New Roman', 'Hoefler Text', serif;
+/*  font-family:'Bitter', 'Georgia', 'Times New Roman', 'Hoefler Text', serif; */
+  font-family:Opensans,'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 .title {
   font-family:Opensans,'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -276,9 +302,8 @@ small {
     height:55px;
     }
   .icon.logo {
-    background-position:0 -295px;
-    width:132px;
-    height:70px;
+    width:100px;
+    height:100px;
     }
     .interactive-heading .icon.logo {
       width:66px;
@@ -397,7 +422,7 @@ small {
       color:#fff;
       }
       .header a.active {
-        color:#3B96CB;
+        color: orange;
         }
 
     .interactive-heading .logo,
@@ -405,6 +430,7 @@ small {
       position:relative;
       display:inline-block;
       z-index:100;
+      background-image: url(img/logo.png);
       }
     .header .logo {
       top:40px;
@@ -443,8 +469,7 @@ small {
   .header .nav a {
     float:left;
     display:block;
-    font-family:Opensans,'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight:bold;
+    font-family:'OswaldBook',  "Arial Narrow", sans-serif;
     margin-left:10px;
     -webkit-font-smoothing:subpixel-antialiased;
     }
@@ -510,7 +535,7 @@ small {
     margin:0 auto;
     }
   .section.grey {
-    background:#eee;
+    background:rgb(250,247,243);
     }
   .section.dark {
     background:#101010 url(img/dot-matrix.png) repeat 0 0;
@@ -1098,7 +1123,7 @@ Details: http: //perishablepress.com/press/2009/12/06/new-clearfix-hack*/
   }
   .active-nav .nav a {
     display:block;
-    color:#8897A0;
+    color: orange;;
     font-size:13px;
     padding:2px 10px;
     }
