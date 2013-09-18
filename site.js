@@ -63,9 +63,9 @@
     eafs.generateMap = function(layer, options, callback) {
 
         var o = {
-            lat: options.lat || 18.46,
-            lon: options.lon || 81.65,
-            zoom: options.zoom.defaultZoom || 4,
+            lat: options.lat || 30,
+            lon: options.lon || 38,
+            zoom: options.zoom.defaultZoom || 3,
             max: options.zoom.max || 17,
             min: options.zoom.min || 7
         };
@@ -126,13 +126,12 @@
                 a.href = '#' + f.properties.url;
                 a.setAttribute('data-scroll', true);
 
-                var city = f.properties.title.split(',')[0],
-                    country = f.properties.title.split(',')[1],
+                var country = f.properties.title,
                     projects = f.properties.projects.length - 1;
 
                 var up = document.createElement('div');
                     up.className = 'popup';
-                    up.innerHTML = '<div class="clearfix"><div class="name">' + city + '<small>' + country + '</small></div><div class="val"><p>' + projects + ' Case Studies</p></div></div>';
+                    up.innerHTML = '<div class="clearfix"><div class="name">' + country + '</div></div>';
 
                 a.appendChild(up);
             return a;
@@ -142,9 +141,9 @@
         map.setZoomRange(3, 17);
 
         var mapDefaults = {
-            lat: 23.03,
-            lon: 71.54,
-            zoom: 4
+            lat: 30,
+            lon: 38,
+            zoom: 3
         };
 
         // Set iniital center and zoom

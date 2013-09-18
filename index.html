@@ -19,7 +19,7 @@ slideshow:
     <ul class='activities grid clearfix'>
       {% for case in site.categories.casestudy limit:3 %}
       <li>
-        <a href='{{site.baseurl}}{{case.url}}' style='background-image:url("http://api.tiles.mapbox.com/v3/{{case.map}}/{{case.center[0].lon}},{{case.center[0].lat}},{{case.center[0].zoom}}/640x300.png");'>
+        <a href='{{site.baseurl}}{{case.url}}' style='background-image:url("http://api.tiles.mapbox.com/v3/{{case.map}}/{{case.center.lon}},{{case.center.lat}},{{case.center.zoom}}/640x300.png");'>
           <div class='overlay'></div>
           <div class='label'>
             {% for name in site.categories.cities %}
@@ -28,7 +28,7 @@ slideshow:
               {% endif %}
             {% endfor %}
           </div>
-          <h4 class='case-title'>{{case.title}}</h4>
+          <!--<h4 class='case-title'>{{case.title}}</h4>-->
           <p class='city-desc'>{{case.subtitle | truncate:120}}</p>
           <span class='more'>More</span>
         </a>
@@ -44,7 +44,7 @@ slideshow:
     <ul class='activities grid toggled clearfix'>
       {% for case in site.categories.casestudy offset:3 %}
       <li>
-        <a href='{{site.baseurl}}{{case.url}}' style='background-image:url("http://api.tiles.mapbox.com/v3/{{case.map}}/{{case.center[0].lon}},{{case.center[0].lat}},{{case.center[0].zoom}}/640x300.png");'>
+        <a href='{{site.baseurl}}{{case.url}}' style='background-image:url("http://api.tiles.mapbox.com/v3/{{case.map}}/{{case.center.lon}},{{case.center.lat}},{{case.center.zoom}}/640x300.png");'>
           <div class='overlay'></div>
           <div class='label'>
             {% for name in site.categories.cities %}
@@ -53,8 +53,8 @@ slideshow:
               {% endif %}
             {% endfor %}
           </div>
-          <h4 class='case-title'>
-            {{case.title}}</h4>
+          <!--<h4 class='case-title'>
+            {{case.title}}</h4>-->
           <p class='city-desc'>{{case.subtitle | truncate:120}}</p>
           <span class='more'>More</span>
         </a>
