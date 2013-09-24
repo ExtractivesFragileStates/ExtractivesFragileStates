@@ -11,15 +11,26 @@ slideshow:
   - slide: 6466834543_1ff9a4ac4a_b.jpg
     title: Poverty
     subtitle: Slide Subtitle
+citiesMap: "tristen.map-2wjrklq0"
 ---
-
 <div class='section grey'>
-  <div class='limiter'>
-    <h4 class='title centered'>Select Case Studies<br /> <span class='subtitle'>Discover innovative uses of open data to reveal connections </span></h4>
+  <div>
+   
+    {% for item in site.categories.cities %}
+      {% assign cities = forloop.length %}
+    {% endfor %}
+
+    {% for item in site.categories.casestudy %}
+      {% assign casestudy = forloop.length %}
+    {% endfor %}
+
+    <h2 class='centered'>{{cities}} Countries</h2>
+    <h4 class='title centered'>Explore the impact of extractive industries at the local level</h4>
+
     <ul class='activities grid clearfix'>
-      {% for case in site.categories.casestudy limit:3 %}
+      {% for case in site.categories.casestudy %}
       <li>
-        <a href='{{site.baseurl}}{{case.url}}' style='background-image:url("http://api.tiles.mapbox.com/v3/{{case.map}}/{{case.center.lon}},{{case.center.lat}},{{case.center.zoom}}/640x300.png");'>
+        <a href='{{site.baseurl}}{{case.url}}' style='background-image:url("http://api.tiles.mapbox.com/v3/{{case.map}}/{{case.center.lon}},{{case.center.lat}},{{case.center.zoom}}/1280x400.png");'>
           <div class='overlay'></div>
           <div class='label'>
             {% for name in site.categories.cities %}
@@ -36,7 +47,7 @@ slideshow:
       {% endfor %}
     </ul>
 
-    {% if site.categories.casestudy.size > 3 %}
+    {% if site.categories.casestudy.size > 5 %}
     <div class='centered'>
       <a href='#' class='button toggle'>Load More</a>
     </div>

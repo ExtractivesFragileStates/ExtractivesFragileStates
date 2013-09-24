@@ -48,32 +48,22 @@
         });
       </script>
     </div>
-
-    {% elsif page.citiesMap %}
-    <div id='header' class='map header'>
-      {% include header.html %}
-
-      <div class='limiter'>
-        <div class='title-block'>
-          {% for item in site.categories.cities %}
-            {% assign cities = forloop.length %}
-          {% endfor %}
-
-          {% for item in site.categories.casestudy %}
-            {% assign casestudy = forloop.length %}
-          {% endfor %}
-
-          <h2>{{cities}} Countries</h2>
-          <p class='subtitle'>Explore the impact of extractive industries at the local level</p>
-        </div>
+    {% endif %}
+    {% if page.citiesMap %}
+    <div class='section data-coverage'>
+      <h4 class='title centered'>Public contributions improve OpenStreetMap's Global coverage daily</h4>
+      <div class='map' id='countries-coverage'>
+        <small class='attribution'>Map visualizes the density of OpenStreetMap contributions.</small>
       </div>
+    </div>
+    <div class=''>
 
-      <script>
-        var header = document.getElementById('header');
+    <script>
+        var header = document.getElementById('countries-coverage');
         $(function() {
           eafs.citiesMap(header, '{{page.citiesMap}}');
         });
-      </script>
+    </script>
     </div>
     {% endif %}
 
