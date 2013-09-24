@@ -25,6 +25,9 @@
 <div id="content">
 
   {% assign switcher_class = 'four-wide' %}
+  {% if page.sections.size == 2 %}
+     {% assign switcher_class = 'two-wide' %}
+  {% endif %}
 	<div id="map-ui" class="{{switcher_class}} switcher-box">
     {% for section in page.sections %}{% unless section.class == "headerSection" %}<a href="#" id="{{section.sectionid}}" class="section">{{section.label}}</a>{% endunless %}{% endfor %}
 	</div>	
