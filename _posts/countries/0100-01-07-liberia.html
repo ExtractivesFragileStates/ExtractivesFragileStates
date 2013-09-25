@@ -1,0 +1,321 @@
+---
+layout: map
+permalink: /countries/liberia
+categories: [casestudy,countries,cities]
+city: liberia
+title: 'Liberas Mineral Wealth' 
+subtitle: 'Conflict and Extractives in Libera'
+preview: 'dhaka.png'
+map: 'helsinki.Liberia_landcover'
+lat: 6.2
+lon: -11
+center:
+    lat: 6.2
+    lon: -11
+    zoom: 7
+    layers:
+      - id: 'helsinki.liberia_base_layer'
+        z: -1000
+      - id: 'helsinki.liberia_label'
+        z: 1000
+    introText: introText
+section-count: 3
+sections:
+  - sectionid: environment
+    label: ENVIRONMENT
+    layers:
+    - layerid: landCover
+      label: Land Cover
+      maps:
+        - mapid: 'helsinki.Liberia_landcover'
+          text: 'conflictText'
+          legend: 'landCoverLegend'
+  - sectionid: development
+    label: DEVELOPMENT
+    layers:
+    - layerid: poverty
+      label: Poverty
+      maps:
+        - mapid: helsinki.Liberia_Unemployment
+          text: developmentText
+          legend: unemploymentLegend
+          htmlid: unemployment
+          label: Unemployment
+        - mapid: helsinki.Liberia_Electricity
+          text: developmentText
+          legend: electricLightLegend
+          htmlid: electricity
+          label: Electric Lighting
+        - htmlid: pipedWater
+          label: Piped Water
+          mapid: helsinki.Liberia_PipedWater
+          legend: pipedWaterLegend
+          text: developmentText
+    - layerid: school
+      label: Education
+      maps:
+        - mapid: helsinki.Liberia_School_Tot
+          legend: schoolLegend
+          text: developmentText
+    - layerid: health
+      label: Health
+      maps:
+        - htmlid: healthCenter
+          label: Health Centers
+          mapid: 'helsinki.Liberia_HealthCenter'
+          legend: healthCenterLegend
+          text: developmentText
+        - htmlid: malaria
+          label: Disease
+          mapid: helsinki.Liberia_Disease
+          legend: landCoverLegend
+          text: developmentText
+  - sectionid: concessions
+    label: Concessions
+    class: headerSection
+    layers:
+      - layerid: mines
+        label: Mines
+        maps:
+          - mapid: helsinki.Liberia_Mining_Concessions
+  - sectionid: extractives
+    label: EXTRACTIVES
+    layers:
+      - layerid: geo
+        label: Geology
+        maps:
+          - htmlid: mineral
+            label: Resources
+            mapid: helsinki.liberia_mineral_contours
+            legend: resourceLegend
+            text: extractivesText
+          - htmlid: geology
+            label: Geology
+            mapid: helsinki.Liberia_geology
+            text: extractivesText
+            legend: geologyLegend
+      - layerid: all_con
+        label: Concessions
+        maps:
+          - mapid: helsinki.Liberia_all_concessions
+            legend: unemploymentLegend
+            text: extractivesText
+      - layerid: offshore
+        label: Offshore
+        maps:
+          - mapid: helsinki.Liberia_Offshore
+            text: extractivesText
+---
+
+<!-- Legend -->
+
+<!-- Unemployment - vertical graduated -->
+<div id='unemploymentLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Unemployment</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>0 - 28%</li>
+			<li><span style='background:#FC8D59;'></span>28% - 38%</li>
+			<li><span style='background:#E34A33;'></span>38% - 53%</li>
+			<li><span style='background:#B30000;'></span>53% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
+</div>
+</div>
+
+
+<!-- electricLightLegend - vertical graduated -->
+<div id='electricLightLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>No Electric Light</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>90% - 98%</li>
+			<li><span style='background:#FC8D59;'></span>98% - 98.5%</li>
+			<li><span style='background:#E34A33;'></span>98.5% - 99%</li>
+			<li><span style='background:#B30000;'></span>99% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
+</div>
+</div>
+
+
+<!-- pipedWaterLegend - vertical graduated -->
+<div id='pipedWaterLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>No Piped Water</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>39% - 50%</li>
+			<li><span style='background:#FC8D59;'></span>50% - 64%</li>
+			<li><span style='background:#E34A33;'></span>64% - 74%</li>
+			<li><span style='background:#B30000;'></span>74% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
+</div>
+</div>
+
+
+<!-- schoolLegend - vertical graduated -->
+<div id='schoolLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Percent in School</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>32% - 56%</li>
+			<li><span style='background:#FC8D59;'></span>56% - 65%</li>
+			<li><span style='background:#E34A33;'></span>65% - 80%</li>
+			<li><span style='background:#B30000;'></span>80% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
+</div>
+</div>
+
+
+<!-- healthCenterLegend - vertical graduated -->
+<div id='healthCenterLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>w/in 5 miles of<br>Health Center</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>30% - 55%</li>
+			<li><span style='background:#FC8D59;'></span>55% - 65%</li>
+			<li><span style='background:#E34A33;'></span>65% - 75%</li>
+			<li><span style='background:#B30000;'></span>75% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
+</div>
+</div>
+
+
+<!-- malariaLegend - vertical graduated -->
+<div id='malariaLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Malaria Cases</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>6% - 12%</li>
+			<li><span style='background:#FC8D59;'></span>12% - 16%</li>
+			<li><span style='background:#E34A33;'></span>16% - 22%</li>
+			<li><span style='background:#B30000;'></span>22% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
+</div>
+</div>
+
+
+
+<!-- Geology Legend - vertical categorized -->
+<div id='geologyLegend' style='display:none'>
+<div class='map-legendVerticalCategorized'>
+	<div class='legend-name'>
+		<div class='legend-title'>Geology</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#c7741e;'></span>Quaternary Sediments</li>
+			<li><span style='background:#2d8814;'></span>Paleoproteroic Leucogranite</li>
+			<li><span style='background:#4e9cb9;'></span>Paleoproterozoic Euburnean Complexes</li>
+			<li><span style='background:#b23cbe;'></span>Paleoproterozoic Volcano-plutonic Sediments</li>
+			<li><span style='background:#db412f;'></span>Neoarchean-Paleoproterozoic Formations of BIF</li>
+			<li><span style='background:#2a0a0d;'></span>Neoarchean-Paleoproterozoic Greenstone</li>
+			<li><span style='background:#304f85;'></span>Neoarchean Plutonic and Metamorphic Granite/Gneisses</li>
+			<li><span style='background:#79d560;'></span>Metamorphosed Gneissic Complexes</li>
+			<li><span style='background:#43c71e;'></span>Mesoarchean Gneissic Complexes</li>
+			<li><span style='background:#0b5338;'></span>Mesoarchean Volcanoplutonic</li>
+			<li><span style='background:#683b29;'></span>Mesoarchean Volcano-sedimentary and BIF</li>
+			<li><span style='background:#092447;'></span>Paleoarchean Gneisses</li>
+			<li><span style='background:#35dab3;'></span>Paleoproterozoic Volcanosediments (Late bimodal)</li>
+			<li><span style='background:#dbb640;'></span>Paleoproterozoic Tholeiitic Volcanosediments</li>
+			<li><span style='background:#cf3b4b;'></span>Paleoproteroic Sediments</li>
+		</ul>
+	<div class='legend-description'>HOVER over a province for details on its mineral wealth</div>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="http://www.sigafrique.net/">SIG Afrique</a> Geology data</div>
+</div>
+</div>
+
+<!-- LandCover Legend - vertical categorized -->
+<div id='landCoverLegend' style='display:none'>
+<div class='map-legendVerticalCategorized'>
+	<div class='legend-name'>
+		<div class='legend-title'>Land Cover</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#c7741e;'></span>Rural Areas</li>
+			<li><span style='background:#79d560;'></span>Predominant Rural Agricultural Domain</li>
+			<li><span style='background:#43c71e;'></span>Agricultural Area with Small Forest Presence</li>
+			<li><span style='background:#4e9cb9;'></span>Agriculture Degraded Forest</li>
+			<li><span style='background:#1c4c7a;'></span>Open Dense Forest</li>
+			<li><span style='background:#092447;'></span>Closed Dense Forest</li>
+			<li><span style='background:#35dab3;'></span>Free Water</li>
+			<li><span style='background:#e98b55;'></span>Savannas or Nude Areas</li>
+			<li><span style='background:#cf3b4b;'></span>Littoral Ecosystem Complex</li>
+			<li><span style='background:#bb5ddf;'></span>Agro-Industrial Plantation</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="http://www.moa.gov.lr/index.php">Liberia Ministry of Agriculture</a><br>and <a href='http://www.fda.gov.lr/'>Liberia Forest Development Authority</a></div>
+</div>
+</div>
+
+<!-- resource Legend - vertical categorized -->
+<div id='resourceLegend' style='display:none'>
+<div class='map-legendVerticalCategorized'>
+	<div class='legend-name'>
+		<div class='legend-title'>Resources</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#f3ca44;'></span>Gold</li>
+			<li><span style='background:#7d92d7;'></span>Diamonds</li>
+			<li><span style='background:#8d8681;'></span>Iron Ore</li>
+<!--			<li><span style='background:#c68aad;'></span>Bauxite</li>
+			<li><span style='background:#afd180;'></span>Rutile</li>
+-->		</ul>
+	<div class='legend-description'></div>
+	</div>
+	<div class='legend-source'><b>Source:</b> Marco River Resources, Inc.</div>
+</div>
+</div>
+
+
+
+<div id='introText' style='display:none'>
+<p>Intro Text To Come...</p>
+</div>
+
+
+<div id="conflictText" style='display:none'>
+<p>Conflict Text To Come...</p>
+</div>
+
+<div id="extractivesText" style='display:none'>
+<p>Extractives Text To Come...</p>
+</div>
+
+<div id="developmentText" style="display:none">
+<p>Development Text To Come...</p>
+</div>
+
+
+
