@@ -8,22 +8,21 @@
 <div id='map'></div>
 
 <div id='map-header'>
-  <span><a href='{{site.baseurl}}/'>Home</a></span> >> 
-  <span class='refresher'>{{page.title}}</span> >>
-  <span><a href="{{site.baseurl}}/gis/{{page.city}}">GIS</a></span>
-  <span class='headerSection'>
-  {% for section in page.sections %}
-    {% if section.class == "headerSection" %}
-      {% for layer in section.layers %}
-		    <a href="#" id="{{layer.layerid}}" class="maplink headerLayer" tyle='padding: 4px 0 2px 0; line-height: 1.3em;'>{{layer.label}}</a>
-      {% endfor %}
-    {% endif %}
-  {% endfor %}
+	<span class='headerSection'>
+	{% for section in page.sections %}
+	{% if section.class == "headerSection" %}
+	  {% for layer in section.layers %}
+			<a href="#" id="{{layer.layerid}}" class="maplink headerLayer" tyle='padding: 4px 0 2px 0; line-height: 1.3em;'>{{layer.label}}</a>
+	  {% endfor %}
+	{% endif %}
+	{% endfor %}
 	</span>
+	<span class='home_button'><a href='{{site.baseurl}}/'><img src='img/mine.png' height='18px' width='18px' /> HOME</a></span>
+	<span class='gis_button'><a href="{{site.baseurl}}/gis/{{page.city}}">GIS</a></span>
 </div>
 
 <div id="content">
-
+	<div class='title refresher'>{{page.title}}</div>
   {% assign switcher_class = 'four-wide' %}
   {% if page.sections.size == 2 %}
      {% assign switcher_class = 'two-wide' %}

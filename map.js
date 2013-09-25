@@ -192,12 +192,12 @@
 		  layer.addClass('active');
 	  },
 	  textMenuDown: function() {
-	  	$('.dropdownMenu').animate( { 'top': '40px' }, 150 );
-		  $('#text').animate( { 'top': '84px' }, 150 );
+	  	$('.dropdownMenu').animate( { 'top': '74px' }, 150 );
+		  $('#text').animate( { 'top': '114px' }, 150 );
 	  },
 	  textMenuUp: function() {
-		  $('.dropdownMenu').animate( { 'top': '0px' }, 150 );
-		  $('#text').animate( { 'top': '44px' }, 150 );
+		  $('.dropdownMenu').animate( { 'top': '30px' }, 150 );
+		  $('#text').animate( { 'top': '74px' }, 150 );
 	  },
   	activateDeactivate: function(button) {
   		button.addClass('active');

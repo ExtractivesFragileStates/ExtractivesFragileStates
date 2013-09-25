@@ -152,9 +152,46 @@ body { margin:0; padding:0; }
     background: url(../img/logo.png) 30px 60px no-repeat;
 }
 
+#map-header {
+	background: rgba(30, 30, 30, 0.9);
+	position: absolute;
+	top: 0; 
+	left: 360px;
+	right: 0;
+	padding: 4px 0 8px;
+	font-size: 16pt;
+	/* text-align: center; */
+	color: #333;
+	cursor: pointer;
+}
+
+#map-header .headerSection {
+	float: left;
+	padding: 0 12px;
+}
+
+#map-header .gis_button,
+#map-header .home_button {
+	float: right;
+	padding: 0 8px;
+}
+
+#map-header a {
+	color: #FAF7F4;
+	text-decoration: none;
+}
+
+#map-header a:hover {
+	color: #ddd;
+}
+
+#map-header a:active {
+	color: orange;
+}
+
 #content {
 	position: absolute;
-	top: 56px;
+	top: 0;
 	left: 0;
 	bottom:0;
 	width:360px;
@@ -164,28 +201,21 @@ body { margin:0; padding:0; }
     z-index: 2;
 }
 
-
-#map-header {
-	background: rgb(250,247,243);
-	position: absolute;
-	top: 0; 
-	left: 0;
-	width: 100%;
-	padding-top: 17px;
-	padding-bottom: 19px;
-  padding-left: 10px;
-	font-size: 18pt;
-	font-weight: 800;
-	/* text-align: center; */
+#content .title {
+	background:rgb(250,247,243);
 	color: #333;
-	cursor: pointer;
+	height: 30px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18pt;
+	padding: 4px 0;
 }
 	
 .switcher-box {
     position: absolute;
     width: 100%;
     left: 0;
-    top: 0px;
+    top: 30px;
     z-index: 10;
 }
 
@@ -216,7 +246,7 @@ body { margin:0; padding:0; }
 	font-size: 1.3em;
 }
 
-#map-header:hover, .dropdownMenu a:hover, .menu a:hover, #map-ui a:hover {
+.dropdownMenu a:hover, .menu a:hover, #map-ui a:hover {
 	color: #000;
 	background: #efedea;
 }
@@ -296,7 +326,7 @@ body { margin:0; padding:0; }
 	position: absolute;
 	overflow-x:hidden;
 	overflow-y:auto;
-	top: 44px;
+	top: 72px;
 	left: 0;
 	bottom: 10px;
 	width: auto;
