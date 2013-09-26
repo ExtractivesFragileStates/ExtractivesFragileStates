@@ -1,0 +1,458 @@
+---
+layout: map
+permalink: /countries/sierraleone
+categories: [casestudy,countries,cities]
+city: sierraleone
+title: 'Sierra Leone&#39;s Mineral Wealth' 
+subtitle: 'Conflict and Extractives in Sierra Leone'
+preview: 'dhaka.png'
+map: 'helsinki.sierra_leone_acled'
+lat: 8.44
+lon: -12.5
+center:
+    lat: 8.44
+    lon: -12.5
+    zoom: 8
+    layers:
+      - id: 'helsinki.sierra_leone'
+        z: -1000
+      - id: 'helsinki.sierra_leone_labels'
+        z: 1000
+    introText: introText
+sections:
+  - sectionid: development
+    label: DEVELOPMENT
+    layers:
+    - layerid: poverty
+      label: Poverty
+      maps:
+        - htmlid: pov
+          label: Percent Poor
+          mapid: helsinki.SL_Pov
+          legend: povLegend
+          text: developmentText
+        - htmlid: gini
+          label: Inequality
+          mapid: helsinki.SL_GiniCoefficient
+          legend: giniLegend
+          text: developmentText
+        - htmlid: unemployment
+          label: Unemployment
+          mapid: helsinki.SL_Employment
+          legend: unLegend
+          text: developmentText
+        - htmlid: rural
+          label: Rural Population
+          mapid: helsinki.SL_Rural
+          legend: ruralLegend
+          text: developmentText
+        - htmlid: ag
+          label: Agriculture
+          mapid: helsinki.SL_Agriculture
+          legend: agLegend
+          text: developmentText
+        - htmlid: electricity
+          label: Percent Electricity
+          mapid: helsinki.SL_Electricity
+          legend: elecLegend
+          text: developmentText
+    - layerid: school
+      label: Education
+      maps:
+        - htmlid: school_percent
+          label: Percent in School
+          mapid: helsinki.SL_PrimarySchool
+          legend: schoLegend
+          text: developmentText
+        - htmlid: literacy
+          label: Adult Literacy
+          mapid: helsinki.SL_Literacy
+          legend: litLegend
+          text: developmentText
+    - layerid: health
+      label: Health
+      maps:
+        - htmlid: health_map
+          label: Health
+          mapid: helsinki.SL_HealthCenterDensity
+          legend: heaLegend
+          text: developmentText
+        - htmlid: water
+          label: Drinking Water
+          mapid: helsinki.SL_DrinkingWater
+          legend: waterLegend
+          text: developmentText
+        - htmlid: cholera
+          label: Cholera
+          mapid: helsinki.SL_Cholera
+          legend: cholLegend
+          text: developmentText
+  - sectionid: extractives
+    label: EXTRACTIVES
+    layers:
+      - layerid: resources
+        label: Resources
+        maps:
+          - mapid: helsinki.sl_mineral_contours_diamonds
+            legend: resourceLegend
+            text: extractivesText
+      - layerid: concessions
+        label: Mining Concessions   
+        maps:
+          - htmlid: gold
+            label: Gold
+            mapid: helsinki.SL_Mine_Lic_Gold
+            legend: concessionsLegend
+            text: extractivesText
+          - htmlid: diamonds
+            label: Diamonds
+            mapid: helsinki.SL_Mine_Lic_Diamond
+            legend: concessionsLegend
+            text: extractivesText
+          - htmlid: iron
+            label: Iron Ore
+            mapid: helsinki.SL_Mine_Lic_IronOre
+            legend: concessionsLegend
+            text: extractivesText
+          - htmlid: bauxite
+            label: Bauxite
+            mapid: helsinki.SL_Mine_Lic_Bauxite
+            legend: concessionsLegend
+            text: extractivesText
+          - htmlid: rutile
+            label: Rutile
+            mapid: helsinki.SL_Mine_Lic_Rutile
+            legend: concessionsLegend
+            text: extractivesText
+      - layerid: offshore
+        label: Offshore
+        maps:
+          - mapid: helsinki.SL_Offshore
+            text: extractivesText
+  - sectionid: conflict
+    label: STRESSES
+    layers:
+      - layerid: acled
+        label: Security
+        maps:
+          - mapid: helsinki.sierra_leone_acled
+            text: conflictText
+            legend: acledLegend
+  - sectionid: mines
+    label: Mines
+    class: headerSection
+    layers:
+      - layerid: mines_map
+        label: Mines
+        maps:
+          - mapid: helsinki.SL_Existing_Mines
+---
+
+<!-- Legend -->
+
+<!-- waterLegend -->
+<div id='waterLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Percent Using Rivers<br>or Unprotected Wells</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>0% - 50%</li>
+			<li><span style='background:#FC8D59;'></span>50% - 63%</li>
+			<li><span style='background:#E34A33;'></span>63% - 78%</li>
+			<li><span style='background:#B30000;'></span>78% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.wfp.org/content/sierra-leone-household-food-security-survey-rural-areas-2008' target="_blank">World Food Programme</a>, 2008:<br>Sierra Leone Household Food<br>Security Survey in Rural Areas</div>
+</div>
+</div>
+
+<!-- concessionsLegend -->
+<div id='concessionsLegend' style='display:none'>
+	<div class='map-legendVerticalGraduated'>
+		<div class="legendAttribution">Source: <a href='http://sierraleone.revenuesystems.org/login/auth' target="_blank">Government of Sierra Leone</a>,<br>Ministry of Mines and Resources -<br>Online Repository</div>
+	</div>
+</div>
+
+
+<!-- schoLegend -->
+<div id='schoLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Children in<br>Primary School</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#B30000;'></span>50% - 57%</li>
+			<li><span style='background:#E34A33;'></span>57% - 64%</li>
+			<li><span style='background:#FC8D59;'></span>64% - 70%</li>
+			<li><span style='background:#FDCC8A;'></span>70% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> World Bank, 2013:<br>A Poverty Profile for Sierra Leone</div>
+</div>
+</div>
+
+
+<!-- povLegend -->
+<div id='povLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Percent Poor</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>20% - 54%</li>
+			<li><span style='background:#FC8D59;'></span>54% - 57%</li>
+			<li><span style='background:#E34A33;'></span>57% - 61%</li>
+			<li><span style='background:#B30000;'></span>61% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> World Bank, 2013:<br>A Poverty Profile for Sierra Leone</div>
+</div>
+</div>
+
+<!-- povGapLegend -->
+<div id='povGapLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Poverty Gap</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>0 - 14</li>
+			<li><span style='background:#FC8D59;'></span>14 - 17</li>
+			<li><span style='background:#E34A33;'></span>17 - 20</li>
+			<li><span style='background:#B30000;'></span>20 +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> World Bank, 2013:<br>A Poverty Profile for Sierra Leone</div>
+</div>
+</div>
+
+<!-- povSevLegend -->
+<div id='povSevLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Poverty Severity</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>0 - 5</li>
+			<li><span style='background:#FC8D59;'></span>5 - 7</li>
+			<li><span style='background:#E34A33;'></span>7 - 8</li>
+			<li><span style='background:#B30000;'></span>8 +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> World Bank, 2013:<br>A Poverty Profile for Sierra Leone</div>
+</div>
+</div>
+
+<!-- giniLegend -->
+<div id='giniLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Gini Coefficient</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>0 - 0.25</li>
+			<li><span style='background:#FC8D59;'></span>0.25 - 0.30</li>
+			<li><span style='background:#E34A33;'></span>0.30 - 0.33</li>
+			<li><span style='background:#B30000;'></span>0.33 +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> World Bank, 2013:<br>A Poverty Profile for Sierra Leone</div>
+</div>
+</div>
+
+<!-- ruralLegend -->
+<div id='ruralLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Rural Households</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>0% - 50%</li>
+			<li><span style='background:#FC8D59;'></span>50% - 70%</li>
+			<li><span style='background:#E34A33;'></span>70% - 80%</li>
+			<li><span style='background:#B30000;'></span>80% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> World Bank, 2013:<br>A Poverty Profile for Sierra Leone</div>
+</div>
+</div>
+
+<!-- agLegend -->
+<div id='agLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Agriculture as<br>Main Livelihood</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>0% - 49%</li>
+			<li><span style='background:#FC8D59;'></span>49% - 60%</li>
+			<li><span style='background:#E34A33;'></span>60% - 80%</li>
+			<li><span style='background:#B30000;'></span>80% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> World Bank, 2013:<br>A Poverty Profile for Sierra Leone</div>
+</div>
+</div>
+
+
+<!-- litLegend -->
+<div id='litLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Adult Literacy</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#B30000;'></span>0% - 17%</li>
+			<li><span style='background:#E34A33;'></span>17% - 27%</li>
+			<li><span style='background:#FC8D59;'></span>27% - 38%</li>
+			<li><span style='background:#FDCC8A;'></span>38% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://hdr.undp.org/en/reports/nationalreports/africa/sierraleone/sierraleone_nhdr_20071.pdf' target="_blank">Sierra Leone Human<br>Development Report 2007</a></div>
+</div>
+</div>
+
+
+<!-- elecLegend -->
+<div id='elecLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Percent Using<br>Electric Lighting</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#B30000;'></span>0% - 0.02%</li>
+			<li><span style='background:#E34A33;'></span>0.02% - 0.05%</li>
+			<li><span style='background:#FC8D59;'></span>0.05% - 5%</li>
+			<li><span style='background:#FDCC8A;'></span>5% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.statistics.sl/final_digest_2006.pdf' target="_blank">Statistics Sierra Leone</a><br>Annual Statistical Digest 2005/2006</div>
+</div>
+</div>
+
+
+<!-- heaLegend -->
+<div id='heaLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Persons per<br>Health Center</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>0 - 3676</li>
+			<li><span style='background:#FC8D59;'></span>3677 - 5472</li>
+			<li><span style='background:#E34A33;'></span>5473 - 6440</li>
+			<li><span style='background:#B30000;'></span>6441 +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.statistics.sl/final_digest_2006.pdf' target="_blank">Statistics Sierra Leone</a><br>Annual Statistical Digest 2005/2006</div>
+</div>
+</div>
+
+
+<!-- unLegend -->
+<div id='unLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Unemployment</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>0% - 25%</li>
+			<li><span style='background:#FC8D59;'></span>25% - 29%</li>
+			<li><span style='background:#E34A33;'></span>29% - 39%</li>
+			<li><span style='background:#B30000;'></span>39% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.worldcat.org/title/republic-of-sierra-leone-2004-population-and-housing-census-analytical-report-on-employment-and-labour-force/oclc/320249882' target="_blank">Republic of Sierra Leone,<br>2004 Population and Housing Census,</a><br>Analytical Report on Employment<br>and Labour Force</div>
+</div>
+</div>
+
+<!-- cholLegend -->
+<div id='cholLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Cholera Cases 2012</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>0 - 321</li>
+			<li><span style='background:#FC8D59;'></span>322 - 1263</li>
+			<li><span style='background:#E34A33;'></span>1264 - 3140</li>
+			<li><span style='background:#B30000;'></span>3141 +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.afro.who.int/en/clusters-a-programmes/dpc/epidemic-a-pandemic-alert-and-response/outbreak-news/3683-cholera-in-sierra-leone-and-guinea-situation-as-of-01-september-2012.html' target="_blank">World Health Organization</a>, 2012:<br>Factsheet - Cholera in Sierra Leone<br>and Guinea</div>
+</div>
+</div>
+
+<!-- acledLegend -->
+<div id='acledLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Conflict Density</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FFFFFF;'></span>0</li>
+			<li><span style='background:#FEF0D9;'></span>1 - 2</li>
+			<li><span style='background:#FDCC8A;'></span>3 - 12</li>
+			<li><span style='background:#FC8D59;'></span>13 - 31</li>
+			<li><span style='background:#E34A33;'></span>32 - 63</li>
+			<li><span style='background:#B30000;'></span>64 +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="http://www.acleddata.com/">ACLED</a>, 1997 - 2012</div>
+</div>
+</div>
+
+
+<!-- resource Legend - vertical categorized -->
+<div id='resourceLegend' style='display:none'>
+<div class='map-legendVerticalCategorized'>
+	<div class='legend-name'>
+		<div class='legend-title'>Resources</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#f3ca44;'></span>Gold</li>
+			<li><span style='background:#adeaf4;'></span>Kimberlite</li>
+			<li><span style='background:#544e9b;'></span>Alluvial Diamonds</li>
+			<li><span style='background:#8d8681;'></span>Iron Ore</li>
+			<li><span style='background:#c68aad;'></span>Bauxite</li>
+			<li><span style='background:#afd180;'></span>Rutile</li>
+			<li><span style='background:#e8ac8a;'></span>Platinum</li>
+		</ul>
+	<div class='legend-description'></div>
+	</div>
+	<div class='legend-source'><b>Source:</b> Marco River Resources, Inc.</div>
+</div>
+</div>>
+
+<div id='introText' style='display:none'>
+<div class='dashboard'><ul class='majorStats'><li><div><span class='key'>GDP</span><sub style='left: 66px; top: 40px;'><em>per cap</em></sub> <span class='val'>$1,344</span></div></li><li><div><span class='key'>HDI</span> <span class='val'>0.359 (177<sup>th</sup>)</span></div></li></ul><ul class='wbStats'><li style='border:0'><div><span></span> <span class='val'></span></div></li><li><div><span class='key'>EITI Status</span> <span class='val' style='color: #f42; font-weight: bold;'>Suspended</span></div></li><li><div><span class='key'>Government Revenue</span> <span class='val'>$7.6mil</span></div></li><li><div><span class='key'>Company Payments</span> <span class='val'>$8.27mil</span></div></li></ul><ul class='eitiStats'><li style='border: 0'><div><span class='key title'>Worldwide Governance Indicators</span><sup style='left: 282px; top:8px;'>â€ </sup></div></li><li><div><span class='key'>Voice & Accountability</span><span class='val'>40.8 / 100</span></div></li><li><div><span class='key'>Political Stability</span> <span class='val'>40.1 / 100</span></div></li><li><div><span class='key'>Government Effectiveness</span><span class='val'>10.0 / 100</span></div></li><li><div><span class='key'>Regulatory Quality</span> <span class='val'>26.1 / 100</span></div></li><li><div><span class='key'>Rule of Law</span> <span class='val'>22.5 / 100</span></div></li><li><div><span class='key'>Control of Corruption</span> <span class='val'>26.5 / 100</span></div></li></ul></div><p>The development of the extractive sector has shaped Sierra Leone's recent history. Mismanagement and corruption in the sector in the 1970s and 1980s set the scene for the outbreak of the country's violent 11-year civil war, which began in 1991. The trade in smuggled conflict diamonds funded and prolonged the fighting. Control of the country's southeastern diamond fields became a strategic objective for both government forces and the rebel Revolutionary United Front.</p><p>More than a decade after the end of the civil war, the country's rich mineral reserves offer the promise of much-needed jobs and government revenue. Exports of minerals, in particular iron ore, accelerated economic growth in 2012 to 21.3%, one of the highest rates in the world. However, the government will need to carefully manage the sector to avoid many of the problems associated with the â€˜resource curse': currency appreciation, economic distortion and increased corruption</p><p>Use the tabs above to view the data that explores the complex dynamics of extractive industries in Sierra Leone: their developmental potential, their environmental impact , and their linkages to conflict and fragility.</p>
+</div>
+
+<div id="extractivesText" style="display:none">
+<p>More than a decade after the end of its civil war (1991-2002), mining is again driving Sierra Leone's economy. Major commodities include diamonds, rutile, bauxite, gold, and iron ore. Oil and natural gas have been found offshore and may be tapped in future. Mining accounted for 90% of export revenues and 30% of Sierra Leone's GDP in 2013.</p><p>Between 2011 and 2012 mineral exports more than tripled. That was largely the result of a significant increase in iron ore exports, which now account for 32.2 % of export revenue, contributing US$357 million to the economy. Sierra Leone is also the world's third-largest producer of rutile (a titanium sand used in many industrial functions) and tenth-largest producer of diamonds.</p><p>Conscious that mismanagement of the mining sector in the 1970s and 1980s helped to create the conditions for the civil war, and that â€˜blood diamonds' financed the fighting, the government is working to improve transparency and accountability in the extractives sector. The country is a participant in both the Extractive Industries Transparency Initiative (EITI) and the Kimberley Process Certification Scheme. In addition, in 2012 the Ministry of Mines and Mineral Resources launched an online repository that improved public access to information on industrial and artisanal mineral rights, including license and payment data. There is still much work to be done though; The EITI suspended Sierra Leone in February 2013 as a result of incomplete adherence to its auditing and reporting requirements.</p>
+</div>
+
+<div id="developmentText" style="display:none">
+<p>Despite its mineral resources, Sierra Leone remains one of the poorest countries in the world, ranking 176th out of 186 countries in the 2013 Human Development Index (HDI). Ensuring that the country's mineral assets contribute to sustainable development will be a critical challenge for Sierra Leone in the coming years.</p><p>Absolute poverty is widespread: 53% of the population live on less than US $1.25 a day and average life expectancy was just 48.1 years in 2012. Poverty, health and education indicators are particularly bad in remote rural areas, which also host several large mining operations.</p><p>Other pressing issues include health concerns and access to safe water. Sierra Leone has the world's highest death rates from malaria. Meanwhile, 2012 saw the country's worst cholera outbreak in 15 years with over 19,000 reported cases and more than 270 deaths. Food insecurity is a major challenge facing many communities. A 2007 survey from the World Food Programme (WFP) found that, in some districts, up to 97% of rural households experienced serious problems producing or purchasing enough food in the previous year.</p>
+</div>
+
+<div id="conflictText" style="display:none">
+<p>More than a decade has elapsed since the 2002 end of Sierra Leone's 11-year civil war, and there have been three peaceful transfers of power. However, the war's impacts are still felt, particularly in terms of the major development needs and on-going fragility.</p><p>In the 1990s Sierra Leone become synonymous with the trade in â€˜blood diamonds', which was incentivizing and prolonging the conflict. The marginalization of rural youth who felt ignored by politicians in Freetown was another cause of the war. Today, with an estimated 70% of youth unemployed or underemployed, there are concerns that frustrations over the slow pace of development could lead to future instability.</p><p>So far, industrial mining operations have generated few jobs: just 13,891 people were directly employed in industrial mining operations in 2012 compared to an estimated 150,000-200,000 artisanal miners in the informal sector. The combination of high unemployment, difficult working conditions associated with mining activities, and persistent poverty represents a significant threat to stability.</p>
+</div>
+
