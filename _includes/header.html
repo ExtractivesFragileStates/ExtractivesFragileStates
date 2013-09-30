@@ -1,13 +1,11 @@
 <div class='globals'>
-  <div class='limiter'>
     {% unless page.slideshow %}
       <a href='#' id='toggle' class='icon toggle'>Toggle Nav</a>
     {% endunless %}
     <div class='nav clearfix'>
+      <a href='{{site.baseurl}}/' class='site-logo'><img src='{{site.baseurl}}/img/logo_light.png' />Extractives and Fraile States</a>
       <!-- <a href='{{site.baseurl}}/countries' {% if page.url == "/countries" %}class='active'{% endif %}>All Countries</a> -->
+      <a href='{{site.baseurl}}/data' {% if page.url == "/data" %}class='active'{% endif %}>Data</a>
       <a href='{{site.baseurl}}/about' {% if page.url == "/about" %}class='active'{% endif %}>About</a>
-      <a href='{{site.baseurl}}/open' {% if page.url == "/open" %}class='active'{% endif %}>Open</a>
     </div>
-    <a href='{{site.baseurl}}/' class='title icon logo'>Extractives and Fragile States</a>
-  </div>
 </div>
