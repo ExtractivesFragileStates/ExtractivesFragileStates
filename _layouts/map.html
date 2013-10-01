@@ -8,21 +8,28 @@
 <div id='map'></div>
 
 <div id='map-header'>
+	<!-- <span class='title'><a href='{{site.baseurl}}/'> {{page.title}}</a></span> -->
+<!-- 
 	<span class='headerSection'>
 	{% for section in page.sections %}
 	{% if section.class == "headerSection" %}
 	  {% for layer in section.layers %}
-			<a href="#" id="{{layer.layerid}}" class="maplink headerLayer" tyle='padding: 4px 0 2px 0; line-height: 1.3em;'>{{layer.label}}</a>
+			<a href="#" id="{{layer.layerid}}" class="maplink headerLayer">{{layer.label}}</a>
 	  {% endfor %}
 	{% endif %}
 	{% endfor %}
 	</span>
-	<span class='home_button'><a href='{{site.baseurl}}/'><img src='{{site.baseurl}}/img/mine.png' height='18px' width='18px' /> HOME</a></span>
-	<span class='gis_button'><a href="{{site.baseurl}}/gis/{{page.city}}">GIS</a></span>
+ -->
+	<span class='gis_button'>
+		<a href="{{site.baseurl}}/gis/{{page.city}}" {% if page.url == "/gis/{{page.city}}" %} class='active' {% endif %}>GIS</a>
+	</span>
+	<span class='narrative_button'>
+		<a href="{{site.baseurl}}/countries/{{page.city}}" {% if page.url == "/countries/{{page.city}}" %} class='active' {% endif %}>Narrative</a>
+	</span>
 </div>
 
 <div id="content">
-	<div class='title refresher'>{{page.title}}</div> 
+	<div class='title refresher'><img src='{{site.baseurl}}/img/logo_light.png'/>{{page.title}}</div> 
   {% assign count = "" %}
   {% for section in page.sections %}
     {% unless section.class == "headerSection" %}
@@ -37,7 +44,7 @@
      {% assign switcher_class = 'three-wide' %}
   {% endif %}
 	<div id="map-ui" class="{{switcher_class}} switcher-box">
-    {% for section in page.sections %}{% unless section.class == "headerSection" %}<a href="#" id="{{section.sectionid}}" class="section">{{section.label}}</a>{% endunless %}{% endfor %}
+    {% for section in page.sections %}{% unless section.class == "headerSection" %}<a href="#" id="{{section.sectionid}}" class="section"><div>{{section.label}}</div></a>{% endunless %}{% endfor %}
 	</div>	
 
   {% for section in page.sections %}
@@ -60,7 +67,7 @@
           {% else %}
             {% assign layer_class = "" %}
           {% endif %}
-	        <a href="#" id="{{layer.layerid}}" class="maplink {{layer_class}}">{{layer.label}}</a>
+	        <a href="#" id="{{layer.layerid}}" class="maplink {{layer_class}}"><div>{{layer.label}}</div></a>
         {% endfor %}
       	</div>
         

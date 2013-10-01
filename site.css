@@ -363,7 +363,7 @@ small {
   Global layout & styling ♥
 ---------------------------------------------*/
 .limiter {
-  width:960px;
+  width: 960px;
   margin:0 auto;
   padding:0 20px;
   }
@@ -427,13 +427,13 @@ small {
 
     .interactive-heading .logo,
     .header .logo {
-      position:relative;
+      /* position:relative; */
       display:inline-block;
       z-index:100;
       background-image: url(img/logo.png);
       }
     .header .logo {
-      top:40px;
+      /* top:40px; */
       }
     .slide-control {
       background:transparent;
@@ -458,22 +458,52 @@ small {
         }
 
 .interactive-heading .nav,
+.main-header .nav,
 .header .nav {
   position:absolute;
-  top:40px;
-  right:20px;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index:2000;
   font-size: 120%;
+  height: 45px;
+  line-height: 45px;
+  background-color: rgba(0,0,0,0.9);
+  padding: 0 40px;
+  border-bottom: 1px solid #BBB;
   }
   .interactive-heading .nav a,
-  .header .nav a {
-    float:left;
+  .header .nav a,
+  .main-header .nav a {
+    float: right;
     display:block;
-    font-family:'OswaldBook',  "Arial Narrow", sans-serif;
     margin-left:10px;
+    color: #FAF7F4;
     -webkit-font-smoothing:subpixel-antialiased;
     }
-
+  .interactive-heading .nav a.active,
+  .header .nav a.active,
+  .main-header .nav a.active {
+    color: orange;
+    }
+  .interactive-heading .nav a:hover,
+  .header .nav a:hover,
+  .main-header .nav a:hover {
+    color: orange;
+  }
+  .main-header .nav .site-logo {
+    float: left;
+    font-size: 18pt;
+    }
+  .main-header .nav .site-logo:hover {
+    color: #eeeeee;
+    }
+  .main-header .nav img {
+    height: 24px;
+    padding-right: 4px;
+    vertical-align: -2px;
+    }
+    
 .inner {
   padding:20px;
   }
@@ -556,7 +586,7 @@ small {
     border-color:#404040;
     }
   .section .partners img {
-    width:200px;
+    /* width:200px; */
     display:block;
     margin:0 auto 10px;
     }
@@ -849,19 +879,13 @@ small {
   Page: Cities
 -------------------------------------*/
 .marker {
-  background:transparent url(img/sprite.png) no-repeat 0 -155px;
-  height:60px;
-  width:60px;
+  background:transparent url(img/map-logo.png) no-repeat 0 0;
+  height:64px;
+  width:64px;
   margin:-60px 0px 0px -30px;
   display:block;
   pointer-events:auto;
   }
-  .marker.marker-afghanistan {
-    background-position:-65px -155px;
-    }
-  .marker.marker-colombo-sri-lanka {
-    background-position:-130px -155px;
-    }
   .marker:hover .popup {
     display:block;
     }

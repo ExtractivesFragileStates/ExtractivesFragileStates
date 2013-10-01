@@ -4,13 +4,16 @@
   {% include dochead.html %}
 </head>
 <body>
-
+	<!-- insert header -->
+	<div class='main-header'>
+		{% include header.html %}
+	</div>
+	
     {% if page.no-header %}
     <div id='header' class='header no-header'></div>
     {% elsif page.preview %}
     <div id='header' class='header' style='background-image:url("{{site.baseurl}}/img/banners/{{page.preview}}");'>
       <div class='dot-matrix'></div>
-      {% include header.html %}
       <div class='limiter'>
         <div class='title-block'>
           <h2>{{page.title}}</h2>
@@ -33,7 +36,6 @@
       {% for item in page.slideshow %}
       <div class='slide {% if item.nocover %}no-cover {% endif %} {% if forloop.first %}active {% endif %} slide-{{forloop.index}}' data-index='slide-{{forloop.index}}' style='background-image:url("{{site.baseurl}}/img/banners/{{item.slide}}");'>
         <div class='dot-matrix'></div>
-        {% include header.html %}
         <div class='limiter'>
           <div class='title-block'>
             <h2>{{item.title}}</h2>
@@ -51,9 +53,8 @@
     {% endif %}
     {% if page.citiesMap %}
     <div class='section data-coverage'>
-      <h4 class='title centered'>Public contributions improve OpenStreetMap's Global coverage daily</h4>
       <div class='map' id='countries-coverage'>
-        <small class='attribution'>Map visualizes the density of OpenStreetMap contributions.</small>
+        <!-- <small class='attribution'>Map visualizes the density of OpenStreetMap contributions.</small> -->
       </div>
     </div>
     <div class=''>
