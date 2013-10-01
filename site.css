@@ -879,19 +879,13 @@ small {
   Page: Cities
 -------------------------------------*/
 .marker {
-  background:transparent url(img/sprite.png) no-repeat 0 -155px;
-  height:60px;
-  width:60px;
+  background:transparent url(img/map-logo.png) no-repeat 0 0;
+  height:64px;
+  width:64px;
   margin:-60px 0px 0px -30px;
   display:block;
   pointer-events:auto;
   }
-  .marker.marker-afghanistan {
-    background-position:-65px -155px;
-    }
-  .marker.marker-colombo-sri-lanka {
-    background-position:-130px -155px;
-    }
   .marker:hover .popup {
     display:block;
     }
