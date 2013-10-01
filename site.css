@@ -880,9 +880,9 @@ small {
 -------------------------------------*/
 .marker {
   background:transparent url(img/map-logo.png) no-repeat 0 0;
-  height:64px;
-  width:64px;
-  margin:-60px 0px 0px -30px;
+  height:42px;
+  width:42px;
+  margin:-42px 0px 0px -21px;
   display:block;
   pointer-events:auto;
   }
