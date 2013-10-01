@@ -7,12 +7,11 @@
 
     global: function() {
       this.init_map();
-	  	$('.maplink').on('click', this.maplink);
+	  $('.maplink').on('click', this.maplink);
       $('.section').on('click', this.section);
       $('.gisMenu').on('click', this.gisMenu);
-
-  		$('.refresher').on('click', this.refresher);
-		  $('#text').on('click', '.navigate', this.navigate);
+      $('.refresher').on('click', this.refresher);
+	  $('#text').on('click', '.navigate', this.navigate);
     },
 
     init_map: function() {
@@ -20,7 +19,7 @@
       this.map = L.map('map', {
 	      minZoom: 3,
 	      maxZoom: 10,
-      	zoomControl: false,
+      	  zoomControl: false,
 	      attributionControl: false
       })
 	    .setView(page_data.baseLayer["latlon"], page_data.baseLayer["zoom"]);
@@ -32,7 +31,7 @@
 
       // Add Intro Text, Zoom Control, Initialize an empty Layer Group, and hide all non-permanent menus
       $('#text').html(page_data.baseLayer["text"]);
-      new L.Control.Zoom({ position: 'topleft' }).addTo(this.map);
+      // new L.Control.Zoom({ position: 'topleft' }).addTo(this.map);
 
       this.group = L.layerGroup().addTo(this.map);
       this.group.setZIndex(0);
@@ -192,12 +191,12 @@
 		  layer.addClass('active');
 	  },
 	  textMenuDown: function() {
-	  	$('.dropdownMenu').animate( { 'top': '74px' }, 150 );
-		  $('#text').animate( { 'top': '114px' }, 150 );
+	  	  $('.dropdownMenu').animate( { 'top': '89px' }, 150 );
+		  $('#text').animate( { 'top': '135px' }, 150 );
 	  },
 	  textMenuUp: function() {
-		  $('.dropdownMenu').animate( { 'top': '30px' }, 150 );
-		  $('#text').animate( { 'top': '74px' }, 150 );
+		  $('.dropdownMenu').animate( { 'top': '46px' }, 150 );
+		  $('#text').animate( { 'top': '89px' }, 150 );
 	  },
   	activateDeactivate: function(button) {
   		button.addClass('active');

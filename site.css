@@ -468,17 +468,17 @@ small {
   font-size: 120%;
   height: 45px;
   line-height: 45px;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(0,0,0,0.9);
   padding: 0 40px;
+  border-bottom: 1px solid #BBB;
   }
   .interactive-heading .nav a,
   .header .nav a,
   .main-header .nav a {
     float: right;
     display:block;
-    font-family:'OswaldBook',  "Arial Narrow", sans-serif;
     margin-left:10px;
-    color: #fefefe;
+    color: #FAF7F4;
     -webkit-font-smoothing:subpixel-antialiased;
     }
   .interactive-heading .nav a.active,
@@ -493,8 +493,7 @@ small {
   }
   .main-header .nav .site-logo {
     float: left;
-    font-size: 24px;
-    color: #fefefe;
+    font-size: 18pt;
     }
   .main-header .nav .site-logo:hover {
     color: #eeeeee;
