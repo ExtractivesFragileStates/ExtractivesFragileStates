@@ -123,7 +123,7 @@
         var markerLayer = mapbox.markers.layer().features(poi).factory(function(f) {
             var a = document.createElement('a');
                 a.className = 'marker marker-' + f.properties.klass;
-                a.href = '#' + f.properties.url;
+                a.href = '{{site.baseurl}}/' + f.properties.url;
                 a.setAttribute('data-scroll', true);
 
                 var country = f.properties.title,
@@ -141,7 +141,7 @@
         map.setZoomRange(3, 17);
 
         var mapDefaults = {
-            lat: 30,
+            lat: 25,
             lon: 38,
             zoom: 3
         };
