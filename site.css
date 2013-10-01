@@ -248,7 +248,7 @@ small {
   }
 
 .icon {
-  background:transparent url(img/sprite.png) no-repeat 0 0;
+ /* background:transparent url(img/sprite.png) no-repeat 0 0;*/
   display:block;
   width:20px;
   height:20px;
@@ -704,7 +704,7 @@ small {
     float:left;
     margin-bottom:1px;
     }
-    .activities .city-desc {
+    .activities .country-desc {
       display:block;
       margin:0;
       position:relative;
@@ -726,7 +726,7 @@ small {
            -o-animation-name:fadeOutLeft;
               animation-name:fadeOutLeft;
       }
-      .activities a:hover .city-desc {
+      .activities a:hover .country-desc {
         opacity:1;
         -webkit-animation-delay:300ms;
            -moz-animation-delay:300ms;

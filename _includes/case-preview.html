@@ -2,8 +2,8 @@
         <a href='{{site.baseurl}}{{case.url}}' style='background-image:url("http://api.tiles.mapbox.com/v3/{{case.map}}/{{case.center[0].lon}},{{case.center[0].lat}},{{case.center[0].zoom}}/640x300.png");'>
           <div class='overlay'></div>
           <div class='label'>
-            {% for name in site.categories.cities %}
-              {% if name.city == case.city %}
+            {% for name in site.categories.countries %}
+              {% if name.country == case.country %}
                 {{name.title}}
               {% endif %}
             {% endfor %}

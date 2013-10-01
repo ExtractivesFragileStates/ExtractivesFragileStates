@@ -60,60 +60,7 @@
         });
     };
 
-    eafs.generateMap = function(layer, options, callback) {
-
-        var o = {
-            lat: options.lat || 30,
-            lon: options.lon || 38,
-            zoom: options.zoom.defaultZoom || 3,
-            max: options.zoom.max || 17,
-            min: options.zoom.min || 7
-        };
-
-        mapbox.load(layer, function(l) {
-            var map = mapbox.map('map');
-            map.addLayer(l.layer).zoom(o.zoom).center({
-                lat: o.lat,
-                lon: o.lon
-            });
-
-            map.setZoomRange(o.min, o.max);
-            map.ui.zoomer.add();
-            // map.ui.hash.add();
-            map.interaction.auto();
-            map.ui.legend.add();
-            map.ui.refresh();
-
-            callback;
-
-            // fix source in dhaka legends
-            var legendsrc = $('.legend-source').html();
-
-            if ( legendsrc == 'Source: <a href="https://www.gfdrr.org/gfdrr/">GFDRR</a>') {
-                $('.legend-source').html("Source: <a href='http://www.cdmp.org.bd/'>CDMP, Government of Bangladesh</a>");
-            } else {
-                $('.legend-source').html();
-            }
-
-            map.interaction.on({
-                on: function(o) {
-                    $('img').error(function () {
-                        
-                        var url = $(this).attr('src');
-                        var replace = url.replace('mapbox.com/dhaka/dhaka/','opencitiesproject.com/dhaka/')
-                        $(this).attr('src',replace)
-                        
-                    });
-                },
-                off: function(){
-                    
-                }
-            });
-
-        });
-    };
-
-    eafs.citiesMap = function(el, mapId) {
+    eafs.countriesMap = function(el, mapId) {
         var map = mapbox.map(el, mapbox.layer().id(mapId), null, [
             easey_handlers.DragHandler(),
             easey_handlers.DoubleClickHandler()

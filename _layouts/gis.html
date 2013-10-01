@@ -7,14 +7,7 @@
 
 <div id='map'></div>
  
-<div id='map-header'>
-	<span class='gis_button'>
-		<a href="{{site.baseurl}}/gis/{{page.city}}" {% if page.url == "/gis/{{page.city}}" %} class='active' {% endif %}>GIS</a>
-	</span>
-	<span class='narrative_button'>
-		<a href="{{site.baseurl}}/countries/{{page.city}}" {% if page.url == "/countries/{{page.city}}" %} class='active' {% endif %}>Narrative</a>
-	</span>
-</div>
+{% include map-header.html %}
 
 <div id="content">
 	<div class='title refresher'><img src='{{site.baseurl}}/img/logo_light.png'/>{{page.title}}</div> 
@@ -22,7 +15,7 @@
 	<div id='text-container' class='gisMenu'>
 		<div id='gisText'>
 		{% for item in site.categories.countries %}
-		  {% if page.country-ref == item.city %}
+		  {% if page.country-ref == item.country %}
 			{% for section in item.sections %}
 			{% assign theme = section.label %} 
 			<h1>{{theme}}</h1>
@@ -49,7 +42,7 @@
   </div>
 
    {% for item in site.categories.countries %}
-      {% if page.country-ref == item.city %}
+      {% if page.country-ref == item.country %}
         {% assign sections = item.sections %}
         {% assign center = item.center %}
         {% assign gis = true %}

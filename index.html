@@ -11,13 +11,13 @@ slidesho:
   - slide: 6466834543_1ff9a4ac4a_b.jpg
     title: Poverty
     subtitle: Slide Subtitle
-citiesMap: "tristen.map-2wjrklq0"
+countriesMap: "tristen.map-2wjrklq0"
 ---
 <div class='section grey'>
   <div>
    
-    {% for item in site.categories.cities %}
-      {% assign cities = forloop.length %}
+    {% for item in site.categories.countries %}
+      {% assign countries = forloop.length %}
     {% endfor %}
 
  
@@ -25,7 +25,7 @@ citiesMap: "tristen.map-2wjrklq0"
       {% assign casestudy = forloop.length %}
     {% endfor %}
 
-    <!-- <h2 class='centered'>{{cities}} Countries</h2> -->
+    <!-- <h2 class='centered'>{{countries}} Countries</h2> -->
     <h4 class='title centered'>Explore the impact of extractive industries at the local level</h4>
 
     <ul class='activities grid clearfix'>
@@ -34,14 +34,14 @@ citiesMap: "tristen.map-2wjrklq0"
         <a href='{{site.baseurl}}{{case.url}}' style='background-image:url("http://api.tiles.mapbox.com/v3/{{case.map}}/{{case.center.lon}},{{case.center.lat}},{{case.center.zoom}}/1280x400.png");'>
           <div class='overlay'></div>
           <div class='label'>
-            {% for name in site.categories.cities %}
-              {% if name.city == case.city %}
+            {% for name in site.categories.countries %}
+              {% if name.country == case.country %}
                 {{name.title}}
               {% endif %}
             {% endfor %}
           </div>
           <!--<h4 class='case-title'>{{case.title}}</h4>-->
-          <p class='city-desc'>{{case.subtitle | truncate:120}}</p>
+          <p class='country-desc'>{{case.subtitle | truncate:120}}</p>
           <span class='more'>More</span>
         </a>
       </li>
@@ -60,8 +60,8 @@ citiesMap: "tristen.map-2wjrklq0"
         <a href='{{site.baseurl}}{{case.url}}' style='background-image:url("http://api.tiles.mapbox.com/v3/{{case.map}}/{{case.center.lon}},{{case.center.lat}},{{case.center.zoom}}/640x300.png");'>
           <div class='overlay'></div>
           <div class='label'>
-            {% for name in site.categories.cities %}
-              {% if name.city == case.city %}
+            {% for name in site.categories.countries %}
+              {% if name.country == case.country %}
                 {{name.title}}
               {% endif %}
             {% endfor %}
@@ -69,7 +69,7 @@ citiesMap: "tristen.map-2wjrklq0"
           <!--<h4 class='case-title'>
             {{case.title}}</h4>-->
 <!--
-          <p class='city-desc'>{{case.subtitle | truncate:120}}</p>
+          <p class='country-desc'>{{case.subtitle | truncate:120}}</p>
           <span class='more'>More</span>
         </a>
       </li>

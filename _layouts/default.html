@@ -51,7 +51,7 @@
       </script>
     </div>
     {% endif %}
-    {% if page.citiesMap %}
+    {% if page.countriesMap %}
     <div class='section data-coverage'>
       <div class='map' id='countries-coverage'>
         <!-- <small class='attribution'>Map visualizes the density of OpenStreetMap contributions.</small> -->
@@ -62,7 +62,7 @@
     <script>
         var header = document.getElementById('countries-coverage');
         $(function() {
-          eafs.citiesMap(header, '{{page.citiesMap}}');
+          eafs.countriesMap(header, '{{page.countriesMap}}');
         });
     </script>
     </div>

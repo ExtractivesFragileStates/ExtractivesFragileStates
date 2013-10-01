@@ -1,0 +1,13 @@
+{% if page.country-ref %}
+  {% capture country %}{{page.country-ref}}{% endcapture %}
+{% else %}
+  {% capture country %}{{page.country}}{% endcapture %} 
+{% endif %}
+<div id='map-header'>
+	<span class='gis_button'>{% capture url %}/gis/{{country}}{% endcapture %}
+		<a {% if page.url == url %} class='active' {% else %} href="{{site.baseurl}}/gis/{{country}}" {% endif %}>GIS</a>
+	</span>
+	<span class='narrative_button'>{% capture url %}/countries/{{country}}{% endcapture %}
+		<a {% if page.url == url %} class='active' {% else %} href="{{site.baseurl}}/countries/{{country}}" {% endif %}>Narrative</a>
+	</span>{{page.country-ref}}{{page.url}}
+</div>
