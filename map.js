@@ -196,7 +196,7 @@
 	  },
 	  textMenuUp: function() {
 		  $('.dropdownMenu').animate( { 'top': '46px' }, 150 );
-		  $('#text').animate( { 'top': '89px' }, 150 );
+		  $('#text').animate( { 'top': '72px' }, 150 );
 	  },
   	activateDeactivate: function(button) {
   		button.addClass('active');

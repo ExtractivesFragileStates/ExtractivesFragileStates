@@ -115,7 +115,7 @@ a:hover {
 
 h1 {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     font-weight: bold;
 }
 
@@ -150,6 +150,10 @@ body { margin:0; padding:0; }
     background: url(../img/logo.png) 30px 60px no-repeat;
 }
 
+
+
+/******************************* Header & Content Box *******************************/
+
 #map-header {
 	position: absolute;
 	top: 0; 
@@ -162,7 +166,6 @@ body { margin:0; padding:0; }
 	padding: 0 40px;
 	font-size: 16pt;
 	color: #333;
-	cursor: pointer;
 	border-bottom: 1px solid #BBB;
 }
 
@@ -181,6 +184,8 @@ body { margin:0; padding:0; }
 #map-header a.active {
 	color: orange;
 }
+
+
 
 #content {
 	position: absolute;
@@ -204,13 +209,40 @@ body { margin:0; padding:0; }
 	height: 45px;
 	line-height: 45px;
 	border-bottom: 1px solid #BBB;
+	cursor: pointer;
 }
 	#content .title img {
   		height: 24px;
     	padding-right: 4px;
     	vertical-align: -2px;
     }
-	
+    #content .title:hover {
+    	color: #bbbbbb;
+    }
+
+#content .one-wide > a {
+	width: 100%; 
+}
+
+#content .two-wide > a {
+	width: 50%; 
+}
+
+#content .three-wide > a {
+	width: 33%; /* 119px; */
+}
+
+#content .three-wide > a:last-child {
+	width: 34%; /* 120px; */
+}
+
+#content .four-wide > a {
+	width: 25%; /* 89px; */
+}
+
+
+/******************************* Narrative View *******************************/
+
 .switcher-box {
     position: absolute;
     width: 100%;
@@ -268,28 +300,6 @@ body { margin:0; padding:0; }
     color: orange;
 }
 
-.gisMenu {
-  font-size: 16px;
-}
-.gisMenu div {
-  padding: 10px;
-}
-/*.gisMenu a {
-  text-decoration: none;
-  cursor: default; 
-}
-.gisMenu a.possible {
-	text-decoration: underline;
-  cursor: pointer;
-}*/
-.gisMenu.grid {
-  float: right;
-  display: none;
-}
-.gisMenu.grid.possible {
-  display: block;
-  font-weight: bold;
-}
 #map-ui a:active, .dropdownMenu a:active, .menu a:active {
 	color: orange;
 	background: #fff;
@@ -300,48 +310,58 @@ body { margin:0; padding:0; }
 }
 
 
-#content .one-wide > a {
-	width: 100%; 
+/******************************* GIS *******************************/
+
+#gisText ul {
+	padding: 0 0 6px 12px;
 }
 
-#content .two-wide > a {
-	width: 50%; 
+#gisText ul a {
+	color: #333;
+	text-decoration: none;
+	font-weight: normal;
 }
+	#gisText ul a:hover {
+		color: #aaa;
+	}
+	#gisText ul a:active {
+		color: #333;
+	}
+	#gisText ul a.active {
+		color: orange;
+	}
 
-#content .three-wide > a {
-	width: 33%; /* 119px; */
+.gisMenu.grid {
+  float: right;
+  display: none;
 }
-
-#content .three-wide > a:last-child {
-	width: 33%; /* 120px; */
+.gisMenu.grid.possible {
+  display: block;
+  font-weight: bold;
 }
-
-#content .four-wide > a {
-	width: 25%; /* 89px; */
-}
-
-/* 
-#content .four-wide > a:last-child {
-	width: 90px;
-}
- */
 
 
 
 /******************************* Text *******************************/
     
-#text {
+#text-container {
 	position: absolute;
-	background:rgba(250,247,243,0.9);
+	background:rgba(250,247,243,0.96);
 	overflow-x:hidden;
 	overflow-y:auto;
 	top: 72px;
 	left: 0;
 	bottom: 0;
-	width: auto;
-	padding: 10px;
+	width: 100%;
 	font-size: 9pt;
 	z-index: 2;
+}
+	#text-container.gisMenu {
+		top: 46px;
+	}
+	
+#text, #gisText {
+	padding: 10px;
 }
 	
 #text .heading {

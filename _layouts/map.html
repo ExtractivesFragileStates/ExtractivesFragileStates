@@ -8,18 +8,6 @@
 <div id='map'></div>
 
 <div id='map-header'>
-	<!-- <span class='title'><a href='{{site.baseurl}}/'> {{page.title}}</a></span> -->
-<!-- 
-	<span class='headerSection'>
-	{% for section in page.sections %}
-	{% if section.class == "headerSection" %}
-	  {% for layer in section.layers %}
-			<a href="#" id="{{layer.layerid}}" class="maplink headerLayer">{{layer.label}}</a>
-	  {% endfor %}
-	{% endif %}
-	{% endfor %}
-	</span>
- -->
 	<span class='gis_button'>
 		<a href="{{site.baseurl}}/gis/{{page.city}}" {% if page.url == "/gis/{{page.city}}" %} class='active' {% endif %}>GIS</a>
 	</span>
@@ -86,7 +74,9 @@
   {% endfor %}
 
 	<!-- Text -->
-	<div id='text'></div>
+	<div id='text-container'>
+		<div id='text'></div>
+	</div>
 
 	<div class='attribution' style='display:none'>
 		<div>...</div>

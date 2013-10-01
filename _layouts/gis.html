@@ -8,29 +8,41 @@
 <div id='map'></div>
  
 <div id='map-header'>
-  <span><a href="{{site.baseurl}}/">Home</a></span> >> 
-  <span><a href="{{site.baseurl}}/countries/{{page.country-ref}}">{{page.title}}</a></span> >>
-  <span class='refresher'>GIS</span>    
+	<span class='gis_button'>
+		<a href="{{site.baseurl}}/gis/{{page.city}}" {% if page.url == "/gis/{{page.city}}" %} class='active' {% endif %}>GIS</a>
+	</span>
+	<span class='narrative_button'>
+		<a href="{{site.baseurl}}/countries/{{page.city}}" {% if page.url == "/countries/{{page.city}}" %} class='active' {% endif %}>Narrative</a>
+	</span>
 </div>
 
 <div id="content">
+	<div class='title refresher'><img src='{{site.baseurl}}/img/logo_light.png'/>{{page.title}}</div> 
 
-<div class="gisMenu">
-{% for item in site.categories.countries %}
-  {% if page.country-ref == item.city %}
-    {% for section in item.sections %}
-      {% for layer in section.layers %} 
-        {% assign label = layer.label %}
-        {% for map in layer.maps %}
-          {% if map.label %}{% assign label = map.label %}{% endif %}
-          <div>
-          <a href="#" class="gisMenu" mapid="{{map.mapid}}">{{label}}</a> <a href="#" class="gisMenu grid" mapid="{{map.mapid}}">I</a>
-          </div>
-        {% endfor %}
-      {% endfor %}
-    {% endfor %}
-  {% endif %}
-{% endfor %}
+	<div id='text-container' class='gisMenu'>
+		<div id='gisText'>
+		{% for item in site.categories.countries %}
+		  {% if page.country-ref == item.city %}
+			{% for section in item.sections %}
+			{% assign theme = section.label %} 
+			<h1>{{theme}}</h1>
+			<ul>
+			  {% for layer in section.layers %} 
+				{% assign label = layer.label %}
+				{% for map in layer.maps %}
+				  {% if map.label %}{% assign label = map.label %}{% endif %}
+				  <li>
+					  <a href="#" class="gisMenu" mapid="{{map.mapid}}">{{label}}</a> 
+					  <a href="#" class="gisMenu grid" mapid="{{map.mapid}}"><img src='{{site.baseurl}}/img/eye_orange.png' alt='O'/></a>
+				  </li>
+				{% endfor %}
+			  {% endfor %}
+			</ul>
+			{% endfor %}
+		  {% endif %}
+		{% endfor %}
+		</div>
+	</div>
 </div> 
 
   {{content}}
