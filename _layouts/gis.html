@@ -32,8 +32,8 @@
 				{% for map in layer.maps %}
 				  {% if map.label %}{% assign label = map.label %}{% endif %}
 				  <li>
-					  <a href="#" class="gisMenu" mapid="{{map.mapid}}">{{label}}</a> 
-					  <a href="#" class="gisMenu grid" mapid="{{map.mapid}}"><img src='{{site.baseurl}}/img/eye_orange.png' alt='O'/></a>
+					  <a href="#" class="gisMenu" sectionid="{{section.sectionid}}" mapid="{{map.mapid}}">{{label}}</a> 
+					  <a href="#" class="gisMenu grid" sectionid="{{section.sectionid}}" mapid="{{map.mapid}}"><div></div></a>
 				  </li>
 				{% endfor %}
 			  {% endfor %}

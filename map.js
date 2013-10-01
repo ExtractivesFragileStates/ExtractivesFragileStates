@@ -33,6 +33,8 @@
       $('#text').html(page_data.baseLayer["text"]);
       // new L.Control.Zoom({ position: 'topleft' }).addTo(this.map);
 
+      //do this in a better way? for GIS?
+      this.layer_groups = {};
       this.group = L.layerGroup().addTo(this.map);
       this.group.setZIndex(0);
       this.headerGroup = L.layerGroup().addTo(this.map);
@@ -87,6 +89,7 @@
       e.preventDefault();
 	  	e.stopPropagation();	
       var mapid = this.getAttribute('mapid');
+      var sectionid = this.getAttribute('sectionid');
 		  //extractives.clearLayersLegends();
       var grid = $(this).hasClass('grid');
       if (grid) {
@@ -99,14 +102,24 @@
           $(this).addClass('active');
         }
       } else {
+        // Toggle off this layer
         if ($(this).hasClass('active')) {
+          extractives.layer_groups[ sectionid ].clearLayers();
           $(this).removeClass('active');
           $(this).next().removeClass('possible');
-          extractives.removeLayer('group',mapid);
+          $(this).next().removeClass('active');
         } else {
+        // Switch to this layer
+          if (extractives.layer_groups[ sectionid ] == null) {
+            extractives.layer_groups[ sectionid ] = L.layerGroup().addTo(extractives.map);
+          }
+          extractives.layer_groups[ sectionid ].clearLayers();
+          $("[sectionid=" + sectionid + ']').removeClass('active');
+          $("[sectionid=" + sectionid + ']').next().removeClass('active');
+          $("[sectionid=" + sectionid + ']').next().removeClass('possible');
           $(this).addClass('active');
           $(this).next().addClass('possible');
-          extractives.group.addLayer(L.mapbox.tileLayer(mapid));
+          extractives.layer_groups[ sectionid ].addLayer(L.mapbox.tileLayer(mapid));
         }
       }
     },
