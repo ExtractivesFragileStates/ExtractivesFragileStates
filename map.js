@@ -205,11 +205,11 @@
 	  },
 	  textMenuDown: function() {
 	  	  $('.dropdownMenu').animate( { 'top': '89px' }, 150 );
-		  $('#text').animate( { 'top': '135px' }, 150 );
+		  $('#text-container').animate( { 'top': '135px' }, 150 );
 	  },
 	  textMenuUp: function() {
 		  $('.dropdownMenu').animate( { 'top': '46px' }, 150 );
-		  $('#text').animate( { 'top': '72px' }, 150 );
+		  $('#text-container').animate( { 'top': '92px' }, 150 );
 	  },
   	activateDeactivate: function(button) {
   		button.addClass('active');
