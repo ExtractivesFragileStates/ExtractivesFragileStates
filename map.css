@@ -545,11 +545,10 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 .menu > a {
     padding: 10px 0 10px 0; /* check! */
     border: 1px solid #cbc4b3;
-    border-bottom-width: 0;
     width: 106px;
     float: left;
-    margin-right: 8px;
-    margin-left: 5px;
+    height:100%;
+    text-align: center;
 }
 
 .menu a:last-child {

@@ -54,11 +54,16 @@
         
         {% for layer in section.layers %} <!-- map menu buttons -->
           {% if layer.maps.size > 1 %}
-	          <div id='{{layer.layerid}}-menu' class='menu layerMenu' style='top:130px'>
-            {% for map in layer.maps %}    
+            {% assign button_count = 0 %}
+	          <div id='{{layer.layerid}}-menu' class='menu layerMenu'>
+            {% for map in layer.maps %}   
+              {% capture tmp %}{{ button_count | plus:1 }}{% endcapture %}
+              {% assign button_count = tmp %} 
           		<a href="#" id="{{map.htmlid}}" class="maplink">{{map.label}}</a>
+              {% capture tmp %}{{button_count | modulo:3}}{% endcapture %}
+              {% if tmp == "0" %}<br/>{% endif %}
             {% endfor %}
-        	  </div>
+        	  <div style="margin:5px"></div></div>
           {% endif %}
         {% endfor %}
 

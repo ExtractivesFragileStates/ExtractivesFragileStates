@@ -51,18 +51,18 @@
       var layer_group = 'group';
       if (switcherElement.hasClass('headerLayer')) { layer_group = 'headerGroup'; }
 
-      if (switcherElement.hasClass('active')) {
+     /* if (switcherElement.hasClass('active')) {
        //maplink is active, just switch it off
   		  switcherElement.removeClass('active');
         extractives.clearLayersLegends(layer_group);
-      } else if (switcherElement.hasClass('multimap')) {
+      } else */ if (switcherElement.hasClass('multimap')) {
         //maplink will load a menu in the legend
         var menu = $('#' + this.id + '-menu');
     		extractives.clearLayersLegends(layer_group);
     		extractives.activateDeactivate($(this));
     		menu.children(':first').trigger('click');
-    		menu.show();
-        menu.prependTo($('.leaflet-bottom.leaflet-right'));
+    		//menu.show();
+        //menu.prependTo($('.leaflet-bottom.leaflet-right'));
       } else {
   	  	//remove layers/legends and add new layer/legend
 	    	extractives.clearLayersLegends(layer_group);
@@ -162,9 +162,24 @@
 	  	  this.map.addControl(L.mapbox.gridControl(gridLayer));
       }
 
-		  var legendHtml = page_data.mapboxLayers[layerId]["legend"];
-		  var mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(legendHtml)
-		  this.map.addControl(mapLegend);
+      var legendHtml = "";
+      if ($('#' + layerId).parent().hasClass('layerMenu')) {
+        var menu = $('#' + layerId).parent();
+        menu.show();
+		    var legendHtml = menu[0].outerHTML + "<div class='clear' style='padding-bottom:10px'></div>" + page_data.mapboxLayers[layerId]["legend"];
+		    this.mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(legendHtml)
+		    this.map.addControl(this.mapLegend);
+        $('.maplink').off('click', this.maplink);
+	      $('.maplink').on('click', this.maplink);
+        $('#' + layerId).addClass('active');
+        //var menu = $('#' + layerId).parent();
+        //menu.show();
+        //menu.prependTo($('.leaflet-bottom.leaflet-right'));
+      } else {
+		    var legendHtml = page_data.mapboxLayers[layerId]["legend"];
+		    this.mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(legendHtml)
+		    this.map.addControl(this.mapLegend);
+      }
 	  },
     removeLayer: function(g, mapid) {
       this[g].eachLayer(function (layer) {
@@ -198,7 +213,11 @@
       $('.map-tooltip').each( function() { $(this).remove(); } ); // might need to clear gridControl
 	  	$('.layerMenu').hide();
   		$('.layerMenu').children().removeClass('active');
-		  $('.map-legends').remove();
+		  //$('.map-legends').remove();
+      if (this.mapLegend) {
+        this.map.removeControl(this.mapLegend);
+        this.mapLegend = null;
+      }
 	  },
     changeZ: function(layer) {
 		  $('.dropdownMenu').css('z-index', 1);
