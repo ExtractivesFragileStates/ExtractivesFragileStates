@@ -13,10 +13,8 @@
 	<div class='title refresher'><img src='{{site.baseurl}}/img/logo_light.png'/>{{page.title}}</div> 
   {% assign count = "" %}
   {% for section in page.sections %}
-    {% unless section.class == "headerSection" %}
-      {% capture tmp %}{{count}}*{% endcapture %}
-      {% assign count = tmp %}
-    {% endunless %}
+    {% capture tmp %}{{count}}*{% endcapture %}
+    {% assign count = tmp %}
   {% endfor %}
   {% assign switcher_class = 'four-wide' %}
   {% if count.size == 2 %}
@@ -25,11 +23,10 @@
      {% assign switcher_class = 'three-wide' %}
   {% endif %}
 	<div id="map-ui" class="{{switcher_class}} switcher-box">
-    {% for section in page.sections %}{% unless section.class == "headerSection" %}<a href="#" id="{{section.sectionid}}" class="section"><div>{{section.label}}</div></a>{% endunless %}{% endfor %}
+    {% for section in page.sections %}<a href="#" id="{{section.sectionid}}" class="section"><div>{{section.label}}</div></a>{% endfor %}
 	</div>	
 
   {% for section in page.sections %}
-    {% unless section.class == "headerSection" %}
       {% if section.layers %}
         {% if section.layers.size == 2 %}
           {% assign layer_class = 'two-wide' %}
@@ -52,7 +49,7 @@
         {% endfor %}
       	</div>
         
-        {% for layer in section.layers %} <!-- map menu buttons -->
+        {% for layer in section.layers %} <!-- map menu buttons. make three wide -->
           {% if layer.maps.size > 1 %}
             {% assign button_count = 0 %}
 	          <div id='{{layer.layerid}}-menu' class='menu layerMenu'>
@@ -63,12 +60,11 @@
               {% capture tmp %}{{button_count | modulo:3}}{% endcapture %}
               {% if tmp == "0" %}<br/>{% endif %}
             {% endfor %}
-        	  <div style="margin:5px"></div></div>
+        	  </div>
           {% endif %}
         {% endfor %}
 
       {% endif %}
-    {% endunless %}
   {% endfor %}
 
 	<!-- Text -->
