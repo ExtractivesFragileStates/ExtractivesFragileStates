@@ -316,11 +316,12 @@ body { margin:0; padding:0; }
 /******************************* GIS *******************************/
 
 #gisText ul {
-	padding: 0 0 6px 12px;
+	margin: 0 14px 8px;
 }
 
 #gisText ul li {
 	position: relative;
+	height: 2em;
 	margin-top: 2px;
 	border: 1px solid #ccc;
 	border-top: 0;
@@ -328,6 +329,7 @@ body { margin:0; padding:0; }
 }
 
 #gisText ul li a {
+	height: 100%;
 	padding-left: 4px;
 	color: #333;
 	text-decoration: none;
@@ -353,7 +355,7 @@ body { margin:0; padding:0; }
 .gisMenu.grid {
 	position: absolute;
 	right: 0;
-	bottom: 0;
+	top: 4px;
 	float: right;
 	display: none;
 }
