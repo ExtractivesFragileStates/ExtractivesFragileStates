@@ -4,10 +4,17 @@
   {% capture country %}{{page.country}}{% endcapture %} 
 {% endif %}
 <div id='map-header'>
-	<span class='gis_button'>{% capture url %}/gis/{{country}}{% endcapture %}
-		<a {% if page.url == url %} class='header-active' {% else %} href="{{site.baseurl}}/gis/{{country}}" {% endif %}>GIS</a>
+	<span class='nav_button'>
+		<a href="{{site.baseurl}}/">Home</a>
 	</span>
-	<span class='narrative_button'>{% capture url %}/countries/{{country}}{% endcapture %}
-		<a {% if page.url == url %} class='header-active' {% else %} href="{{site.baseurl}}/countries/{{country}}" {% endif %}>Narrative</a>
-	</span>{{page.country-ref}}{{page.url}}
+	<span class='nav_button'>{% capture url %}/gis/{{country}}{% endcapture %}
+		<a {% if page.url == url %} class='header-active' {% else %} href="{{site.baseurl}}/gis/{{country}}" {% endif %}>
+			<!-- <img src='{{site.baseurl}}/img/stack_photoshop.png'/>GIS -->
+		</a>
+	</span>
+	<span class='nav_button'>{% capture url %}/countries/{{country}}{% endcapture %}
+		<a {% if page.url == url %} class='header-active' {% else %} href="{{site.baseurl}}/countries/{{country}}" {% endif %}>
+			<!-- <img src='{{site.baseurl}}/img/page.png'/>Narrative -->
+		</a>
+	</span>
 </div>

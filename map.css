@@ -161,7 +161,6 @@ body { margin:0; padding:0; }
 	top: 0; 
 	left: 0;
 	right: 0;
-	font-size: 120%;
 	height: 45px;
 	line-height: 45px;
 	background-color: rgba(30,30,30,0.9);
@@ -171,10 +170,10 @@ body { margin:0; padding:0; }
 	border-bottom: 1px solid #BBB;
 }
 
-#map-header .gis_button,
-#map-header .narrative_button {
+#map-header .nav_button {
 	float: right;
 	padding: 0 8px;
+	font-size: 14pt;
 }
 
 #map-header a {
