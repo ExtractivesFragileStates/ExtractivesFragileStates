@@ -7,11 +7,11 @@
 
     global: function() {
       this.init_map();
-	  $('.maplink').on('click', this.maplink);
+	    $('.maplink').on('click', this.maplink);
       $('.section').on('click', this.section);
       $('.gisMenu').on('click', this.gisMenu);
       $('.refresher').on('click', this.refresher);
-	  $('#text').on('click', '.navigate', this.navigate);
+	    $('#text').on('click', '.navigate', this.navigate);
     },
 
     init_map: function() {
@@ -33,12 +33,13 @@
       $('#text').html(page_data.baseLayer["text"]);
       // new L.Control.Zoom({ position: 'topleft' }).addTo(this.map);
 
-      //do this in a better way? for GIS?
+      //layer_groups object used for GIS layout.
       this.layer_groups = {};
+
+      //one group used for Narrative layout
       this.group = L.layerGroup().addTo(this.map);
       this.group.setZIndex(0);
-      this.headerGroup = L.layerGroup().addTo(this.map);
-      this.group.setZIndex(998);
+
       $('.layerMenu').hide();
     },
 
@@ -48,26 +49,16 @@
 	  	e.stopPropagation();
 	  	var switcherElement = $(this);
   
-      var layer_group = 'group';
-      if (switcherElement.hasClass('headerLayer')) { layer_group = 'headerGroup'; }
+    	extractives.clearLayersLegends();
+      extractives.activateDeactivate($(this));
 
-     /* if (switcherElement.hasClass('active')) {
-       //maplink is active, just switch it off
-  		  switcherElement.removeClass('active');
-        extractives.clearLayersLegends(layer_group);
-      } else */ if (switcherElement.hasClass('multimap')) {
+      if (switcherElement.hasClass('multimap')) {
         //maplink will load a menu in the legend
         var menu = $('#' + this.id + '-menu');
-    		extractives.clearLayersLegends(layer_group);
-    		extractives.activateDeactivate($(this));
     		menu.children(':first').trigger('click');
-    		//menu.show();
-        //menu.prependTo($('.leaflet-bottom.leaflet-right'));
       } else {
-  	  	//remove layers/legends and add new layer/legend
-	    	extractives.clearLayersLegends(layer_group);
-	    	extractives.activateDeactivate($(this));
-	    	extractives.switchLayer(switcherElement, layer_group);
+  	  	//add new layer/legend
+	    	extractives.switchLayer(switcherElement);
 	    	$('#text').html(page_data.mapboxLayers[switcherElement.attr('id')]["text"])
       }
 	  },
@@ -78,7 +69,7 @@
   		var firstChildElement = $('#' + this.id + '-layer').children(':first');
 
 	    // remove layers/legends and trigger first layer button event
-	    extractives.removeAll('group');
+	    extractives.removeAll();
 	    firstChildElement.trigger('click');
 
 	    // change z-index on layer menus and move layer
@@ -90,11 +81,11 @@
 	  	e.stopPropagation();	
       var mapid = this.getAttribute('mapid');
       var sectionid = this.getAttribute('sectionid');
-		  //extractives.clearLayersLegends();
       var grid = $(this).hasClass('grid');
+
       if (grid) {
         if ($(this).prev().hasClass('active')) {
-          extractives.removeGrids('group');
+          extractives.removeGrids();
           $('.map-tooltip').each( function() { $(this).remove(); } );
           var gridLayer = L.mapbox.gridLayer(mapid);
           extractives.group.addLayer(gridLayer);
@@ -125,7 +116,6 @@
         }
       }
     },
-
 	  navigate: function(e) {
 	  	e.preventDefault();
 	  	e.stopPropagation();	
@@ -148,72 +138,54 @@
   		extractives.map.setView(page_data.baseLayer["latlon"], page_data.baseLayer["zoom"]);
   	},
 
-	  switchLayer: function(layer, layer_group) {
+	  switchLayer: function(layer) {
 		  layerId = layer.attr('id');
-     // if (page_data.mapboxLayers[layerId]["zIndex"] != "") {
-  		//  this[layer_group].addLayer(L.mapbox.tileLayer(page_data.mapboxLayers[layerId]["id"]), {zIndex: page_data.mapboxLayers[layerId]["zIndex"]} );
-      //} else {
-  		  this[layer_group].addLayer(L.mapbox.tileLayer(page_data.mapboxLayers[layerId]["id"])); //, {zIndex: 0 });
-      //}
+  		this['group'].addLayer(L.mapbox.tileLayer(page_data.mapboxLayers[layerId]["id"])); 
 
 	  	var gridLayer = L.mapbox.gridLayer(page_data.mapboxLayers[layerId]["id"]);
-      if (layer_group == 'group') {
-  		  this.group.addLayer(gridLayer);
-	  	  this.map.addControl(L.mapbox.gridControl(gridLayer));
-      }
+  		this.group.addLayer(gridLayer);
+	  	this.map.addControl(L.mapbox.gridControl(gridLayer));
 
       var legendHtml = "";
       if ($('#' + layerId).parent().hasClass('layerMenu')) {
+        //add buttons
         var menu = $('#' + layerId).parent();
         menu.show();
-		    var legendHtml = menu[0].outerHTML + "<div class='clear' style='padding-bottom:10px'></div>" + page_data.mapboxLayers[layerId]["legend"];
+		    legendHtml = menu[0].outerHTML + "<div class='clear' style='padding-bottom:10px'></div>" + page_data.mapboxLayers[layerId]["legend"];
 		    this.mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(legendHtml)
 		    this.map.addControl(this.mapLegend);
         $('.maplink').off('click', this.maplink);
 	      $('.maplink').on('click', this.maplink);
         $('#' + layerId).addClass('active');
-        //var menu = $('#' + layerId).parent();
-        //menu.show();
-        //menu.prependTo($('.leaflet-bottom.leaflet-right'));
       } else {
-		    var legendHtml = page_data.mapboxLayers[layerId]["legend"];
-		    this.mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(legendHtml)
-		    this.map.addControl(this.mapLegend);
+		    legendHtml = page_data.mapboxLayers[layerId]["legend"];
       }
+		  this.mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(legendHtml)
+		  this.map.addControl(this.mapLegend);
 	  },
-    removeLayer: function(g, mapid) {
-      this[g].eachLayer(function (layer) {
+    removeLayer: function(mapid) {
+      this['group'].eachLayer(function (layer) {
         if (layer._tilejson.id == mapid) {
-          extractives[g].removeLayer(layer);
+          extractives['group'].removeLayer(layer);
         }
       });
     },
-    removeGrids: function(g) {
-      this[g].eachLayer(function (layer) {
+    removeGrids: function() {
+      this['group'].eachLayer(function (layer) {
         if (layer.options['grids']) {
-          extractives[g].removeLayer(layer);
+          extractives['group'].removeLayer(layer);
         }
       });
     },
-	  removeAll: function(g) {
-		  extractives.clearLayersLegends(g);
-      if (g == "group") {
-  		  $('.active:not(.headerLayer)').removeClass('active');
-      } else {
-        $('.active').removeClass('active'); 
-      }
+	  removeAll: function() {
+		  extractives.clearLayersLegends();
+      $('.active').removeClass('active'); 
 	  },
-    clearLayersLegends: function(g) {
-      if (g) {
-  		  this[g].clearLayers();
-      } else {
-        this['group'].clearLayers();
-        this['headerGroup'].clearLayers();
-      }
-      $('.map-tooltip').each( function() { $(this).remove(); } ); // might need to clear gridControl
+    clearLayersLegends: function() {
+      this['group'].clearLayers();
+      $('.map-tooltip').each( function() { $(this).remove(); } ); // might need to clear gridControl?
 	  	$('.layerMenu').hide();
   		$('.layerMenu').children().removeClass('active');
-		  //$('.map-legends').remove();
       if (this.mapLegend) {
         this.map.removeControl(this.mapLegend);
         this.mapLegend = null;
