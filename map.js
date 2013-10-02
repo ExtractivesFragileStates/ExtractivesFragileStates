@@ -95,6 +95,7 @@
       if (grid) {
         if ($(this).prev().hasClass('active')) {
           extractives.removeGrids('group');
+          $('.map-tooltip').each( function() { $(this).remove(); } );
           var gridLayer = L.mapbox.gridLayer(mapid);
           extractives.group.addLayer(gridLayer);
           extractives.map.addControl(L.mapbox.gridControl(gridLayer));
@@ -119,6 +120,7 @@
           $("[sectionid=" + sectionid + ']').next().removeClass('possible');
           $(this).addClass('active');
           $(this).next().addClass('possible');
+          $(this).next().trigger('click');
           extractives.layer_groups[ sectionid ].addLayer(L.mapbox.tileLayer(mapid));
         }
       }
