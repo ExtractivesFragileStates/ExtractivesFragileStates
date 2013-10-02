@@ -9,7 +9,7 @@ map: 'helsinki.Liberia_landcover'
 lat: 6.2
 lon: -11
 center:
-    lat: 6.2
+    lat: 7
     lon: -11
     zoom: 7
     layers:
@@ -88,8 +88,21 @@ sections:
       - layerid: all_con
         label: Concessions
         maps:
-          - mapid: helsinki.Liberia_all_concessions
-            legend: unemploymentLegend
+          - htmlid: mining
+            label: Mining
+            mapid: helsinki.Liberia_Mining_Concessions
+            text: concessionsText
+          - htmlid: forestry
+            label: Forestry
+            mapid: helsinki.Liberia_concessions_forest
+            text: concessionsText
+          - htmlid: agricultural
+            label: Agriculture
+            mapid: helsinki.Liberia_concessions_ag
+            text: concessionsText
+          - htmlid: protected
+            label: Protected
+            mapid: helsinki.Liberia_concessions_protected
             text: concessionsText
       - layerid: offshore
         label: Offshore
@@ -253,16 +266,11 @@ sections:
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#c7741e;'></span>Rural Areas</li>
-			<li><span style='background:#79d560;'></span>Predominant Rural Agricultural Domain</li>
-			<li><span style='background:#43c71e;'></span>Agricultural Area with Small Forest Presence</li>
-			<li><span style='background:#4e9cb9;'></span>Agriculture Degraded Forest</li>
-			<li><span style='background:#1c4c7a;'></span>Open Dense Forest</li>
-			<li><span style='background:#092447;'></span>Closed Dense Forest</li>
-			<li><span style='background:#35dab3;'></span>Free Water</li>
-			<li><span style='background:#e98b55;'></span>Savannas or Nude Areas</li>
-			<li><span style='background:#cf3b4b;'></span>Littoral Ecosystem Complex</li>
-			<li><span style='background:#bb5ddf;'></span>Agro-Industrial Plantation</li>
+			<li><span style='background:#43c71e;'></span>Forest</li>
+			<li><span style='background:#e98b55;'></span>Mixed Agriculture and Forest</li>
+			<li><span style='background:#cf3b4b;'></span>Agriculture</li>
+			<li><span style='background:#35dab3;'></span>Water</li>
+			<li><span style='background:#bb5ddf;'></span>Other</li>
 		</ul>
 	</div>
 	<div class='legend-source'><b>Source:</b> <a href="http://www.moa.gov.lr/index.php">Liberia Ministry of Agriculture</a><br>and <a href='http://www.fda.gov.lr/'>Liberia Forest Development Authority</a></div>
