@@ -183,7 +183,8 @@ body { margin:0; padding:0; }
 }
 
 #map-header a:hover,
-#map-header a.active {
+#map-header a.active,
+#map-header a.header-active {
 	color: orange;
 }
 
