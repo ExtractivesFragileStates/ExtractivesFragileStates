@@ -318,28 +318,43 @@ body { margin:0; padding:0; }
 	padding: 0 0 6px 12px;
 }
 
-#gisText ul a {
+#gisText ul li {
+	position: relative;
+	margin-top: 2px;
+	border: 1px solid #ccc;
+	border-top: 0;
+	border-right: 0;
+}
+
+#gisText ul li a {
+	padding-left: 4px;
 	color: #333;
 	text-decoration: none;
 	font-weight: normal;
+	display: block;
 }
-	#gisText ul a:hover {
-		color: #aaa;
+	#gisText ul li:hover {
+		background-color: #555;
 	}
-	#gisText ul a:active {
-		color: #333;
+	#gisText ul li:active {
+		background-color: transparent;
 	}
-	#gisText ul a.active {
+	#gisText ul li:hover a {
+		color: #fefefe;
+	}
+	#gisText ul li a:active {
+		color: orange;
+	}
+	#gisText ul li a.active {
 		color: orange;
 	}
 
 .gisMenu.grid {
-  float: right;
-  display: none;
-}
-.gisMenu.grid.possible {
-  display: block;
-  font-weight: bold;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	float: right;
+	display: none;
 }
   .gisMenu.grid.possible div {
      background: url('{{site.baseurl}}/img/eye_black.png');
