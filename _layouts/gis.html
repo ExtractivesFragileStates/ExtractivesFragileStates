@@ -14,6 +14,11 @@
 
 	<div id='text-container' class='gisMenu'>
 		<div id='gisText'>
+			<div class='head'>
+				<img src='{{site.baseurl}}/img/stack_black.png' alt='' />
+				<h1>GIS Map View</h1>
+			</div>
+			<p>Use the GIS map view to overlay data layers from different data themes and to explore spatial correlations.  In order to keep the map clean, only one layer from each theme can be overlaid at a time.  Click the <img src='{{site.baseurl}}/img/eye_orange.png' alt='EYE'/> icon to enable interactivity for any one layer.</p>
 		{% for item in site.categories.countries %}
 		  {% if page.country-ref == item.country %}
 			{% for section in item.sections %}
