@@ -263,6 +263,10 @@ body { margin:0; padding:0; }
 	width: 25%; /* 89px; */
 }
 
+#content .five-wide > a {
+	width: 20%;
+}
+
 #text .head h1,
 #gisText .head h1 {
 	font-size: 190%; 
