@@ -20,6 +20,15 @@ center:
     introText: introText
 section-count: 3
 sections:
+  - sectionid: demographics
+    label: DEMOGRAPHICS
+    layers:
+    - layerid: ethnicity
+      label: Ethnicity
+      maps:
+        - mapid: 'helsinki.Liberia_Ethnic'
+          text: 'introText'
+          legend: 'ethnicityLegend'
   - sectionid: environment
     label: ENVIRONMENT
     layers:
@@ -294,6 +303,55 @@ sections:
 	<div class='legend-description'></div>
 	</div>
 	<div class='legend-source'><b>Source:</b> Marco River Resources, Inc.</div>
+</div>
+</div>
+
+
+<!-- ethnicity Legend - vertical categorized -->
+<!--
+<div id='ethnicityLegend' style='display:none'>
+<div class='map-legendVerticalCategorized'>
+	<div class='legend-name'>
+		<div class='legend-title'>Dominant<br>Ethnic Group</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#f3ffa1;'></span>Bassa</li>
+			<li><span style='background:#bfca43;'></span>Gio</li>
+			<li><span style='background:#969e3e;'></span>Gola</li>
+			<li><span style='background:#e2bb52;'></span>Grebo</li>
+			<li><span style='background:#6c561a;'></span>Kpelle</li>
+			<li><span style='background:#9caeff;'></span>Krahn</li>
+			<li><span style='background:#B25E4B;'></span>Loma</li>
+			<li><span style='background:#B5C270;'></span>Sapo</li>
+			<li><span style='background:#A3465E;'></span>Vai</li>
+		</ul>
+	<div class='legend-description'></div>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
+</div>
+</div>
+-->
+
+<div id='ethnicityLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Dominant Ethnic Group</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#f3ffa1;'></span>Bassa</li>
+			<li><span style='background:#bfca43;'></span>Gio</li>
+			<li><span style='background:#969e3e;'></span>Gola</li>
+			<li><span style='background:#e2bb52;'></span>Grebo</li>
+			<li><span style='background:#6c561a;'></span>Kpelle</li>
+			<li><span style='background:#9caeff;'></span>Krahn</li>
+			<li><span style='background:#B25E4B;'></span>Loma</li>
+			<li><span style='background:#B5C270;'></span>Sapo</li>
+			<li><span style='background:#A3465E;'></span>Vai</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
 </div>
 </div>
 
