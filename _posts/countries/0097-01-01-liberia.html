@@ -29,6 +29,12 @@ sections:
         - mapid: 'helsinki.Liberia_Ethnic'
           text: 'introText'
           legend: 'ethnicityLegend'
+    - layerid: interaction
+      label: Ethnic Interactivity
+      maps:
+        - mapid: 'helsinki.Liberia_Ethnic_Interaction'
+          text: 'introText'
+          legend: 'ethnicInteractionLegend'
   - sectionid: environment
     label: ENVIRONMENT
     layers:
@@ -118,6 +124,28 @@ sections:
         maps:
           - mapid: helsinki.Liberia_Offshore
             text: petroleumText
+  - sectionid: fragility
+    label: STRESSES
+    layers:
+#    - layerid: peaceTribal
+#      label: Tribal
+#      maps:
+#        - mapid: helsinki.Liberia_Ethnic_Peace_Tribal
+#          text: 'introText'
+
+      - layerid: peace
+        label: Barriers to Peace
+        maps:
+          - mapid: helsinki.Liberia_Ethnic_Peace_Tribal
+            htmlid: peaceTribal
+            label: Tribal Conflicts
+            legend: resourceLegend
+            text: introText
+          - mapid: helsinki.Liberia_Ethnic_Peace_Discrimination
+            htmlid: peaceDiscrimination
+            label: Ethnic Discrimination
+            legend: resourceLegend
+            text: introText
 ---
 
 <!-- Legend -->
@@ -354,6 +382,25 @@ sections:
 	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
 </div>
 </div>
+
+<!-- ethnicInteractionLegend - vertical graduated -->
+<div id='ethnicInteractionLegend' style='display:none'>
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Interact Daily with<br>Other Ethnicities</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>50% - 59%</li>
+			<li><span style='background:#FC8D59;'></span>59% - 67%</li>
+			<li><span style='background:#E34A33;'></span>67% - 75%</li>
+			<li><span style='background:#B30000;'></span>75% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
+</div>
+</div>
+
 
 
 
