@@ -9,12 +9,12 @@
 	</span>
 	<span class='nav_button'>{% capture url %}/gis/{{country}}{% endcapture %}
 		<a {% if page.url == url %} class='header-active' {% else %} href="{{site.baseurl}}/gis/{{country}}" {% endif %}>
-			<!-- <img src='{{site.baseurl}}/img/stack_photoshop.png'/>-->GIS
+			<div class='image stack'></div><div class='header-button'>GIS</div>
 		</a>
 	</span>
 	<span class='nav_button'>{% capture url %}/countries/{{country}}{% endcapture %}
 		<a {% if page.url == url %} class='header-active' {% else %} href="{{site.baseurl}}/countries/{{country}}" {% endif %}>
-			<!-- <img src='{{site.baseurl}}/img/page.png'/>-->Narrative
+			<div class='image page'></div><div class='header-button'>Narrative</div>
 		</a>
 	</span>
 </div>
