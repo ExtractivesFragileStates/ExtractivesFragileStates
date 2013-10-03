@@ -159,9 +159,10 @@
         $('#' + layerId).addClass('active');
       } else {
 		    legendHtml = page_data.mapboxLayers[layerId]["legend"];
+		    this.mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(legendHtml)
+		    this.map.addControl(this.mapLegend);
       }
-		  this.mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(legendHtml)
-		  this.map.addControl(this.mapLegend);
+
 	  },
     removeLayer: function(mapid) {
       this['group'].eachLayer(function (layer) {
@@ -190,6 +191,7 @@
         this.map.removeControl(this.mapLegend);
         this.mapLegend = null;
       }
+      $('.map-legends').remove();
 	  },
     changeZ: function(layer) {
 		  $('.dropdownMenu').css('z-index', 1);
