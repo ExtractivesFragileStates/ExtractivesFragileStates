@@ -11,45 +11,20 @@
 
 <div id="content">
 	<div class='title refresher'><img src='{{site.baseurl}}/img/logo_light.png'/>{{page.title}}</div> 
-  {% assign count = "" %}
-  {% for section in page.sections %}
-    {% capture tmp %}{{count}}*{% endcapture %}
-    {% assign count = tmp %}
-  {% endfor %}
-  {% assign switcher_class = 'one-wide' %}
-  {% if count.size == 2 %}
-     {% assign switcher_class = 'two-wide' %}
-  {% elsif count.size == 3 %}
-     {% assign switcher_class = 'three-wide' %}
-  {% elsif count.size == 4 %}
-     {% assign switcher_class = 'four-wide' %}
-  {% elsif count.size == 5 %}
-     {% assign switcher_class = 'five-wide' %}
-  {% endif %}
+  {% capture switcher_class %}wide{{page.sections.size}}{% endcapture %}
 	<div id="map-ui" class="{{switcher_class}} switcher-box">
     {% for section in page.sections %}<a href="#" id="{{section.sectionid}}" class="section"><div>{{section.label}}</div></a>{% endfor %}
 	</div>	
 
   {% for section in page.sections %}
       {% if section.layers %}
-        {% if section.layers.size == 1 %}
-          {% assign layer_class = 'one-wide' %}
-        {% elsif section.layers.size == 2 %}
-          {% assign layer_class = 'two-wide' %}
-        {% elsif section.layers.size == 3 %}
-          {% assign layer_class = 'three-wide' %}
-        {% elsif section.layers.size == 4 %}
-          {% assign layer_class = 'four-wide' %}
-        {% elsif section.layers.size == 5 %}
-          {% assign layer_class = 'five-wide' %}
-        {% endif %}
+        {% capture layer_class %}wide{{section.layers.size}}{% endcapture %}
 
         <div id="{{section.sectionid}}-layer" class="{{layer_class}} switcher-box dropdownMenu">
         {% for layer in section.layers %}
+          {% assign layer_class = "" %}
           {% if layer.maps.size > 1 %}
             {% assign layer_class = "multimap" %}
-          {% else %}
-            {% assign layer_class = "" %}
           {% endif %}
 	        <a href="#" id="{{layer.layerid}}" class="maplink {{layer_class}}"><div>{{layer.label}}</div></a>
         {% endfor %}
