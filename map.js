@@ -19,10 +19,13 @@
       this.map = L.map('map', {
 	      minZoom: 3,
 	      maxZoom: 10,
-      	  zoomControl: false,
+      	  zoomControl: true,
 	      attributionControl: false
       })
 	    .setView(page_data.baseLayer["latlon"], page_data.baseLayer["zoom"]);
+
+      $(window).resize(function() { $('.leaflet-control-zoom').css('left', $('#content').width()); });
+      $('.leaflet-control-zoom').css('left', $('#content').width());
 
       // Build Base Layer
       for(i = 0; i < page_data.baseLayer["id"].length; i++){
