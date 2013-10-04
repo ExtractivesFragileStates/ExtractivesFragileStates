@@ -601,8 +601,8 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     text-decoration: none;
 }
 	.menu a div {
-		height: 22px;
-    	line-height: 22px;
+		height: 24px;
+    	line-height: 24px;
     	width: 100%;
     	border-left: 1px solid #BBB;
     }
@@ -610,7 +610,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 		border-right: 1px solid #cbc4b3;
 	}
 	.menu a:hover {
-		background-color: #bbb;
+		background-color: #efedea;
 	}
 	.menu a:active {
 		background-color: transparent;
@@ -730,7 +730,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 	font: 10pt "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	background-color: #faf7f3;
 	color: #333;
-	min-width: 220px;
+	min-width: 260px;
 }
 
 .map-legend .legend-name {
