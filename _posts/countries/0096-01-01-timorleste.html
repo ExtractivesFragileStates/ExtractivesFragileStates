@@ -3,7 +3,7 @@ layout: map
 permalink: /countries/timor-leste
 categories: [casestudy, countries]
 country: timor-leste
-title: 'Timor-Lestes Mineral Wealth' 
+title: 'Timor-Leste&#39;s Mineral Wealth' 
 subtitle: 'Conflict and Extractives in Timor-Leste'
 map: 'helsinki.timor_leste_base_layer'
 lat: -8.9
@@ -25,22 +25,22 @@ sections:
     - layerid: poverty
       label: Poverty
       maps:
-          - mapid: 'helsinki.TL_employ'
-            text: 'developmentText'
-            legend: 'unLegend'
-            htmlid: 'unemployment'
-            label: 'Unemployment'
-          - mapid: 'helsinki.TL_light'
-            text: 'developmentText'
-            legend: 'elecLegend'
-            htmlid: 'electricity'
-            label: 'Percent Electricity'
+          - mapid: helsinki.TL_employ
+            text: developmentText
+            legend: unemploymentLegend
+            htmlid: unemployment
+            label: Unemployment
+          - mapid: helsinki.TL_light
+            text: developmentText
+            legend: electricityLegend
+            htmlid: electricity
+            label: Percent Electricity
     - layerid: school
       label: Education
       maps:
-          - mapid: 'helsinki.TL_education'
+          - mapid: helsinki.TL_education
             text: developmentText
-            legend: schoLegend
+            legend: educationLegend
   - sectionid: extractives
     label: EXTRACTIVES
     layers:
@@ -56,38 +56,62 @@ sections:
           text: extractivesText
 ---
 
-<div id='unLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+
+<!-- unemploymentLegend - vertical graduated -->
+<div id='unemploymentLegend' style='display:none'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Unemployment</div>
+		<div class='legend-title'>Unemployment (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>0% - 25%</li>
-			<li><span style='background:#FC8D59;'></span>25% - 29%</li>
-			<li><span style='background:#E34A33;'></span>29% - 39%</li>
-			<li><span style='background:#B30000;'></span>39% +</li>
+			<li><span style='background:#FEF0D9;'></span>0 - 2.3</li>
+			<li><span style='background:#FFD9A5;'></span>2.3 - 5.1</li>
+			<li><span style='background:#FAA682;'></span>5.1 - 8.8</li>
+			<li><span style='background:#E76C5B;'></span>8.8 - 18.2</li>
+			<li><span style='background:#D85151;'></span>> 18.2</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.worldcat.org/title/republic-of-sierra-leone-2004-population-and-housing-census-analytical-report-on-employment-and-labour-force/oclc/320249882' target="_blank">Republic of Sierra Leone,<br>2004 Population and Housing Census,</a><br>Analytical Report on Employment<br>and Labour Force</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
 </div>
 </div>
 
-<!-- elecLegend -->
-<div id='elecLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<!-- electricityLegend - vertical graduated -->
+<div id='electricityLegend' style='display:none'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Percent Using<br>Electric Lighting</div>
+		<div class='legend-title'>No Electric or<br>Solar Lighting (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#B30000;'></span>0% - 0.02%</li>
-			<li><span style='background:#E34A33;'></span>0.02% - 0.05%</li>
-			<li><span style='background:#FC8D59;'></span>0.05% - 5%</li>
-			<li><span style='background:#FDCC8A;'></span>5% +</li>
+			<li><span style='background:#FEF0D9;'></span>0 - 50</li>
+			<li><span style='background:#FFD9A5;'></span>50 - 75</li>
+			<li><span style='background:#FAA682;'></span>75 - 90</li>
+			<li><span style='background:#E76C5B;'></span>90 - 98</li>
+			<li><span style='background:#D85151;'></span>> 98</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.statistics.sl/final_digest_2006.pdf' target="_blank">Statistics Sierra Leone</a><br>Annual Statistical Digest 2005/2006</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
+</div>
+</div>
+
+
+<!-- educationLegend - vertical graduated -->
+<div id='educationLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Never Attended or<br>Left School (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>43 - 56</li>
+			<li><span style='background:#FFD9A5;'></span>56 - 63</li>
+			<li><span style='background:#FAA682;'></span>63 - 69</li>
+			<li><span style='background:#E76C5B;'></span>69 - 76</li>
+			<li><span style='background:#D85151;'></span>> 76</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
 </div>
 </div>
 
