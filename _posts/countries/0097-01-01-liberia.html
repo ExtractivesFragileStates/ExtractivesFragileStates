@@ -55,6 +55,11 @@ sections:
     - layerid: poverty
       label: Poverty
       maps:
+        - mapid: helsinki.Liberia_WealthLevel
+          text: unemploymentText
+          legend: wealthIndexLegend
+          htmlid: wealthIndex
+          label: Wealth Index
         - mapid: helsinki.Liberia_Unemployment
           text: unemploymentText
           legend: unemploymentLegend
@@ -70,6 +75,24 @@ sections:
           mapid: helsinki.Liberia_PipedWater
           legend: pipedWaterLegend
           text: pipeborneWaterText
+    - layerid: foodInecurity
+      label: Food Insecurity
+      maps:
+        - mapid: helsinki.Liberia_Food_ModerateInsecure
+          text: foodSecurityText
+          legend: foodInsecurityLegend
+          htmlid: foodInsecurity
+          label: Food Insecurity
+        - mapid: helsinki.Liberia_Food_PoorConsumption
+          text: foodSecurityText
+          legend: foodPoorConsumptionLegend
+          htmlid: foodPoorConsumption
+          label: Poor Consumption
+        - mapid: helsinki.Liberia_Food_Malnutrition
+          text: foodSecurityText
+          legend: foodMalnutritionLegend
+          htmlid: malnutrition
+          label: Malnutrition
     - layerid: school
       label: Education
       maps:
@@ -528,6 +551,81 @@ sections:
 	</div>
 	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
 </div>
+</div>
+
+
+<!-- foodInsecurityLegend - vertical graduated -->
+<div id='foodInsecurityLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Food Insecurity (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>20 - 55</li>
+			<li><span style='background:#FFD9A5;'></span>55 - 61</li>
+			<li><span style='background:#FAA682;'></span>61 - 66</li>
+			<li><span style='background:#E76C5B;'></span>66 - 78</li>
+			<li><span style='background:#D85151;'></span>> 78</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='https://wca.humanitarianresponse.info/en/system/files/documents/files/CFSNS%20LIberia%20Executive%20Summary_June2013.pdf'>Liberia Comprehensive Food Security<br>and Nutrition Survey (CFSNS) June 2013</a></div>
+</div>
+</div>
+
+<!-- foodPoorConsumptionLegend - vertical graduated -->
+<div id='foodPoorConsumptionLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Poor Consumption (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>3 - 39</li>
+			<li><span style='background:#FFD9A5;'></span>39 - 48</li>
+			<li><span style='background:#FAA682;'></span>48 - 62</li>
+			<li><span style='background:#E76C5B;'></span>62 - 68</li>
+			<li><span style='background:#D85151;'></span>> 68</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='https://wca.humanitarianresponse.info/en/system/files/documents/files/CFSNS%20LIberia%20Executive%20Summary_June2013.pdf'>Liberia Comprehensive Food Security<br>and Nutrition Survey (CFSNS) June 2013</a></div>
+</div>
+</div>
+
+<!-- foodMalnutritionLegend - vertical graduated -->
+<div id='foodMalnutritionLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Malnutrition (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>19 - 33</li>
+			<li><span style='background:#FFD9A5;'></span>33 - 38</li>
+			<li><span style='background:#FAA682;'></span>38 - 42</li>
+			<li><span style='background:#E76C5B;'></span>42 - 46</li>
+			<li><span style='background:#D85151;'></span>> 46</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='https://wca.humanitarianresponse.info/en/system/files/documents/files/CFSNS%20LIberia%20Executive%20Summary_June2013.pdf'>Liberia Comprehensive Food Security<br>and Nutrition Survey (CFSNS) June 2013</a></div>
+</div>
+
+<!-- wealthIndexLegend - vertical graduated -->
+<div id='wealthIndexLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Wealth Index</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>1 - 46</li>
+			<li><span style='background:#FFD9A5;'></span>46 - 57</li>
+			<li><span style='background:#FAA682;'></span>57 - 67</li>
+			<li><span style='background:#E76C5B;'></span>67 - 81</li>
+			<li><span style='background:#D85151;'></span>> 81</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='https://wca.humanitarianresponse.info/en/system/files/documents/files/CFSNS%20LIberia%20Executive%20Summary_June2013.pdf'>Liberia Comprehensive Food Security<br>and Nutrition Survey (CFSNS) June 2013</a></div>
 </div>
 
 
