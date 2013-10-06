@@ -35,20 +35,6 @@ sections:
         - mapid: 'helsinki.Liberia_Ethnic_Interaction'
           text: 'introText'
           legend: 'ethnicInteractionLegend'
-  - sectionid: environment
-    label: ENVIRONMENT
-    layers:
-    - layerid: landCover
-      label: Land Cover
-      maps:
-        - mapid: helsinki.Liberia_landcover
-          text: environmentText
-          legend: landCoverLegend
-    - layerid: protectedAreas
-      label: Protected Areas
-      maps:
-        - mapid: helsinki.Liberia_concessions_protected
-          text: environmentText
   - sectionid: development
     label: DEVELOPMENT
     layers:
@@ -122,6 +108,20 @@ sections:
           mapid: helsinki.Liberia_Health_Disease
           legend: diseaseLegend
           text: healthText
+  - sectionid: environment
+    label: ENVIRONMENT
+    layers:
+    - layerid: landCover
+      label: Land Cover
+      maps:
+        - mapid: helsinki.Liberia_landcover
+          text: environmentText
+          legend: landCoverLegend
+    - layerid: protectedAreas
+      label: Protected Areas
+      maps:
+        - mapid: helsinki.Liberia_concessions_protected
+          text: environmentText
   - sectionid: extractives
     label: EXTRACTIVES
     layers:
@@ -198,16 +198,17 @@ sections:
 
 <!-- Unemployment - vertical graduated -->
 <div id='unemploymentLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Unemployment</div>
+		<div class='legend-title'>Unemployment (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>0 - 28%</li>
-			<li><span style='background:#FC8D59;'></span>28% - 38%</li>
-			<li><span style='background:#E34A33;'></span>38% - 53%</li>
-			<li><span style='background:#B30000;'></span>53% +</li>
+			<li><span style='background:#FEF0D9;'></span>25 - 35</li>
+			<li><span style='background:#FFD9A5;'></span>35 - 45</li>
+			<li><span style='background:#FAA682;'></span>45 - 53</li>
+			<li><span style='background:#E76C5B;'></span>53 - 67</li>
+			<li><span style='background:#D85151;'></span>> 67</li>
 		</ul>
 	</div>
 	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
@@ -217,16 +218,17 @@ sections:
 
 <!-- electricLightLegend - vertical graduated -->
 <div id='electricLightLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>No Electric Light</div>
+		<div class='legend-title'>No Electric Light (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>90% - 98%</li>
-			<li><span style='background:#FC8D59;'></span>98% - 98.5%</li>
-			<li><span style='background:#E34A33;'></span>98.5% - 99%</li>
-			<li><span style='background:#B30000;'></span>99% +</li>
+			<li><span style='background:#FEF0D9;'></span>90-97</li>
+			<li><span style='background:#FFD9A5;'></span>97-98</li>
+			<li><span style='background:#FAA682;'></span>98-98.5</li>
+			<li><span style='background:#E76C5B;'></span>98.5-99</li>
+			<li><span style='background:#D85151;'></span>> 99</li>
 		</ul>
 	</div>
 	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
@@ -236,23 +238,24 @@ sections:
 
 <!-- pipedWaterLegend - vertical graduated -->
 <div id='pipedWaterLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>No Piped Water</div>
+		<div class='legend-title'>No Piped Water (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>39% - 50%</li>
-			<li><span style='background:#FC8D59;'></span>50% - 64%</li>
-			<li><span style='background:#E34A33;'></span>64% - 74%</li>
-			<li><span style='background:#B30000;'></span>74% +</li>
+			<li><span style='background:#FEF0D9;'></span>39 - 50</li>
+			<li><span style='background:#FFD9A5;'></span>50 - 60</li>
+			<li><span style='background:#FAA682;'></span>60 - 67</li>
+			<li><span style='background:#E76C5B;'></span>67 - 75</li>
+			<li><span style='background:#D85151;'></span>> 75</li>
 		</ul>
 	</div>
 	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
 </div>
 </div>
 
-<!-- schoolLegend - vertical graduated -->
+<!-- schoolLegend - graduated -->
 <div id='schoolLegend' style='display:none'>
 <div class='map-legendGraduated'>
 	<div class='legend-name'>
@@ -272,7 +275,7 @@ sections:
 </div>
 
 
-<!-- healthCenterDistanceLegend - vertical graduated -->
+<!-- healthCenterDistanceLegend - graduated -->
 <div id='healthCenterDistanceLegend' style='display:none'>
 <div class='map-legendGraduated'>
 	<div class='legend-name'>
@@ -291,7 +294,7 @@ sections:
 </div>
 </div>
 
-<!-- healthCenterUsageLegend - vertical graduated -->
+<!-- healthCenterUsageLegend - graduated -->
 <div id='healthCenterUsageLegend' style='display:none'>
 <div class='map-legendGraduated'>
 	<div class='legend-name'>
