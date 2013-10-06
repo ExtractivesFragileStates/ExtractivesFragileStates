@@ -102,15 +102,25 @@ sections:
     - layerid: health
       label: Health
       maps:
-        - htmlid: healthCenter
-          label: Health Centers
-          mapid: 'helsinki.Liberia_HealthCenter'
-          legend: healthCenterLegend
+        - htmlid: healthCenterDistance
+          label: PHC Distance
+          mapid: 'helsinki.Liberia_Health_HealthCenterDistance'
+          legend: healthCenterDistanceLegend
           text: healthText
-        - htmlid: malaria
-          label: Disease
-          mapid: helsinki.Liberia_Disease
-          legend: landCoverLegend
+        - htmlid: healthCenterUsage
+          label: PHC Usage
+          mapid: 'helsinki.Liberia_Health_HealthCenterUsage'
+          legend: healthCenterUsageLegend
+          text: healthText
+        - htmlid: childImmunization
+          label: Child Immunization
+          mapid: helsinki.Liberia_Health_Immunization
+          legend: immunizationLegend
+          text: healthText
+        - htmlid: childDisease
+          label: Childhood Disease
+          mapid: helsinki.Liberia_Health_Disease
+          legend: diseaseLegend
           text: healthText
   - sectionid: extractives
     label: EXTRACTIVES
@@ -242,19 +252,19 @@ sections:
 </div>
 </div>
 
-
 <!-- schoolLegend - vertical graduated -->
 <div id='schoolLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Percent in School</div>
+		<div class='legend-title'>In School (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>32% - 56%</li>
-			<li><span style='background:#FC8D59;'></span>56% - 65%</li>
-			<li><span style='background:#E34A33;'></span>65% - 80%</li>
-			<li><span style='background:#B30000;'></span>80% +</li>
+			<li><span style='background:#FEF0D9;'></span>32 - 51</li>
+			<li><span style='background:#FFD9A5;'></span>51 - 59</li>
+			<li><span style='background:#FAA682;'></span>59 - 65</li>
+			<li><span style='background:#E76C5B;'></span>65 - 80</li>
+			<li><span style='background:#D85151;'></span>> 80</li>
 		</ul>
 	</div>
 	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
@@ -262,18 +272,38 @@ sections:
 </div>
 
 
-<!-- healthCenterLegend - vertical graduated -->
-<div id='healthCenterLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<!-- healthCenterDistanceLegend - vertical graduated -->
+<div id='healthCenterDistanceLegend' style='display:none'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>w/in 5 miles of<br>Health Center</div>
+		<div class='legend-title'>Live w/in 5 miles of a<br>Primary Health Center (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>30% - 55%</li>
-			<li><span style='background:#FC8D59;'></span>55% - 65%</li>
-			<li><span style='background:#E34A33;'></span>65% - 75%</li>
-			<li><span style='background:#B30000;'></span>75% +</li>
+			<li><span style='background:#FEF0D9;'></span>32 - 51</li>
+			<li><span style='background:#FFD9A5;'></span>51 - 59</li>
+			<li><span style='background:#FAA682;'></span>59 - 66</li>
+			<li><span style='background:#E76C5B;'></span>66 - 78</li>
+			<li><span style='background:#D85151;'></span>> 78</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
+</div>
+</div>
+
+<!-- healthCenterUsageLegend - vertical graduated -->
+<div id='healthCenterUsageLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Primary Health Center<br>Usage Rate</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>.73-.95</li>
+			<li><span style='background:#FFD9A5;'></span>.95-1.21</li>
+			<li><span style='background:#FAA682;'></span>1.21-1.53</li>
+			<li><span style='background:#E76C5B;'></span>1.53-1.77</li>
+			<li><span style='background:#D85151;'></span>> 1.77</li>
 		</ul>
 	</div>
 	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
@@ -281,23 +311,48 @@ sections:
 </div>
 
 
-<!-- malariaLegend - vertical graduated -->
-<div id='malariaLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<!-- immunizationLegend - vertical graduated -->
+<div id='immunizationLegend' style='display:none'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Malaria Cases</div>
+		<div class='legend-title'>Immunization Rate in<br>Children under 1 (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>6% - 12%</li>
-			<li><span style='background:#FC8D59;'></span>12% - 16%</li>
-			<li><span style='background:#E34A33;'></span>16% - 22%</li>
-			<li><span style='background:#B30000;'></span>22% +</li>
+			<li><span style='background:#FEF0D9;'></span>46 - 52</li>
+			<li><span style='background:#FFD9A5;'></span>52 - 57</li>
+			<li><span style='background:#FAA682;'></span>57 - 69</li>
+			<li><span style='background:#E76C5B;'></span>69 - 79</li>
+			<li><span style='background:#D85151;'></span>> 79</li>
 		</ul>
 	</div>
 	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
 </div>
 </div>
+
+
+
+<!-- diseaseLegend - vertical graduated -->
+<div id='diseaseLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Disease Rate in<br>Children under 5 (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>10 - 17</li>
+			<li><span style='background:#FFD9A5;'></span>17 - 22</li>
+			<li><span style='background:#FAA682;'></span>22 - 27</li>
+			<li><span style='background:#E76C5B;'></span>27 - 38</li>
+			<li><span style='background:#D85151;'></span>> 38</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
+</div>
+</div>
+
+
+
 
 
 
