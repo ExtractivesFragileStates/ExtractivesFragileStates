@@ -101,7 +101,7 @@
             extractives.map.removeControl(extractives.mapLegend);
             extractives.mapLegend = null;
           }
-          if (legendid) {
+          if (legendid && document.getElementById(legendid)) {
             extractives.mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(document.getElementById(legendid).innerHTML);
 		        extractives.map.addControl(extractives.mapLegend);
           }
