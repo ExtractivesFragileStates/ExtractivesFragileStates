@@ -687,7 +687,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 	font: 10pt "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	background-color: #faf7f3;
 	color: #333;
-	min-width: 260px;
+	min-width: 280px;
 }
 
 .map-legend .legend-name {
