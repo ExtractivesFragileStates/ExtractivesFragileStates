@@ -145,6 +145,7 @@ sections:
             label: Mining
             mapid: helsinki.Liberia_Mining_Concessions
             text: miningConcessionsText
+            legend: miningConcessionsLegend
           - htmlid: forestry
             label: Forestry
             mapid: helsinki.Liberia_concessions_forest
@@ -194,9 +195,75 @@ sections:
             text: interCommunalRivalryText
 ---
 
-<!-- Legend -->
+<!-- 1. Demographics Legends -->
 
-<!-- Unemployment - vertical graduated -->
+<!-- ethnicityLegend - graduated -->
+<div id='ethnicityLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Dominant Ethnic Group</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#f3ffa1;'></span>Bassa</li>
+			<li><span style='background:#bfca43;'></span>Gio</li>
+			<li><span style='background:#969e3e;'></span>Gola</li>
+			<li><span style='background:#e2bb52;'></span>Grebo</li>
+			<li><span style='background:#6c561a;'></span>Kpelle</li>
+			<li><span style='background:#9caeff;'></span>Krahn</li>
+			<li><span style='background:#B25E4B;'></span>Loma</li>
+			<li><span style='background:#B5C270;'></span>Sapo</li>
+			<li><span style='background:#A3465E;'></span>Vai</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
+</div>
+</div>
+
+<!-- ethnicInteractionLegend - graduated -->
+<div id='ethnicInteractionLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Interact Daily with<br>Other Ethnicities (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>50 - 57</li>
+			<li><span style='background:#FFD9A5;'></span>57 - 63</li>
+			<li><span style='background:#FAA682;'></span>63 - 70</li>
+			<li><span style='background:#E76C5B;'></span>70 - 76</li>
+			<li><span style='background:#D85151;'></span>> 76</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
+</div>
+</div>
+
+
+
+
+<!-- 2. Development Legends -->
+
+
+<!-- wealthIndexLegend - graduated -->
+<div id='wealthIndexLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Wealth Index</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>1 - 46</li>
+			<li><span style='background:#FFD9A5;'></span>46 - 57</li>
+			<li><span style='background:#FAA682;'></span>57 - 67</li>
+			<li><span style='background:#E76C5B;'></span>67 - 81</li>
+			<li><span style='background:#D85151;'></span>> 81</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='https://wca.humanitarianresponse.info/en/system/files/documents/files/CFSNS%20LIberia%20Executive%20Summary_June2013.pdf'>Liberia Comprehensive Food Security<br>and Nutrition Survey (CFSNS) June 2013</a></div>
+</div>
+
+<!-- Unemployment - graduated -->
 <div id='unemploymentLegend' style='display:none'>
 <div class='map-legendGraduated'>
 	<div class='legend-name'>
@@ -254,6 +321,77 @@ sections:
 	<div class='legend-source'><b>Source:</b> <a href="http://www.undp.org/content/undp/en/home/librarypage/mdg/mdg-reports/africa-collection.html">Liberia Institute of<br>Statistics and Geo-Information<br>Services</a></div>
 </div>
 </div>
+
+
+
+
+
+<!-- foodInsecurityLegend - vertical graduated -->
+<div id='foodInsecurityLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Food Insecurity (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>20 - 55</li>
+			<li><span style='background:#FFD9A5;'></span>55 - 61</li>
+			<li><span style='background:#FAA682;'></span>61 - 66</li>
+			<li><span style='background:#E76C5B;'></span>66 - 78</li>
+			<li><span style='background:#D85151;'></span>> 78</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='https://wca.humanitarianresponse.info/en/system/files/documents/files/CFSNS%20LIberia%20Executive%20Summary_June2013.pdf'>Liberia Comprehensive Food Security<br>and Nutrition Survey (CFSNS) June 2013</a></div>
+</div>
+</div>
+
+<!-- foodPoorConsumptionLegend - vertical graduated -->
+<div id='foodPoorConsumptionLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Poor Consumption (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>3 - 39</li>
+			<li><span style='background:#FFD9A5;'></span>39 - 48</li>
+			<li><span style='background:#FAA682;'></span>48 - 62</li>
+			<li><span style='background:#E76C5B;'></span>62 - 68</li>
+			<li><span style='background:#D85151;'></span>> 68</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='https://wca.humanitarianresponse.info/en/system/files/documents/files/CFSNS%20LIberia%20Executive%20Summary_June2013.pdf'>Liberia Comprehensive Food Security<br>and Nutrition Survey (CFSNS) June 2013</a></div>
+</div>
+</div>
+
+<!-- foodMalnutritionLegend - vertical graduated -->
+<div id='foodMalnutritionLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Malnutrition (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>19 - 33</li>
+			<li><span style='background:#FFD9A5;'></span>33 - 38</li>
+			<li><span style='background:#FAA682;'></span>38 - 42</li>
+			<li><span style='background:#E76C5B;'></span>42 - 46</li>
+			<li><span style='background:#D85151;'></span>> 46</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='https://wca.humanitarianresponse.info/en/system/files/documents/files/CFSNS%20LIberia%20Executive%20Summary_June2013.pdf'>Liberia Comprehensive Food Security<br>and Nutrition Survey (CFSNS) June 2013</a></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- schoolLegend - graduated -->
 <div id='schoolLegend' style='display:none'>
@@ -359,6 +497,54 @@ sections:
 
 
 
+
+
+
+<!-- 3. Environment Legends -->
+
+<!-- LandCover Legend - vertical categorized -->
+<div id='landCoverLegend' style='display:none'>
+<div class='map-legendVerticalCategorized'>
+	<div class='legend-name'>
+		<div class='legend-title'>Land Cover</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#43c71e;'></span>Forest</li>
+			<li><span style='background:#e98b55;'></span>Mixed Agriculture and Forest</li>
+			<li><span style='background:#cf3b4b;'></span>Agriculture</li>
+			<li><span style='background:#35dab3;'></span>Water</li>
+			<li><span style='background:#bb5ddf;'></span>Other</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="http://www.moa.gov.lr/index.php">Liberia Ministry of Agriculture</a><br>and <a href='http://www.fda.gov.lr/'>Liberia Forest Development Authority</a></div>
+</div>
+</div>
+
+
+
+<!-- 4. Extractives Legends -->
+
+<!-- resource Legend - vertical categorized -->
+<div id='resourceLegend' style='display:none'>
+<div class='map-legendVerticalCategorized'>
+	<div class='legend-name'>
+		<div class='legend-title'>Resources</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#f3ca44;'></span>Gold</li>
+			<li><span style='background:#7d92d7;'></span>Diamonds</li>
+			<li><span style='background:#8d8681;'></span>Iron Ore</li>
+<!--			<li><span style='background:#c68aad;'></span>Bauxite</li>
+			<li><span style='background:#afd180;'></span>Rutile</li>
+-->		</ul>
+	<div class='legend-description'></div>
+	</div>
+	<div class='legend-source'><b>Source:</b> Marco River Resources, Inc.</div>
+</div>
+</div>
+
 <!-- Geology Legend - vertical categorized -->
 <div id='geologyLegend' style='display:none'>
 <div class='map-legendVerticalCategorized'>
@@ -383,157 +569,35 @@ sections:
 			<li><span style='background:#dbb640;'></span>Paleoproterozoic Tholeiitic Volcanosediments</li>
 			<li><span style='background:#cf3b4b;'></span>Paleoproteroic Sediments</li>
 		</ul>
-	<div class='legend-description'>HOVER over a province for details on its mineral wealth</div>
-	</div>
 	<div class='legend-source'><b>Source:</b> <a href="http://www.sigafrique.net/">SIG Afrique</a> Geology data</div>
 </div>
 </div>
 
-<!-- LandCover Legend - vertical categorized -->
-<div id='landCoverLegend' style='display:none'>
-<div class='map-legendVerticalCategorized'>
+<!-- miningConcessions Legend - table -->
+<div id='miningConcessionsLegend' style='display:none'>
+<div class='map-legendTable'>
 	<div class='legend-name'>
-		<div class='legend-title'>Land Cover</div>
+		<div class='legend-title'>Mining Concessions</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#43c71e;'></span>Forest</li>
-			<li><span style='background:#e98b55;'></span>Mixed Agriculture and Forest</li>
-			<li><span style='background:#cf3b4b;'></span>Agriculture</li>
-			<li><span style='background:#35dab3;'></span>Water</li>
-			<li><span style='background:#bb5ddf;'></span>Other</li>
+			<li><span class='mineral'></span><span class='type'>Exploration</span><span class='type'>Development</span></li>
+			<li><span class='mineral'>Gold</span><img><img></li>
+			<li><span class='mineral'>Iron</span><img><img></li>
+			<li><span class='mineral'>Diamonds</span><img><img></li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> <a href="http://www.moa.gov.lr/index.php">Liberia Ministry of Agriculture</a><br>and <a href='http://www.fda.gov.lr/'>Liberia Forest Development Authority</a></div>
-</div>
-</div>
-
-<!-- resource Legend - vertical categorized -->
-<div id='resourceLegend' style='display:none'>
-<div class='map-legendVerticalCategorized'>
-	<div class='legend-name'>
-		<div class='legend-title'>Resources</div>
+	<div class='legend-source'>Source: <a href="#">USGS, Important Areas for Mineral Investment</a>, 2011</div>
 	</div>
-	<div class='legend-scale'>
-		<ul class='legend-labels'>
-			<li><span style='background:#f3ca44;'></span>Gold</li>
-			<li><span style='background:#7d92d7;'></span>Diamonds</li>
-			<li><span style='background:#8d8681;'></span>Iron Ore</li>
-<!--			<li><span style='background:#c68aad;'></span>Bauxite</li>
-			<li><span style='background:#afd180;'></span>Rutile</li>
--->		</ul>
-	<div class='legend-description'></div>
-	</div>
-	<div class='legend-source'><b>Source:</b> Marco River Resources, Inc.</div>
 </div>
 </div>
 
 
-<!-- ethnicity Legend - vertical categorized -->
-<!--
-<div id='ethnicityLegend' style='display:none'>
-<div class='map-legendVerticalCategorized'>
-	<div class='legend-name'>
-		<div class='legend-title'>Dominant<br>Ethnic Group</div>
-	</div>
-	<div class='legend-scale'>
-		<ul class='legend-labels'>
-			<li><span style='background:#f3ffa1;'></span>Bassa</li>
-			<li><span style='background:#bfca43;'></span>Gio</li>
-			<li><span style='background:#969e3e;'></span>Gola</li>
-			<li><span style='background:#e2bb52;'></span>Grebo</li>
-			<li><span style='background:#6c561a;'></span>Kpelle</li>
-			<li><span style='background:#9caeff;'></span>Krahn</li>
-			<li><span style='background:#B25E4B;'></span>Loma</li>
-			<li><span style='background:#B5C270;'></span>Sapo</li>
-			<li><span style='background:#A3465E;'></span>Vai</li>
-		</ul>
-	<div class='legend-description'></div>
-	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
-</div>
-</div>
--->
-
-<div id='ethnicityLegend' style='display:none'>
-<div class='map-legendGraduated'>
-	<div class='legend-name'>
-		<div class='legend-title'>Dominant Ethnic Group</div>
-	</div>
-	<div class='legend-scale'>
-		<ul class='legend-labels'>
-			<li><span style='background:#f3ffa1;'></span>Bassa</li>
-			<li><span style='background:#bfca43;'></span>Gio</li>
-			<li><span style='background:#969e3e;'></span>Gola</li>
-			<li><span style='background:#e2bb52;'></span>Grebo</li>
-			<li><span style='background:#6c561a;'></span>Kpelle</li>
-			<li><span style='background:#9caeff;'></span>Krahn</li>
-			<li><span style='background:#B25E4B;'></span>Loma</li>
-			<li><span style='background:#B5C270;'></span>Sapo</li>
-			<li><span style='background:#A3465E;'></span>Vai</li>
-		</ul>
-	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
-</div>
-</div>
-
-<!-- ethnicInteractionLegend - vertical graduated -->
-<div id='ethnicInteractionLegend' style='display:none'>
-<div class='map-legendGraduated'>
-	<div class='legend-name'>
-		<div class='legend-title'>Interact Daily with<br>Other Ethnicities (%)</div>
-	</div>
-	<div class='legend-scale'>
-		<ul class='legend-labels'>
-			<li><span style='background:#FEF0D9;'></span>50 - 57</li>
-			<li><span style='background:#FFD9A5;'></span>57 - 63</li>
-			<li><span style='background:#FAA682;'></span>63 - 70</li>
-			<li><span style='background:#E76C5B;'></span>70 - 76</li>
-			<li><span style='background:#D85151;'></span>> 76</li>
-		</ul>
-	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
-</div>
-</div>
 
 
-<!-- noPeaceTribalLegend - vertical graduated -->
-<div id='noPeaceTribalLegend' style='display:none'>
-<div class='map-legendGraduated'>
-	<div class='legend-name'>
-		<div class='legend-title'>Believe that Tribal Conflicts<br>Cannot be Resolved (%)</div>
-	</div>
-	<div class='legend-scale'>
-		<ul class='legend-labels'>
-			<li><span style='background:#FEF0D9;'></span>0 - 2</li>
-			<li><span style='background:#FFD9A5;'></span>2 - 3</li>
-			<li><span style='background:#FAA682;'></span>3 - 4</li>
-			<li><span style='background:#E76C5B;'></span>4 - 5</li>
-			<li><span style='background:#D85151;'></span>> 5</li>
-		</ul>
-	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
-</div>
-</div>
 
-<!-- noPeaceDiscriminationLegend - vertical graduated -->
-<div id='noPeaceDiscriminationLegend' style='display:none'>
-<div class='map-legendGraduated'>
-	<div class='legend-name'>
-		<div class='legend-title'>Believe that Discrimination<br>Prevents Peace (%)</div>
-	</div>
-	<div class='legend-scale'>
-		<ul class='legend-labels'>
-			<li><span style='background:#FEF0D9;'></span>0 - 2</li>
-			<li><span style='background:#FFD9A5;'></span>2 - 3</li>
-			<li><span style='background:#FAA682;'></span>3 - 4</li>
-			<li><span style='background:#E76C5B;'></span>4 - 6</li>
-			<li><span style='background:#D85151;'></span>> 6</li>
-		</ul>
-	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
-</div>
-</div>
+
+<!-- 4. Stresses Legends -->
 
 <!-- landDisputesLegend - vertical graduated -->
 <div id='landDisputesLegend' style='display:none'>
@@ -612,79 +676,46 @@ sections:
 </div>
 
 
-<!-- foodInsecurityLegend - vertical graduated -->
-<div id='foodInsecurityLegend' style='display:none'>
+<!-- noPeaceTribalLegend - vertical graduated -->
+<div id='noPeaceTribalLegend' style='display:none'>
 <div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Food Insecurity (%)</div>
+		<div class='legend-title'>Believe that Tribal Conflicts<br>Cannot be Resolved (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FEF0D9;'></span>20 - 55</li>
-			<li><span style='background:#FFD9A5;'></span>55 - 61</li>
-			<li><span style='background:#FAA682;'></span>61 - 66</li>
-			<li><span style='background:#E76C5B;'></span>66 - 78</li>
-			<li><span style='background:#D85151;'></span>> 78</li>
+			<li><span style='background:#FEF0D9;'></span>0 - 2</li>
+			<li><span style='background:#FFD9A5;'></span>2 - 3</li>
+			<li><span style='background:#FAA682;'></span>3 - 4</li>
+			<li><span style='background:#E76C5B;'></span>4 - 5</li>
+			<li><span style='background:#D85151;'></span>> 5</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> <a href='https://wca.humanitarianresponse.info/en/system/files/documents/files/CFSNS%20LIberia%20Executive%20Summary_June2013.pdf'>Liberia Comprehensive Food Security<br>and Nutrition Survey (CFSNS) June 2013</a></div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
 </div>
 </div>
 
-<!-- foodPoorConsumptionLegend - vertical graduated -->
-<div id='foodPoorConsumptionLegend' style='display:none'>
+<!-- noPeaceDiscriminationLegend - vertical graduated -->
+<div id='noPeaceDiscriminationLegend' style='display:none'>
 <div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Poor Consumption (%)</div>
+		<div class='legend-title'>Believe that Discrimination<br>Prevents Peace (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FEF0D9;'></span>3 - 39</li>
-			<li><span style='background:#FFD9A5;'></span>39 - 48</li>
-			<li><span style='background:#FAA682;'></span>48 - 62</li>
-			<li><span style='background:#E76C5B;'></span>62 - 68</li>
-			<li><span style='background:#D85151;'></span>> 68</li>
+			<li><span style='background:#FEF0D9;'></span>0 - 2</li>
+			<li><span style='background:#FFD9A5;'></span>2 - 3</li>
+			<li><span style='background:#FAA682;'></span>3 - 4</li>
+			<li><span style='background:#E76C5B;'></span>4 - 6</li>
+			<li><span style='background:#D85151;'></span>> 6</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> <a href='https://wca.humanitarianresponse.info/en/system/files/documents/files/CFSNS%20LIberia%20Executive%20Summary_June2013.pdf'>Liberia Comprehensive Food Security<br>and Nutrition Survey (CFSNS) June 2013</a></div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
 </div>
 </div>
 
-<!-- foodMalnutritionLegend - vertical graduated -->
-<div id='foodMalnutritionLegend' style='display:none'>
-<div class='map-legendGraduated'>
-	<div class='legend-name'>
-		<div class='legend-title'>Malnutrition (%)</div>
-	</div>
-	<div class='legend-scale'>
-		<ul class='legend-labels'>
-			<li><span style='background:#FEF0D9;'></span>19 - 33</li>
-			<li><span style='background:#FFD9A5;'></span>33 - 38</li>
-			<li><span style='background:#FAA682;'></span>38 - 42</li>
-			<li><span style='background:#E76C5B;'></span>42 - 46</li>
-			<li><span style='background:#D85151;'></span>> 46</li>
-		</ul>
-	</div>
-	<div class='legend-source'><b>Source:</b> <a href='https://wca.humanitarianresponse.info/en/system/files/documents/files/CFSNS%20LIberia%20Executive%20Summary_June2013.pdf'>Liberia Comprehensive Food Security<br>and Nutrition Survey (CFSNS) June 2013</a></div>
-</div>
 
-<!-- wealthIndexLegend - vertical graduated -->
-<div id='wealthIndexLegend' style='display:none'>
-<div class='map-legendGraduated'>
-	<div class='legend-name'>
-		<div class='legend-title'>Wealth Index</div>
-	</div>
-	<div class='legend-scale'>
-		<ul class='legend-labels'>
-			<li><span style='background:#FEF0D9;'></span>1 - 46</li>
-			<li><span style='background:#FFD9A5;'></span>46 - 57</li>
-			<li><span style='background:#FAA682;'></span>57 - 67</li>
-			<li><span style='background:#E76C5B;'></span>67 - 81</li>
-			<li><span style='background:#D85151;'></span>> 81</li>
-		</ul>
-	</div>
-	<div class='legend-source'><b>Source:</b> <a href='https://wca.humanitarianresponse.info/en/system/files/documents/files/CFSNS%20LIberia%20Executive%20Summary_June2013.pdf'>Liberia Comprehensive Food Security<br>and Nutrition Survey (CFSNS) June 2013</a></div>
-</div>
+
 
 
 
@@ -693,25 +724,9 @@ sections:
 <p>As it embarks on this new long-term growth strategy, Liberia, must turn to its past to learn lessons. Natural resources have long shaped Liberia’s historical development up to and through its civil war.  Revenues were repatriated abroad and rents and patronage distributed among elites, while rural and indigenous Liberians were instead largely apportioned the environmental and social impacts of mid-Twentieth Century resource extraction.  The map highlights correlations of natural resource deposits, poverty and food insecurity, suggesting both the historical failure of natural resources to contribute to local development in Liberia, as well as the net-negative impacts of exploratory and very-early-stage (read: non-revenue-generating) contemporary concessions thus far.  Without newfound and far-reaching commitments to good governance (both de jure and de facto) and inclusive, citizen-oriented development, Liberia’s resource-tied development may once again be overwhelmed by the intrinsic fragility stressors posed by resource dependence.</p>
 </div>
 
-<div id="environmentText" style='display:none'>
-<h1>Environment</h1>
-<p>Liberia is the most heavily forested country in West Africa, with forests covering 45% of its land mass (4.4 million Ha).  Its equatorial and tropical environments are home to extremely rich biodiversity, including approximately 240 tree species, 2,000 flowering plants, 125 mammal species, 590 bird species, 74 reptiles and amphibians and over 1,000 insect species.   In addition to providing wildlife habitat, Liberia forests are essential for soil and water conservation, sustainable agriculture, ecotourism, climate stability and local community livelihoods.  Conservation is one of three cornerstones of Liberia’s forestry development policy; one study approximates that a conservation-oriented low carbon development strategy could provide Liberia with US$55 Million per year in carbon revenues.</p>
-<p>A number of protected areas have been proposed and established in Liberia, but securing them has proven difficult.  Paltry monitoring and conservation resources are often overmatched by difficult terrain, traditional non-timber forest uses, and illicit hunters, alluvial miners and pitsawyers.  In addition, conservation priorities are often called into question by the overlap of protected zones and natural resource concentrations: see, for instance, the proximity of iron ore to protected areas around Wologizi, and the heated national debate currently ensuing.  Agriculture –traditional “slash and burn,” and contemporary foreign concessions for rubber and palm oil – further pose significant deforestation threats.</p>
-<p>For all its natural wealth, Liberia is environmentally vulnerable.  Coastal erosion already has led to increasing displacement in Liberia’s coastal cities.  Rainfall variation undermines predictable hydropower generation, and contributes to infrastructure depreciation and transportation constraints.  Climate-change related increases in sea level and rainfall pose additional threats, including the spread of diseases such as cholera and malaria.  In this context, natural resource extraction poses further environmental strain, the mitigation of which will require the collective efforts of investors, citizens and government.</p>
-</div>
-
-
-
-
-
-
-
-
-
 <div id="unemploymentText" style="display:none">
 <h1>Poverty</h1>
 <p>Postwar economic recovery and growth has contributed to a reduction in the national poverty level from 63.8% in 2007 to 56.3% in 2010, according to the Core Welfare Indicator Questionnaire, though the translation of this economic growth into development impact has been uneven.  Liberia ranks 174th out of 186 countries in the 2013 Human Development Index, up from 182nd in 2011, suggesting that while Liberia has made development headway from the profound depths of the immediate aftermath of the war in 2003, Liberians endure under extremely difficult living conditions.</p>
-<h2>Unemployment</h2>
 <p>The map starkly shows the disproportionate incidence of underdevelopment outside of Liberia’s capital, and in particular in the resource-rich southeast and northwest.  Natural resource extraction – chiefly mining, agriculture and forestry – is being relied upon to create employment in these areas, although the majority of the labor force lacks the schooling and vocational training requisite for positions other than unskilled labor.  Extractive companies have also committed in concession agreements to build schools, housing, clinics, hospitals and infrastructure primarily for the use of employee families, though with some provision made for public access at reasonable cost.   Companies are further obligated to contribute annually to trade development, scholarship and local social development funds on top of their other tax and royalty obligations.  Large-scale iron ore investors, for example, contribute upwards of US$3M per year toward locally-managed Social Development Funds, which have been plagued by misappropriation and political manipulation in their early days.</p>
 </div>
 
@@ -744,8 +759,12 @@ sections:
 
 
 
-
-
+<div id="environmentText" style='display:none'>
+<h1>Environment</h1>
+<p>Liberia is the most heavily forested country in West Africa, with forests covering 45% of its land mass (4.4 million Ha).  Its equatorial and tropical environments are home to extremely rich biodiversity, including approximately 240 tree species, 2,000 flowering plants, 125 mammal species, 590 bird species, 74 reptiles and amphibians and over 1,000 insect species.   In addition to providing wildlife habitat, Liberia forests are essential for soil and water conservation, sustainable agriculture, ecotourism, climate stability and local community livelihoods.  Conservation is one of three cornerstones of Liberia’s forestry development policy; one study approximates that a conservation-oriented low carbon development strategy could provide Liberia with US$55 Million per year in carbon revenues.</p>
+<p>A number of protected areas have been proposed and established in Liberia, but securing them has proven difficult.  Paltry monitoring and conservation resources are often overmatched by difficult terrain, traditional non-timber forest uses, and illicit hunters, alluvial miners and pitsawyers.  In addition, conservation priorities are often called into question by the overlap of protected zones and natural resource concentrations: see, for instance, the proximity of iron ore to protected areas around Wologizi, and the heated national debate currently ensuing.  Agriculture –traditional “slash and burn,” and contemporary foreign concessions for rubber and palm oil – further pose significant deforestation threats.</p>
+<p>For all its natural wealth, Liberia is environmentally vulnerable.  Coastal erosion already has led to increasing displacement in Liberia’s coastal cities.  Rainfall variation undermines predictable hydropower generation, and contributes to infrastructure depreciation and transportation constraints.  Climate-change related increases in sea level and rainfall pose additional threats, including the spread of diseases such as cholera and malaria.  In this context, natural resource extraction poses further environmental strain, the mitigation of which will require the collective efforts of investors, citizens and government.</p>
+</div>
 
 
 
@@ -781,13 +800,6 @@ sections:
 <h2>Petroleum</h2>
 <p>Following the successful exploitation of the bookending Jubilee oil field in Ghana and Mercury field in Sierra Leone, major international oil companies including Chevron, Exxon, Anadarko, Tullow and Repsol have acquired stakes in Liberian offshore blocks along the West Africa Transform Margin.  A number of deeper offshore blocks are reserved for later tender.  The government and investors are bullish, and Liberians’ expectations for significant revenue streams (in the billions) and future employment opportunities are heightened.  At present, though, operations remain in an exploration phase, and test-drilling has yet to reveal deposits that are definitively commercially viable.  In anticipation of the sector’s development, agreed delimitation of maritime boundaries with neighbors is a priority, as is institutional reform.</p>
 </div>
-
-
-
-
-
-
-
 
 
 
