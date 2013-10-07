@@ -85,6 +85,7 @@
       var mapid = this.getAttribute('mapid');
       var sectionid = this.getAttribute('sectionid');
       var grid = $(this).hasClass('grid');
+      var legendid = this.getAttribute('legendid');
 
       if (grid) {
         if ($(this).prev().hasClass('active')) {
@@ -95,12 +96,26 @@
           extractives.map.addControl(L.mapbox.gridControl(gridLayer));
           $('.grid').removeClass('active');
           $(this).addClass('active');
+
+          if (extractives.mapLegend) {
+            extractives.map.removeControl(extractives.mapLegend);
+            extractives.mapLegend = null;
+          }
+          if (legendid) {
+            extractives.mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(document.getElementById(legendid).innerHTML);
+		        extractives.map.addControl(extractives.mapLegend);
+          }
+
         }
       } else {
         // Toggle off this layer
         if ($(this).hasClass('active')) {
           extractives.layer_groups[ sectionid ].clearLayers();
           $(this).removeClass('active');
+          if (extractives.mapLegend && $(this).next().hasClass('active')) {
+            extractives.map.removeControl(extractives.mapLegend);
+            extractives.mapLegend = null;
+          }
           $(this).next().removeClass('possible');
           $(this).next().removeClass('active');
         } else {
