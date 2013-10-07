@@ -169,7 +169,7 @@
         //add buttons
         var menu = $('#' + layerId).parent();
         menu.show();
-		    legendHtml = menu[0].outerHTML + "<div class='clear' style='padding-bottom:10px'></div>" + page_data.mapboxLayers[layerId]["legend"];
+		    legendHtml = menu[0].outerHTML + "<div style='clear: both; margin-bottom: 6px'></div>" + page_data.mapboxLayers[layerId]["legend"];
 		    this.mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(legendHtml)
 		    this.map.addControl(this.mapLegend);
         $('.maplink').off('click', this.maplink);

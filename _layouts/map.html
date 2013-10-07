@@ -30,16 +30,12 @@
         {% endfor %}
       	</div>
         
-        {% for layer in section.layers %} <!-- map menu buttons. make three wide -->
+        {% for layer in section.layers %}
           {% if layer.maps.size > 1 %}
-            {% assign button_count = 0 %}
-	          <div id='{{layer.layerid}}-menu' class='menu layerMenu'>
-            {% for map in layer.maps %}   
-              {% capture tmp %}{{ button_count | plus:1 }}{% endcapture %}
-              {% assign button_count = tmp %} 
-          		<a href="#" id="{{map.htmlid}}" class="maplink">{{map.label}}</a>
-              {% capture tmp %}{{button_count | modulo:3}}{% endcapture %}
-              {% if tmp == "0" %}<br/>{% endif %}
+          		{% capture layer_class %}wide{{layer.maps.size}}{% endcapture %}
+	          	<div id='{{layer.layerid}}-menu' class="menu layerMenu {{layer_class}}">
+            {% for map in layer.maps %}
+          		<a href="#" id="{{map.htmlid}}" class="maplink"><div>{{map.label}}</div></a>
             {% endfor %}
         	  </div>
           {% endif %}

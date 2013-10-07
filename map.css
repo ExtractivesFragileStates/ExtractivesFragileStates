@@ -243,39 +243,37 @@ body { margin:0; padding:0; }
     	color: #bbbbbb;
     }
 
-#content .wide1 > a {
+.wide1 > a {
 	width: 100%; 
 }
 
-#content .wide2 > a {
+.wide2 > a {
 	width: 50%; 
 }
 
-#content .wide3 > a {
-	width: 33%; /* 119px; */
+.wide3 > a {
+	width: 33%; 
 }
 
-#content .wide3 > a:last-child {
-	width: 34%; /* 120px; */
+.wide3 > a:last-child {
+	width: 34%; 
 }
 
-#content .wide4 > a {
-	width: 25%; /* 89px; */
+.wide4 > a {
+	width: 25%; 
 }
 
-#content .wide5 > a {
+.wide5 > a {
 	width: 20%;
-}
-
-#text .head h1,
-#gisText .head h1 {
-	font-size: 190%; 
-	display: inline;
 }
 
 
 /******************************* Narrative View *******************************/
 
+.menu {
+    z-index: 1001;
+}
+	
 .switcher-box {
     position: absolute;
     width: 100%;
@@ -285,26 +283,41 @@ body { margin:0; padding:0; }
     border-bottom: 1px solid #BBB;
 }
 
+.menu a,
 .switcher-box a {
 	font-family: 'OswaldBook',  "Arial Narrow", sans-serif;
 	font-weight: normal;
     float: left;
-    padding: 0; /* 11px 0 11px 0;  */
-    /* border: 1px solid #BBB; */
-    border-right-width: 0;
+    padding: 0;
     text-align: center;
     text-decoration: none;
     color: #333;
 	background: #fff;
 }
+	.menu a {
+		background: transparent;
+	}
 	.switcher-box a div {
 		height: 45px;
   		line-height: 45px;
   		width: 100%;
 		border-left: 1px solid #BBB;
 	}
+	.menu a div {
+		height: 28px;
+    	line-height: 28px;
+    	width: 100%;
+    	border-left: 1px solid #cbc4b3;
+    }
+    .menu a:last-child div {
+    	border-right: 1px solid #cbc4b3;
+    }
 	.switcher-box a:first-child div {
 		border-left: 0;
+	}
+	.menu a.two-line div,
+	.switcher-box a.two-line div {
+		line-height: 100%;
 	}
 
 
@@ -344,6 +357,10 @@ body { margin:0; padding:0; }
 
 
 /******************************* GIS *******************************/
+#gisText .head img {
+	float: left;
+	margin: 0 4px;
+}
 
 #gisText ul {
 	margin: 0 14px 8px;
@@ -560,41 +577,6 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
 
-
-
-/******************************* Menus: displayed on map, not in content bar *******************************/
-
-.menu{
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    /* position:absolute;
-    top:40px;
-    left: 366px; */
-    z-index: 1001;
-}
-
-.menu > a {
-    padding: 10px 0 10px 0; /* check! */
-    border: 1px solid #cbc4b3;
-    width: 106px;
-    float: left;
-    height:100%;
-    text-align: center;
-}
-
-.menu a:last-child {
-    border-bottom-width: 1px;
-    -webkit-border-radius: 0 0 2px 2px;
-    border-radius: 0 0 2px 2px;
-}
-
-.menu a:first-child {
-    -webkit-border-radius: 2px 2px 0 0;
-    border-radius: 2px 2px 0 0;
-}
-
-
-
-
 /******************************* Tooltips *******************************/
 
 .leaflet-top {
@@ -709,7 +691,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 	font: 10pt "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	background-color: #faf7f3;
 	color: #333;
-	/* width: 265px;  Delete */
+	min-width: 280px;
 }
 
 .map-legend .legend-name {
@@ -741,12 +723,12 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 	clear: both;
 }
 
-.map-legend a {
+.map-legend .legend-source a {
 	color: #74A9CF;
 	font-weight: normal;
 }
 
-.map-legend a:hover{
+.map-legend .legend-source a:hover{
 	text-decoration: underline;
 	color: #AAAAAA;
 }
@@ -797,11 +779,16 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 
 /*  Horizontal Graduated Legend  */
+.map-legendGraduated .legend-scale {
+	text-align: center;
+}
+
 .map-legendGraduated .legend-scale ul {
 	margin: 0;
 	padding: 0;
-	float: left;
 	list-style: none;
+	display: inline-block;
+	overflow: hidden;
 }
 .map-legendGraduated .legend-scale ul li {
 	display: block;

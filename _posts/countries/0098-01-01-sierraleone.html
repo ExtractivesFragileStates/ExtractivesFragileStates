@@ -38,7 +38,7 @@ sections:
         - htmlid: unemployment
           label: Unemployment
           mapid: helsinki.SL_Employment
-          legend: unLegend
+          legend: unemploymentLegend
           text: developmentText
         - htmlid: rural
           label: Rural Population
@@ -51,7 +51,7 @@ sections:
           legend: agLegend
           text: developmentText
         - htmlid: electricity
-          label: Percent Electric
+          label: Electricity
           mapid: helsinki.SL_Electricity
           legend: elecLegend
           text: developmentText
@@ -61,12 +61,12 @@ sections:
         - htmlid: school_percent
           label: Percent in School
           mapid: helsinki.SL_PrimarySchool
-          legend: schoLegend
+          legend: educationLegend
           text: developmentText
         - htmlid: literacy
           label: Adult Literacy
           mapid: helsinki.SL_Literacy
-          legend: litLegend
+          legend: adultLiteracyLegend
           text: developmentText
     - layerid: health
       label: Health
@@ -74,7 +74,7 @@ sections:
         - htmlid: health_map
           label: Health
           mapid: helsinki.SL_HealthCenterDensity
-          legend: heaLegend
+          legend: healthCenterDensityLegend
           text: developmentText
         - htmlid: water
           label: Drinking Water
@@ -84,7 +84,7 @@ sections:
         - htmlid: cholera
           label: Cholera
           mapid: helsinki.SL_Cholera
-          legend: cholLegend
+          legend: choleraLegend
           text: developmentText
   - sectionid: extractives
     label: EXTRACTIVES
@@ -141,66 +141,25 @@ sections:
 
 <!-- Legend -->
 
-<!-- waterLegend -->
-<div id='waterLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
-	<div class='legend-name'>
-		<div class='legend-title'>Percent Using Rivers<br>or Unprotected Wells</div>
-	</div>
-	<div class='legend-scale'>
-		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>0% - 50%</li>
-			<li><span style='background:#FC8D59;'></span>50% - 63%</li>
-			<li><span style='background:#E34A33;'></span>63% - 78%</li>
-			<li><span style='background:#B30000;'></span>78% +</li>
-		</ul>
-	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.wfp.org/content/sierra-leone-household-food-security-survey-rural-areas-2008' target="_blank">World Food Programme</a>, 2008:<br>Sierra Leone Household Food<br>Security Survey in Rural Areas</div>
-</div>
-</div>
 
-<!-- concessionsLegend -->
-<div id='concessionsLegend' style='display:none'>
-	<div class='map-legendVerticalGraduated'>
-		<div class="legendAttribution">Source: <a href='http://sierraleone.revenuesystems.org/login/auth' target="_blank">Government of Sierra Leone</a>,<br>Ministry of Mines and Resources -<br>Online Repository</div>
-	</div>
-</div>
-
-
-<!-- schoLegend -->
-<div id='schoLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
-	<div class='legend-name'>
-		<div class='legend-title'>Children in<br>Primary School</div>
-	</div>
-	<div class='legend-scale'>
-		<ul class='legend-labels'>
-			<li><span style='background:#B30000;'></span>50% - 57%</li>
-			<li><span style='background:#E34A33;'></span>57% - 64%</li>
-			<li><span style='background:#FC8D59;'></span>64% - 70%</li>
-			<li><span style='background:#FDCC8A;'></span>70% +</li>
-		</ul>
-	</div>
-	<div class='legend-source'><b>Source:</b> World Bank, 2013:<br>A Poverty Profile for Sierra Leone</div>
-</div>
-</div>
-
+<!-- development Legends -->
+<!-- poverty Legends -->
 
 <!-- povLegend -->
 <div id='povLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Percent Poor</div>
+		<div class='legend-title'>Total Poverty (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>20% - 54%</li>
-			<li><span style='background:#FC8D59;'></span>54% - 57%</li>
-			<li><span style='background:#E34A33;'></span>57% - 61%</li>
-			<li><span style='background:#B30000;'></span>61% +</li>
+			<li><span style='background:#FDCC8A;'></span>20 - 54</li>
+			<li><span style='background:#FC8D59;'></span>54 - 57</li>
+			<li><span style='background:#E34A33;'></span>57 - 61</li>
+			<li><span style='background:#B30000;'></span>> 61</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> World Bank, 2013:<br>A Poverty Profile for Sierra Leone</div>
+	<div class='legend-source'><b>Source:</b> World Bank, 2013: A Poverty Profile for Sierra Leone</div>
 </div>
 </div>
 
@@ -242,151 +201,212 @@ sections:
 
 <!-- giniLegend -->
 <div id='giniLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Gini Coefficient</div>
+		<div class='legend-title'>Inequality (Gini Coefficient)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>0 - 0.25</li>
-			<li><span style='background:#FC8D59;'></span>0.25 - 0.30</li>
-			<li><span style='background:#E34A33;'></span>0.30 - 0.33</li>
-			<li><span style='background:#B30000;'></span>0.33 +</li>
+			<li><span style='background:#FDCC8A;'></span>0-0.25</li>
+			<li><span style='background:#FC8D59;'></span>0.25-0.30</li>
+			<li><span style='background:#E34A33;'></span>0.30-0.33</li>
+			<li><span style='background:#B30000;'></span>> 0.33</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> World Bank, 2013:<br>A Poverty Profile for Sierra Leone</div>
+	<div class='legend-source'><b>Source:</b> World Bank, 2013: A Poverty Profile for Sierra Leone</div>
+</div>
+</div>
+
+<!-- unemploymentLegend -->
+<div id='unemploymentLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Unemployment (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>0 - 25</li>
+			<li><span style='background:#FC8D59;'></span>25 - 29</li>
+			<li><span style='background:#E34A33;'></span>29 - 39</li>
+			<li><span style='background:#B30000;'></span>> 39</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.worldcat.org/title/republic-of-sierra-leone-2004-population-and-housing-census-analytical-report-on-employment-and-labour-force/oclc/320249882' target="_blank">Republic of Sierra Leone, 2004 Population and Housing Census,</a><br>Analytical Report on Employment and Labour Force</div>
 </div>
 </div>
 
 <!-- ruralLegend -->
 <div id='ruralLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Rural Households</div>
+		<div class='legend-title'>Rural Households (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>0% - 50%</li>
-			<li><span style='background:#FC8D59;'></span>50% - 70%</li>
-			<li><span style='background:#E34A33;'></span>70% - 80%</li>
-			<li><span style='background:#B30000;'></span>80% +</li>
+			<li><span style='background:#FDCC8A;'></span>0 - 50</li>
+			<li><span style='background:#FC8D59;'></span>50 - 70</li>
+			<li><span style='background:#E34A33;'></span>70 - 80</li>
+			<li><span style='background:#B30000;'></span>> 80</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> World Bank, 2013:<br>A Poverty Profile for Sierra Leone</div>
+	<div class='legend-source'><b>Source:</b> World Bank, 2013: A Poverty Profile for Sierra Leone</div>
 </div>
 </div>
 
 <!-- agLegend -->
 <div id='agLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Agriculture as<br>Main Livelihood</div>
+		<div class='legend-title'>Agriculture as Main Livelihood (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>0% - 49%</li>
-			<li><span style='background:#FC8D59;'></span>49% - 60%</li>
-			<li><span style='background:#E34A33;'></span>60% - 80%</li>
-			<li><span style='background:#B30000;'></span>80% +</li>
+			<li><span style='background:#FDCC8A;'></span>0 - 49</li>
+			<li><span style='background:#FC8D59;'></span>49 - 60</li>
+			<li><span style='background:#E34A33;'></span>60 - 80</li>
+			<li><span style='background:#B30000;'></span>> 80</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> World Bank, 2013:<br>A Poverty Profile for Sierra Leone</div>
+	<div class='legend-source'><b>Source:</b> World Bank, 2013: A Poverty Profile for Sierra Leone</div>
 </div>
 </div>
-
-
-<!-- litLegend -->
-<div id='litLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
-	<div class='legend-name'>
-		<div class='legend-title'>Adult Literacy</div>
-	</div>
-	<div class='legend-scale'>
-		<ul class='legend-labels'>
-			<li><span style='background:#B30000;'></span>0% - 17%</li>
-			<li><span style='background:#E34A33;'></span>17% - 27%</li>
-			<li><span style='background:#FC8D59;'></span>27% - 38%</li>
-			<li><span style='background:#FDCC8A;'></span>38% +</li>
-		</ul>
-	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://hdr.undp.org/en/reports/nationalreports/africa/sierraleone/sierraleone_nhdr_20071.pdf' target="_blank">Sierra Leone Human<br>Development Report 2007</a></div>
-</div>
-</div>
-
 
 <!-- elecLegend -->
 <div id='elecLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Percent Using<br>Electric Lighting</div>
+		<div class='legend-title'>Electric Lighting (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#B30000;'></span>0% - 0.02%</li>
-			<li><span style='background:#E34A33;'></span>0.02% - 0.05%</li>
-			<li><span style='background:#FC8D59;'></span>0.05% - 5%</li>
-			<li><span style='background:#FDCC8A;'></span>5% +</li>
+			<li><span style='background:#B30000;'></span>0-0.02%</li>
+			<li><span style='background:#E34A33;'></span>0.02-0.05</li>
+			<li><span style='background:#FC8D59;'></span>0.05-5</li>
+			<li><span style='background:#FDCC8A;'></span>> 5</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.statistics.sl/final_digest_2006.pdf' target="_blank">Statistics Sierra Leone</a><br>Annual Statistical Digest 2005/2006</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.statistics.sl/final_digest_2006.pdf' target="_blank">Statistics Sierra Leone</a>Annual Statistical Digest 2005/2006</div>
 </div>
 </div>
 
 
-<!-- heaLegend -->
-<div id='heaLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<!-- education legends -->
+
+<!-- educationLegend -->
+<div id='educationLegend' style='display:none'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Persons per<br>Health Center</div>
+		<div class='legend-title'>Children in Primary School (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>0 - 3676</li>
-			<li><span style='background:#FC8D59;'></span>3677 - 5472</li>
-			<li><span style='background:#E34A33;'></span>5473 - 6440</li>
-			<li><span style='background:#B30000;'></span>6441 +</li>
+			<li><span style='background:#B30000;'></span>50 - 57</li>
+			<li><span style='background:#E34A33;'></span>57 - 64</li>
+			<li><span style='background:#FC8D59;'></span>64 - 70</li>
+			<li><span style='background:#FDCC8A;'></span>> 70</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.statistics.sl/final_digest_2006.pdf' target="_blank">Statistics Sierra Leone</a><br>Annual Statistical Digest 2005/2006</div>
+	<div class='legend-source'><b>Source:</b> World Bank, 2013: A Poverty Profile for Sierra Leone</div>
 </div>
 </div>
 
-
-<!-- unLegend -->
-<div id='unLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<!-- adultLiteracyLegend -->
+<div id='adultLiteracyLegend' style='display:none'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Unemployment</div>
+		<div class='legend-title'>Adult Literacy (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>0% - 25%</li>
-			<li><span style='background:#FC8D59;'></span>25% - 29%</li>
-			<li><span style='background:#E34A33;'></span>29% - 39%</li>
-			<li><span style='background:#B30000;'></span>39% +</li>
+			<li><span style='background:#B30000;'></span>0 - 17</li>
+			<li><span style='background:#E34A33;'></span>17 - 27</li>
+			<li><span style='background:#FC8D59;'></span>27 - 38</li>
+			<li><span style='background:#FDCC8A;'></span>> 38</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.worldcat.org/title/republic-of-sierra-leone-2004-population-and-housing-census-analytical-report-on-employment-and-labour-force/oclc/320249882' target="_blank">Republic of Sierra Leone,<br>2004 Population and Housing Census,</a><br>Analytical Report on Employment<br>and Labour Force</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://hdr.undp.org/en/reports/nationalreports/africa/sierraleone/sierraleone_nhdr_20071.pdf' target="_blank">Sierra Leone Human Development Report 2007</a></div>
 </div>
 </div>
 
-<!-- cholLegend -->
-<div id='cholLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+
+
+
+<!-- health legends -->
+
+<!-- healthCenterDensityLegend -->
+<div id='healthCenterDensityLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Persons per Health Center</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>0-3676</li>
+			<li><span style='background:#FC8D59;'></span>3677-5472</li>
+			<li><span style='background:#E34A33;'></span>5473-6440</li>
+			<li><span style='background:#B30000;'></span>> 6440</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.statistics.sl/final_digest_2006.pdf' target="_blank">Statistics Sierra Leone</a> Annual Statistical Digest 2005/2006</div>
+</div>
+</div>
+
+<!-- waterLegend -->
+<div id='waterLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Water from Rivers or Unprotected Wells (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>0 - 50</li>
+			<li><span style='background:#FC8D59;'></span>50 - 63</li>
+			<li><span style='background:#E34A33;'></span>63 - 78</li>
+			<li><span style='background:#B30000;'></span>> 78</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.wfp.org/content/sierra-leone-household-food-security-survey-rural-areas-2008' target="_blank">World Food Programme</a>, 2008: Sierra Leone Household Food Security Survey in Rural Areas</div>
+</div>
+</div>
+
+<!-- choleraLegend -->
+<div id='choleraLegend' style='display:none'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
 		<div class='legend-title'>Cholera Cases 2012</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#FDCC8A;'></span>0 - 321</li>
-			<li><span style='background:#FC8D59;'></span>322 - 1263</li>
-			<li><span style='background:#E34A33;'></span>1264 - 3140</li>
-			<li><span style='background:#B30000;'></span>3141 +</li>
+			<li><span style='background:#FDCC8A;'></span>0-321</li>
+			<li><span style='background:#FC8D59;'></span>322-1263</li>
+			<li><span style='background:#E34A33;'></span>1264-3140</li>
+			<li><span style='background:#B30000;'></span>> 3140</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.afro.who.int/en/clusters-a-programmes/dpc/epidemic-a-pandemic-alert-and-response/outbreak-news/3683-cholera-in-sierra-leone-and-guinea-situation-as-of-01-september-2012.html' target="_blank">World Health Organization</a>, 2012:<br>Factsheet - Cholera in Sierra Leone<br>and Guinea</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.afro.who.int/en/clusters-a-programmes/dpc/epidemic-a-pandemic-alert-and-response/outbreak-news/3683-cholera-in-sierra-leone-and-guinea-situation-as-of-01-september-2012.html' target="_blank">World Health Organization</a>, 2012:<br>Factsheet - Cholera in Sierra Leone and Guinea</div>
 </div>
 </div>
+
+
+
+
+
+
+
+<!-- concessionsLegend -->
+<div id='concessionsLegend' style='display:none'>
+	<div class='map-legendVerticalGraduated'>
+		<div class="legendAttribution">Source: <a href='http://sierraleone.revenuesystems.org/login/auth' target="_blank">Government of Sierra Leone</a>,<br>Ministry of Mines and Resources -<br>Online Repository</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
 
 <!-- acledLegend -->
 <div id='acledLegend' style='display:none'>
