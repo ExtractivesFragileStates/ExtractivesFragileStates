@@ -270,6 +270,10 @@ body { margin:0; padding:0; }
 
 /******************************* Narrative View *******************************/
 
+.menu {
+    z-index: 1001;
+}
+	
 .switcher-box {
     position: absolute;
     width: 100%;
@@ -279,25 +283,41 @@ body { margin:0; padding:0; }
     border-bottom: 1px solid #BBB;
 }
 
+.menu a,
 .switcher-box a {
 	font-family: 'OswaldBook',  "Arial Narrow", sans-serif;
 	font-weight: normal;
     float: left;
     padding: 0;
-    border-right-width: 0;
     text-align: center;
     text-decoration: none;
     color: #333;
 	background: #fff;
 }
+	.menu a {
+		background: transparent;
+	}
 	.switcher-box a div {
 		height: 45px;
   		line-height: 45px;
   		width: 100%;
 		border-left: 1px solid #BBB;
 	}
+	.menu a div {
+		height: 28px;
+    	line-height: 28px;
+    	width: 100%;
+    	border-left: 1px solid #cbc4b3;
+    }
+    .menu a:last-child div {
+    	border-right: 1px solid #cbc4b3;
+    }
 	.switcher-box a:first-child div {
 		border-left: 0;
+	}
+	.menu a.two-line div,
+	.switcher-box a.two-line div {
+		line-height: 100%;
 	}
 
 
@@ -552,70 +572,6 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 	height: 15%;
 }
 
-
-
-
-/******************************* Menus: displayed on map, not in content bar *******************************/
-/* 
-.switcher-box {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 46px;
-    z-index: 10;
-    border-bottom: 1px solid #BBB;
-}
-
-.switcher-box a {
-	font-family: 'OswaldBook',  "Arial Narrow", sans-serif;
-	font-weight: normal;
-    float: left;
-    padding: 0;
-    border-right-width: 0;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-	background: #fff;
-}
-	.switcher-box a div {
-		height: 45px;
-  		line-height: 45px;
-  		width: 100%;
-		border-left: 1px solid #BBB;
-	}
-	.switcher-box a:first-child div {
-		border-left: 0;
-	}
- */
-	
-.menu {
-    z-index: 1001;
-}
-
-.menu a {
-	font-family: 'OswaldBook',  "Arial Narrow", sans-serif;
-	font-weight: normal;
-	color: #333;
-    float: left;
-    padding: 0;
-    text-align: center;
-    text-decoration: none;
-}
-	.menu a div {
-		height: 24px;
-    	line-height: 24px;
-    	width: 100%;
-    	border-left: 1px solid #BBB;
-    }
-	.menu a:last-child div {
-		border-right: 1px solid #cbc4b3;
-	}
-	.menu a:hover {
-		background-color: #efedea;
-	}
-	.menu a:active {
-		background-color: transparent;
-	}
 
 /******************************* Tooltips *******************************/
 
