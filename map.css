@@ -775,11 +775,16 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 
 /*  Horizontal Graduated Legend  */
+.map-legendGraduated .legend-scale {
+	text-align: center;
+}
+
 .map-legendGraduated .legend-scale ul {
 	margin: 0;
 	padding: 0;
-	float: left;
 	list-style: none;
+	display: inline-block;
+	overflow: hidden;
 }
 .map-legendGraduated .legend-scale ul li {
 	display: block;
