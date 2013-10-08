@@ -31,7 +31,7 @@
 				  {% if map.label %}{% assign label = map.label %}{% endif %}
 				  <li>
 					  <a href="#" class="gisMenu" sectionid="{{section.sectionid}}" mapid="{{map.mapid}}">{{label}}</a> 
-					  <a href="#" class="gisMenu grid" sectionid="{{section.sectionid}}" mapid="{{map.mapid}}"><div></div></a>
+					  <a href="#" class="gisMenu grid" sectionid="{{section.sectionid}}" mapid="{{map.mapid}}" legendid="{{map.legend}}"><div></div></a>
 				  </li>
 				{% endfor %}
 			  {% endfor %}
