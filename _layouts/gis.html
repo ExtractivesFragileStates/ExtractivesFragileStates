@@ -23,7 +23,7 @@
 		  {% if page.country-ref == item.country %}
 			{% for section in item.sections %}
 			{% assign theme = section.label %} 
-			<h1>{{theme}}</h1>
+			<h2>{{theme}}</h2>
 			<ul>
 			  {% for layer in section.layers %} 
 				{% assign label = layer.label %}
