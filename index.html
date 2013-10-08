@@ -13,7 +13,7 @@ slidesho:
   - slide: 6466834543_1ff9a4ac4a_b.jpg
     title: Poverty
     subtitle: Slide Subtitle
-countriesMap: "tristen.map-2wjrklq0"
+countriesMap: "helsinki.project_base"
 ---
 <div class='section grey'>
   <div>
@@ -26,15 +26,17 @@ countriesMap: "tristen.map-2wjrklq0"
    {% for item in site.categories.casestudy %}
       {% assign casestudy = forloop.length %}
     {% endfor %}
-
-    <!-- <h2 class='centered'>{{countries}} Countries</h2> -->
-    <h4 class='title centered'>Explore the impact of extractive industries at the local level</h4>
+    <div class='title centered down-arrow'>
+    	<h2>Explore the impact of extractive industries at the local level</h2>
+    	<small>Scroll</small>
+    </div>
 
     <ul class='activities grid clearfix'>
       {% for case in site.categories.casestudy %}
       <li>
         <a href='{{site.baseurl}}{{case.url}}' style='background-image:url("http://api.tiles.mapbox.com/v3/{{case.map}}/{{case.center.lon}},{{case.center.lat}},{{case.center.zoom}}/1280x400.png");'>
           <div class='overlay'></div>
+<!-- 
           <div class='label'>
             {% for name in site.categories.countries %}
               {% if name.country == case.country %}
@@ -42,9 +44,10 @@ countriesMap: "tristen.map-2wjrklq0"
               {% endif %}
             {% endfor %}
           </div>
-          <!--<h4 class='case-title'>{{case.title}}</h4>-->
-          <p class='country-desc'>{{case.subtitle | truncate:120}}</p>
-          <span class='more'>More</span>
+ -->
+<!--           <h2 class='case-title'>{{case.title}}</h2> -->
+          <p class='country-desc'>{{case.title | truncate:120}}</p>
+          <span class='more'>View Country Project</span>
         </a>
       </li>
       {% endfor %}
@@ -68,8 +71,7 @@ countriesMap: "tristen.map-2wjrklq0"
               {% endif %}
             {% endfor %}
           </div>
-          <!--<h4 class='case-title'>
-            {{case.title}}</h4>-->
+          <h4 class='case-title'>{{case.title}}</h4> -->
 <!--
           <p class='country-desc'>{{case.subtitle | truncate:120}}</p>
           <span class='more'>More</span>

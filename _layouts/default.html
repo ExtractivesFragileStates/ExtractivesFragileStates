@@ -11,6 +11,8 @@
 	
     {% if page.no-header %}
     <div id='header' class='header no-header'></div>
+    
+    
     {% elsif page.preview %}
     <div id='header' class='header' style='background-image:url("{{site.baseurl}}/img/banners/{{page.preview}}");'>
       <div class='dot-matrix'></div>
@@ -21,8 +23,10 @@
             <div class='subtitle'>{{page.subtitle}}</div>
           {% endif %}
         </div>
+
       </div>
     </div>
+
 
     {% elsif page.slideshow %}
     <div id='header' class='header slideshow'>
@@ -51,10 +55,12 @@
       </script>
     </div>
     {% endif %}
+    
+    
     {% if page.countriesMap %}
     <div class='section data-coverage'>
     	<div class='map' id='countries-coverage'>
-
+			<!-- <div class='dot-matrix'></div> -->
 			<div class='limiter'>
 				<div class='title-block'>
 					{% if page.title %}
@@ -76,6 +82,7 @@
           eafs.countriesMap(header, '{{page.countriesMap}}');
         });
     </script>
+
     </div>
     {% endif %}
 

@@ -557,6 +557,12 @@ small {
     position:relative;
     z-index:10;
     }
+  .section .title.down-arrow {
+  	background: url('/ExtractivesFragileStates/img/down_arrow.png') no-repeat center 38px;
+  }
+  .section .title.down-arrow:hover {
+  	background: url('/ExtractivesFragileStates/img/down_arrow_orange.png') no-repeat center 38px;
+  }
   .section .viewport {
     background:#101010;
     margin:20px 0;
@@ -752,7 +758,7 @@ small {
       display:block;
       padding:20px;
       color:#fff;
-      height:360px;
+      height:300px;
       position:relative;
       z-index:100;
       text-shadow:none;
