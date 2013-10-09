@@ -1,0 +1,158 @@
+{
+  "bounds": [
+    11.7993,
+    -13.6033,
+    31.0474,
+    5.5941
+  ],
+  "center": [
+    21.9727,
+    -5.2879,
+    6
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "mine_concessions",
+    "template_teaser": "<div class='name'>\n\t<div class='title'>{{{Parties}}}</div>\n\t<div class='subtitle'>License #{{{Code}}}</div>\n</div>\n<div class='details'>\n    <ul class='details'>\n\t<li>Resource: <span class='value'>{{{Resource}}}</span></li>\n\t<li>Status: <span class='value'>{{{Statut}}}</span></li>\n\t<li>Requested: <span class='value'>{{{Demandée}}}</span></li>\n\t<li>Awarded: <span class='value'>{{{Octroyé}}}</span></li>\n        <li>Expires: <span class='value'>{{{Expire}}}</span></li>\n    </ul>\n    <div class='clear'></div>\n</div>",
+    "fields": [
+      "Parties",
+      "Code",
+      "Resource",
+      "Statut",
+      "Expire"
+    ]
+  },
+  "minzoom": 0,
+  "maxzoom": 10,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "polygon",
+      "extent": [
+        12.616666700000053,
+        -12.983333299999998,
+        29.958333299999993,
+        1.2166667000000189
+      ],
+      "id": "arpc",
+      "class": "",
+      "Datasource": {
+        "file": "../../../data/drc/titres_miniers/Arpc.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "arpc",
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        12.383333300000032,
+        -13.175000000000011,
+        30.575000000000045,
+        5.133333300000032
+      ],
+      "id": "demandes",
+      "class": "",
+      "Datasource": {
+        "file": "../../../data/drc/titres_miniers/demandes.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "demandes",
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        12.616666700000053,
+        -13.241666699999968,
+        30.841666700000015,
+        4.133333300000032
+      ],
+      "id": "peperpepmaecp",
+      "class": "",
+      "Datasource": {
+        "file": "../../../data/drc/titres_miniers/pe_per_pepm_aecp.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "peperpepmaecp",
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        12.483333300000055,
+        -13.458333299999993,
+        30.666666700000007,
+        5.1666667000000075
+      ],
+      "id": "pr",
+      "class": "",
+      "Datasource": {
+        "file": "../../../data/drc/titres_miniers/Pr.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "pr",
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        12.483333300000055,
+        -12.433333299999987,
+        29.83333329999996,
+        5.03333330000001
+      ],
+      "id": "zeazrg",
+      "class": "",
+      "Datasource": {
+        "file": "../../../data/drc/titres_miniers/zea_zrg.shp",
+        "id": "zeazrg",
+        "project": "drc_concessions",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "zeazrg",
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        12.383333300000032,
+        -13.458333299999993,
+        30.841666700000015,
+        5.1666667000000075
+      ],
+      "id": "mine_concessions",
+      "class": "",
+      "Datasource": {
+        "file": "../../../data/drc/concessions/mines_join.shp",
+        "id": "minesjoin",
+        "project": "drc_concessions",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "mine_concessions"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "DRC Mine Concessions",
+  "description": "",
+  "attribution": "",
+  "legend": ""
+}
