@@ -23,6 +23,12 @@ sections:
   - sectionid: development
     label: DEVELOPMENT
     layers:
+    - layerid: popDensity
+      label: Population
+      maps:
+        - mapid: helsinki.landscan
+          legend: populationLegend
+          text: introText
     - layerid: poverty
       label: Poverty
       maps:
@@ -47,7 +53,7 @@ sections:
           legend: pipedWaterLegend
           text: pipeborneWaterText
     - layerid: foodInecurity
-      label: Food Insecurity
+      label: Food Security
       maps:
         - mapid: helsinki.Liberia_Food_ModerateInsecure
           text: foodSecurityText
@@ -182,6 +188,30 @@ sections:
 
 
 <!-- 1. Development Legends -->
+
+<!-- Pop Density Legend - horizontal graduated -->
+<div id='populationLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Population Density (persons / km<sup>2</sup>)</div>
+		<div class='legend-subtitle'>adjusted to match UN totals, '00</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FFFFB2;'></span>< 10</li>
+			<li><span style='background:#FED976;'></span>10 - 50</li>
+			<li><span style='background:#FEB24C;'></span>50 - 100</li>
+			<li><span style='background:#FD8D3C;'></span>100 - 200</li>
+			<li><span style='background:#F03B20;'></span>200 - 500</li>
+			<li><span style='background:#BD0026;'></span>500 - 1k</li>
+			<li><span style='background:#6600d8;'></span>1k - 6k</li>
+			<li><span style='background:#FFFFFF; border: 1px solid #dddddd;'></span>6k - 20k</li>
+		</ul>
+	</div>
+	<div class='legend-source'>Source: <a href="http://sedac.ciesin.columbia.edu/data/set/gpw-v3-population-count/data-download">Gridded Population of the World, v3</a>Columbia University, 2005</div>
+</div>
+</div>
+
 
 <!-- wealthIndexLegend - graduated -->
 <div id='wealthIndexLegend' style='display:none'>
@@ -720,7 +750,7 @@ It is estimated that 50,000 Liberian youth will join the labor force every year.
 </div>
 
 <div id="foodSecurityText" style="display:none">
-<h2>Food Insecurity</h2>
+<h2>Food Security</h2>
 <p>Liberia’s most recent food security survey indicates that one out of five Liberians is food insecure, and one out of three is vulnerable because of precarious livelihood and food consumption.  Food insecurity is most severe in Bomi County (55%), which may be surprising given its proximity to Monrovia and that it serves as home to major agricultural, mineral and forestry concessions.  In fact, natural resource concessions are seen to be having a harmful impact on food security in regions such as Bomi.   When (i) community farming land or community forests used for slash and burn farming are appropriated as “public land” for foresty, mineral extraction or commercial cash crop production, (ii) labor hours previously committed to agriculture are converted to extractive labor, and (iii) concession employee purchasing power increases, food scarcity and cost increase, to the detriment of the least well-off.</p>
 </div>
 

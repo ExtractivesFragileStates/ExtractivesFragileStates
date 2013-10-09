@@ -22,6 +22,12 @@ sections:
   - sectionid: development
     label: DEVELOPMENT
     layers:
+    - layerid: popDensity
+      label: Population
+      maps:
+        - mapid: helsinki.landscan
+          legend: populationLegend
+          text: introText
     - layerid: poverty
       label: Poverty
       maps:
@@ -148,6 +154,33 @@ sections:
 
 
 <!-- development Legends -->
+
+<!-- Pop Density Legend - horizontal graduated -->
+<div id='populationLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Population Density (persons / km<sup>2</sup>)</div>
+		<div class='legend-subtitle'>adjusted to match UN totals, '00</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FFFFB2;'></span>< 10</li>
+			<li><span style='background:#FED976;'></span>10 - 50</li>
+			<li><span style='background:#FEB24C;'></span>50 - 100</li>
+			<li><span style='background:#FD8D3C;'></span>100 - 200</li>
+			<li><span style='background:#F03B20;'></span>200 - 500</li>
+			<li><span style='background:#BD0026;'></span>500 - 1k</li>
+			<li><span style='background:#6600d8;'></span>1k - 6k</li>
+			<li><span style='background:#FFFFFF; border: 1px solid #dddddd;'></span>6k - 20k</li>
+		</ul>
+	</div>
+	<div class='legend-source'>Source: <a href="http://sedac.ciesin.columbia.edu/data/set/gpw-v3-population-count/data-download">Gridded Population of the World, v3</a>Columbia University, 2005</div>
+</div>
+</div>
+
+
+
+
 <!-- poverty Legends -->
 
 <!-- povLegend -->
