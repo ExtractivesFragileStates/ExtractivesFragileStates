@@ -142,7 +142,7 @@ h3 {
   line-height:28px;
   margin:0 0 20px;
   }
-h4 {
+h4, span.details {
   font-size:18px;
   line-height:24px;
   margin:0 0 10px;
