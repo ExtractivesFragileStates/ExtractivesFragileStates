@@ -21,26 +21,73 @@ center:
 sections:
   - sectionid: development
     label: DEVELOPMENT
+    layers:
+    - layerid: popDensity
+      label: Population
+      maps:
+        - mapid: helsinki.landscan
+          legend: populationLegend
+          text: developmentText
   - sectionid: extractives
     label: EXTRACTIVES
-  - sectionid: conflict
+    layers:
+    - layerid: mining
+      label:
+      maps:
+        - text: extractivesText
+  - sectionid: stresses
     label: STRESSES
+    text: stressesText
+    layers:
+    - layerid: stress1
+      label:
+      maps:
+        - text: stressesText
 ---
+
+<!-- Pop Density Legend - horizontal graduated -->
+<div id='populationLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Population Density (persons / km<sup>2</sup>)</div>
+		<div class='legend-subtitle'>adjusted to match UN totals, '00</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FFFFB2;'></span>< 10</li>
+			<li><span style='background:#FED976;'></span>10 - 50</li>
+			<li><span style='background:#FEB24C;'></span>50 - 100</li>
+			<li><span style='background:#FD8D3C;'></span>100 - 200</li>
+			<li><span style='background:#F03B20;'></span>200 - 500</li>
+			<li><span style='background:#BD0026;'></span>500 - 1k</li>
+			<li><span style='background:#6600d8;'></span>1k - 6k</li>
+			<li><span style='background:#FFFFFF; border: 1px solid #dddddd;'></span>6k - 20k</li>
+		</ul>
+	</div>
+	<div class='legend-source'>Source: <a href="http://sedac.ciesin.columbia.edu/data/set/gpw-v3-population-count/data-download">Gridded Population of the World, v3</a>Columbia University, 2005</div>
+</div>
+</div>
+
+
+
+<!-- Text -->
 
 <div id='introText'>
 <!--<div class='dashboard'><ul class='majorStats'><li><div><span class='key'>GDP</span><sub style='left: 66px; top: 40px;'><em>per cap</em></sub> <span class='val'>$1,344</span></div></li><li><div><span class='key'>HDI</span> <span class='val'>0.359 (177<sup>th</sup>)</span></div></li></ul><ul class='wbStats'><li style='border:0'><div><span></span> <span class='val'></span></div></li><li><div><span class='key'>EITI Status</span> <span class='val' style='color: #f42; font-weight: bold;'>Suspended</span></div></li><li><div><span class='key'>Government Revenue</span> <span class='val'>$7.6mil</span></div></li><li><div><span class='key'>Company Payments</span> <span class='val'>$8.27mil</span></div></li></ul><ul class='eitiStats'><li style='border: 0'><div><span class='key title'>Worldwide Governance Indicators</span><sup style='left: 282px; top:8px;'>â€ </sup></div></li><li><div><span class='key'>Voice & Accountability</span><span class='val'>40.8 / 100</span></div></li><li><div><span class='key'>Political Stability</span> <span class='val'>40.1 / 100</span></div></li><li><div><span class='key'>Government Effectiveness</span><span class='val'>10.0 / 100</span></div></li><li><div><span class='key'>Regulatory Quality</span> <span class='val'>26.1 / 100</span></div></li><li><div><span class='key'>Rule of Law</span> <span class='val'>22.5 / 100</span></div></li><li><div><span class='key'>Control of Corruption</span> <span class='val'>26.5 / 100</span></div></li></ul></div>
 -->
-<p></p><p>Intro Text Coming Soon... Intro Text Coming Soon... Intro Text Coming Soon...</p>
-</div>
-
-<div id="extractivesText" style="display:none">
-<p>Extractives Text Coming Soon</p>
+<p>Guinea boasts about two thirds of the world’s known bauxite reserves to date and holds significant deposits of iron ore, gold, diamonds and the potential of alumina and smelting of aluminum. While the mining sector accounts for 26 per cent of GDP, 95 per cent of export earning, and 20 to 25 percent of government revenue; the country’s mineral wealth remains underexploited. Despite the potential of the mineral industry to spur socio-economic development, poor governance and cyclical political instability has meant that the people of Guinea have failed to benefit from the country’s vast mineral wealth. Following historic 2010 democratic elections won by President Alpha Condé, there is renewed optimism that the new 2011 mining code has the potential to improve the rule of law, governance and transparency in the mining sector while ensuring that revenues can be transferred to the local level.</p>
 </div>
 
 <div id="developmentText" style="display:none">
-<p>Development Text Coming Soon</p>
+<p>Although Guinea’s mineral wealth makes it potentially one of Africa’s richest countries, its people are among the poorest in the region. Recent surveys showed that 55.2 percent of the population is considered to be poor and the number of persons living in extreme poverty has doubled. The country has one of the lowest Human Development Index Scores in the entire world coming 178th place out of 186 countries. Life expectancy is significantly low—54 years for men and 56 years for women. Guinea has high maternal mortality (980 deaths per 100,000 live births) and an infant mortality (91 per thousand), mainly because of the problem with the health service.</p>
 </div>
 
-<div id="conflictText" style="display:none">
-<p>Stresses Text Coming Soon</p>
+<div id="extractivesText" style="display:none">
+<p>Current mineral production and exploration activities are focused on four main minerals. Bauxite reserves, mainly located in Maritime and Mid-Guinea, are estimated at 30 billion tons. At current annual levels of extraction, these reserves represent 16 centuries of production. The most significant active mine is the Compagnie des Bauxites de Guinée (CBG), which exports 13 million tons per year to mainly Europe and North America. According to the mining ministry, the government received USD 72 million from CBG and the company invested USD 110,000 towards local development directly and indirectly creating over 5,000 direct and indirect jobs.  The mining sector ranks second after the public sector in terms of employment generation with 10,000 direct jobs and over 100,000 indirect and ancillary jobs.</p>
+<p>Guinea’s iron-ore reserves, estimated to exceed 3 billion tons and currently located in Forested Guinea, are receiving increasing international interest, including BHP Billiton, Rio Tinto, Vale SA, and various Chinese companies as iron ore prices have been at record high levels. Vale SA anticipates starting production in 2012 on the iron mine of Simandou for an average annual extraction close to 50 million tons by 2020. To export this production, Vale plans to restore an existing railway. Rio Tinto, which has signed, in April 2011, an agreement with the government for exploitation, expected as early as 2015, of an iron mine with an annual production capacity of 95 million tons, also on the Simandou site. The project involves the construction of a railway of 650 km and a deep water port in the south of Conakry.</p>
+<p>Gold reserves, mainly concentrated in Upper Guinea, are estimated at several hundred tons identified to date. Three industrial gold mining companies acquired concessions in the 1990s, and are owned today by AngloGold Ashanti, Severstal and Canada-based Semafo. Diamond, whose reserves, operated at an artisanal scale, amount to 30 million carats, set primarily in Forested Guinea.</p>
+</div>
+
+<div id="stressesText" style="display:none">
+<p>While the country held the first really competitive election since independence, Guinea still does not have a national assembly. Forthcoming legislative elections, which have been postponed on several occasions, look set to be complicated: ethnic tensions, compounded by the 2010 polls, remain high and the electoral system is deeply controversial and has prompted violent protests. Guinea is home to refugees who fled civil wars in neighboring Liberia, Sierra Leone and Guinea Bissau. There are growing allegations that an uncontrolled influx of thousands of refugees may have facilitated smuggling of quantities of light ammunition and an infiltration by rebels or bandits. Border towns in the Forest region have seen an unprecedented resurgence of banditry. This has led to the government of Guinea blaming refugees for its socio-political and economic problems and this mobilization of a xenophobic and hostile relationship between refugees and citizens of Guinea could lead to fatal violence.</p>
 </div>
