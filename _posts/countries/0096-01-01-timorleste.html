@@ -47,9 +47,47 @@ sections:
           - mapid: helsinki.TL_education
             text: developmentText
             legend: educationLegend
+    - layerid: agriculture
+      label: Agriculture
+      maps:
+          - mapid: helsinki.TL_rice
+            text: developmentText
+            legend: riceLegend
+            htmlid: rice
+            label: Rice
+          - mapid: helsinki.TL_maize
+            text: developmentText
+            legend: maizeLegend
+            htmlid: maize
+            label: Maize
+          - mapid: helsinki.TL_coffee
+            text: developmentText
+            legend: coffeeLegend
+            htmlid: coffee
+            label: Coffee
+          - mapid: helsinki.TL_vegetables
+            text: developmentText
+            legend: vegetablesLegend
+            htmlid: vegetables
+            label: Vegetables
+          - mapid: helsinki.TL_cassava
+            text: developmentText
+            legend: cassavaLegend
+            htmlid: cassava
+            label: Cassava
+          - mapid: helsinki.TL_coconut
+            text: developmentText
+            legend: coconutLegend
+            htmlid: coconut
+            label: Coconut
   - sectionid: extractives
     label: EXTRACTIVES
     layers:
+    - layerid: offshore
+      label: Offshore
+      maps:
+        - mapid: 'helsinki.timor_offshore_simple'
+          text: extractivesText
     - layerid: metallicResources
       label: Metallic Resources
       maps:
@@ -116,11 +154,6 @@ sections:
           htmlid: phosphate
           label: Phosphate
           legend: industrialResourceLegend
-    - layerid: offshore
-      label: Offshore
-      maps:
-        - mapid: 'helsinki.timor_offshore_simple'
-          text: extractivesText
 ---
 
 
@@ -163,7 +196,7 @@ sections:
 			<li><span style='background:#D85151;'></span>> 18.2</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.mof.gov.tl/wp-content/uploads/2011/06/Publication-4-English-Web.pdf' target="_blank">Population and Housing Census of Timor-Leste, 2010</a></div>
 </div>
 </div>
 
@@ -182,7 +215,7 @@ sections:
 			<li><span style='background:#D85151;'></span>> 98</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.mof.gov.tl/wp-content/uploads/2011/06/Publication-4-English-Web.pdf' target="_blank">Population and Housing Census of Timor-Leste, 2010</a></div>
 </div>
 </div>
 
@@ -202,27 +235,129 @@ sections:
 			<li><span style='background:#D85151;'></span>> 76</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> <a href='http://www.peacebuildingdata.org/node/627'>PeacebuildingData.org</a></div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.mof.gov.tl/wp-content/uploads/2011/06/Publication-4-English-Web.pdf' target="_blank">Population and Housing Census of Timor-Leste, 2010</a></div>
 </div>
 </div>
 
 
-<div id='schoLegend' style='display:none'>
-<div class='map-legendVerticalGraduated'>
+<!-- riceLegend - vertical graduated -->
+<div id='riceLegend' style='display:none'>
+<div class='map-legendGraduated'>
 	<div class='legend-name'>
-		<div class='legend-title'>Children in<br>Primary School</div>
+		<div class='legend-title'>Households Growing Rice (%)</div>
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#B30000;'></span>50% - 57%</li>
-			<li><span style='background:#E34A33;'></span>57% - 64%</li>
-			<li><span style='background:#FC8D59;'></span>64% - 70%</li>
-			<li><span style='background:#FDCC8A;'></span>70% +</li>
+			<li><span style='background:#FEF0D9;'></span>0 - 20</li>
+			<li><span style='background:#FFD9A5;'></span>20 - 40</li>
+			<li><span style='background:#FAA682;'></span>40 - 60</li>
+			<li><span style='background:#E76C5B;'></span>60 - 80</li>
+			<li><span style='background:#D85151;'></span>> 80</li>
 		</ul>
 	</div>
-	<div class='legend-source'><b>Source:</b> World Bank, 2013:<br>A Poverty Profile for Sierra Leone</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.mof.gov.tl/wp-content/uploads/2011/06/Publication-4-English-Web.pdf' target="_blank">Population and Housing Census of Timor-Leste, 2010</a></div>
 </div>
 </div>
+
+
+<!-- maizeLegend - vertical graduated -->
+<div id='maizeLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Households Growing Maize (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>0 - 20</li>
+			<li><span style='background:#FFD9A5;'></span>20 - 40</li>
+			<li><span style='background:#FAA682;'></span>40 - 60</li>
+			<li><span style='background:#E76C5B;'></span>60 - 80</li>
+			<li><span style='background:#D85151;'></span>> 80</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.mof.gov.tl/wp-content/uploads/2011/06/Publication-4-English-Web.pdf' target="_blank">Population and Housing Census of Timor-Leste, 2010</a></div>
+</div>
+</div>
+
+<!-- coffeeLegend - vertical graduated -->
+<div id='coffeeLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Households Growing Coffee (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>0 - 20</li>
+			<li><span style='background:#FFD9A5;'></span>20 - 40</li>
+			<li><span style='background:#FAA682;'></span>40 - 60</li>
+			<li><span style='background:#E76C5B;'></span>60 - 80</li>
+			<li><span style='background:#D85151;'></span>> 80</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.mof.gov.tl/wp-content/uploads/2011/06/Publication-4-English-Web.pdf' target="_blank">Population and Housing Census of Timor-Leste, 2010</a></div>
+</div>
+</div>
+
+<!-- vegetablesLegend - vertical graduated -->
+<div id='vegetablesLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Households Growing Vegetables (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>0 - 20</li>
+			<li><span style='background:#FFD9A5;'></span>20 - 40</li>
+			<li><span style='background:#FAA682;'></span>40 - 60</li>
+			<li><span style='background:#E76C5B;'></span>60 - 80</li>
+			<li><span style='background:#D85151;'></span>> 80</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.mof.gov.tl/wp-content/uploads/2011/06/Publication-4-English-Web.pdf' target="_blank">Population and Housing Census of Timor-Leste, 2010</a></div>
+</div>
+</div>
+
+<!-- cassavaLegend - vertical graduated -->
+<div id='cassavaLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Households Growing Cassava (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>0 - 20</li>
+			<li><span style='background:#FFD9A5;'></span>20 - 40</li>
+			<li><span style='background:#FAA682;'></span>40 - 60</li>
+			<li><span style='background:#E76C5B;'></span>60 - 80</li>
+			<li><span style='background:#D85151;'></span>> 80</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.mof.gov.tl/wp-content/uploads/2011/06/Publication-4-English-Web.pdf' target="_blank">Population and Housing Census of Timor-Leste, 2010</a></div>
+</div>
+</div>
+
+<!-- coconutLegend - vertical graduated -->
+<div id='coconutLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Households Growing Coconuts (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>0 - 20</li>
+			<li><span style='background:#FFD9A5;'></span>20 - 40</li>
+			<li><span style='background:#FAA682;'></span>40 - 60</li>
+			<li><span style='background:#E76C5B;'></span>60 - 80</li>
+			<li><span style='background:#D85151;'></span>> 80</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.mof.gov.tl/wp-content/uploads/2011/06/Publication-4-English-Web.pdf' target="_blank">Population and Housing Census of Timor-Leste, 2010</a></div>
+</div>
+</div>
+
+
+
+
 
 
 <!-- metallicResourceLegend -->
