@@ -47,7 +47,7 @@ sections:
           - mapid: helsinki.TL_education
             text: developmentText
             legend: educationLegend
-    - layerid: agriculture
+    - layerid: ag
       label: Agriculture
       maps:
           - mapid: helsinki.TL_rice
@@ -70,16 +70,22 @@ sections:
             legend: vegetablesLegend
             htmlid: vegetables
             label: Vegetables
-          - mapid: helsinki.TL_cassava
-            text: developmentText
-            legend: cassavaLegend
-            htmlid: cassava
-            label: Cassava
+#          - mapid: helsinki.TL_cassava
+#            text: developmentText
+#            legend: cassavaLegend
+#            htmlid: cassava
+#            label: Cassava
           - mapid: helsinki.TL_coconut
             text: developmentText
             legend: coconutLegend
             htmlid: coconut
             label: Coconut
+    - layerid: health
+      label: Health
+      maps:
+          - mapid: helsinki.TL_district_malnutrition
+            text: developmentText
+            legend: malnutritionLegend
   - sectionid: extractives
     label: EXTRACTIVES
     layers:
@@ -355,6 +361,25 @@ sections:
 </div>
 </div>
 
+
+<!-- malnutitionLegend - vertical graduated -->
+<div id='malnutritionLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Malnutrition Under 5 (%)</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FEF0D9;'></span>6 - 8</li>
+			<li><span style='background:#FFD9A5;'></span>8 - 12</li>
+			<li><span style='background:#FAA682;'></span>12 - 14</li>
+			<li><span style='background:#E76C5B;'></span>14 - 23</li>
+			<li><span style='background:#D85151;'></span>> 23</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href='http://www.mof.gov.tl/wp-content/uploads/2011/06/Publication-4-English-Web.pdf' target="_blank">Population and Housing Census of Timor-Leste, 2010</a></div>
+</div>
+</div>
 
 
 
