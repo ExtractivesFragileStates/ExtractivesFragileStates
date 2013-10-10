@@ -1,57 +1,72 @@
 {% if page.stats %}
-
-<div class='dashboard'>
-	<ul class='majorStats'>
-		<li>
-			<div><span class='key'>GDP</span><sub style='left: 66px; top: 40px;'><em>per capita</em></sub> <span class='val'>${{page.stats.gdp}}</span></div>
-		</li>
-		<li>
-			<div><span class='key'>HDI</span> <span class='val'>{{page.stats.hdi}} ({{page.stats.hdi_rank}}<sup>th</sup>)</span></div>
-		</li>
-	</ul>
-
-	<ul class='wbStats'>
-		<li style='border:0'>
-			<div><span></span> <span class='val'></span></div>
-		</li>
-		<li>
-			<div><span class='key'>EITI Status</span> <span class='val' style='color: #f42; font-weight: bold;'>Candidate</span></div>
-		</li>
-		<li>
-			<div><span class='key'>Government Revenue</span> <span class='val'>$23.38mil</span></div></li><li><div><span class='key'>Company Payments</span> <span class='val'>$24.96mil</span></div>
-		</li>
-	</ul>
-
-	<ul class='eitiStats'>
-		<li style='border: 0'>
-			<div><span class='key title'>Worldwide Governance Indicators</span><sup style='left: 282px; top:8px;'>†</sup></div>
-		</li>
-		<li>
-			<div><span class='key'>Voice & Accountability</span><span class='val'>7.5 / 100</span></div>
-		</li>
-		<li>
-			<div><span class='key'>Political Stability</span> <span class='val'>1.4 / 100 </span></div>
-		</li>
-		<li>
-			<div><span class='key'>Government Effectiveness</span><span class='val'>5.2 / 100 </span></div>
-		</li>
-		<li>
-			<div><span class='key'>Regulatory Quality</span> <span class='val'>4.7 / 100</span></div>
-		</li>
-		<li>
-			<div><span class='key'>Rule of Law</span> <span class='val'>0.5 / 100</span></div>
-		</li>
-		<li>
-			<div><span class='key'>Control of Corruption</span> <span class='val'>1.4 / 100  </span></div>
-		</li>
-	</ul>
-</div>
-
 <div class='head'>
 	<img src='{{site.baseurl}}/img/page_black.png' alt='' />
 	<h1>Narrative Map View</h1>
 </div>
 <p>The Narrative Map groups data layers by theme.  Use the buttons above to explore each theme.  Click the <img src='{{site.baseurl}}/img/logo_16.png' alt='Header'/> at the top of the page to return to this intro page.</p>
+
+<div class='dashboard'>
+  <div class='list two-wide first'>
+    <ul>
+      <li class='double'>
+        <span class='key'>GDP</span><small class='minor'><em>per capita</em></small>
+        <span class='value'>{{page.stats.gdp}}</span>
+      </li>
+      <li class='double'>
+        <span class='key'>HDI</span>
+        <span class='value'>{{page.stats.hdi}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class='list two-wide second'>
+    <ul>
+      <li class='skip'>
+      </li>
+      <li>
+        <span class='key'>EITI Status</span>
+        <span class='value eiti-{{page.stats.eiti_status}}'>{{page.stats.eiti_status | capitalize}}</span>
+      </li>
+      <li>
+        <span class='key'>Govt. Revenue</span>
+        <span class='value'>{{page.stats.eiti_govt}}</span>
+      </li>
+      <li>
+        <span class='key'>Comp. Payments</span>
+        <span class='value'>{{page.stats.eiti_comp}}</span>
+      </li>
+    </ul>
+  </div>
+  
+  <div class='clear'></div>
+  <h2>Resource Governance Index <sup><small>†</small></sup></h2>
+  
+  <div class='list one-wide'>
+    <ul>
+      <li>
+        <span class='key'>Composite Score</span>
+        <span class='value'>{{page.stats.rw_composite}}</span>
+      </li>
+      <li>
+        <span class='key'>Institutional & Legal Setting</span>
+        <span class='value'>{{page.stats.rw_institutional}}</span>
+      </li>
+      <li>
+        <span class='key'>Reporting Practices</span>
+        <span class='value'>{{page.stats.rw_reporting}}</span>
+      </li>
+      <li>
+        <span class='key'>Safeguards & Quality Controls</span>
+        <span class='value'>{{page.stats.rw_safeguards}}</span>
+      </li>
+      <li>
+        <span class='key'>Enabling Environment</span>
+        <span class='value'>{{page.stats.rw_enabling}}</span>
+      </li>
+    </ul>
+  </div>
+  
+  <div class='clear'></div>
+</div>
 			
 
 {% endif %}

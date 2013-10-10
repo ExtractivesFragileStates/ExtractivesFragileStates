@@ -362,69 +362,13 @@ body { margin:0; padding:0; }
 }
 
 
-/******************************* GIS *******************************/
+/******************************* Text *******************************/
+#text .head img,
 #gisText .head img {
 	float: left;
 	margin: 10px 4px;
 }
 
-#gisText ul {
-	margin: 0 14px 8px;
-}
-
-#gisText ul li {
-	position: relative;
-	height: 2em;
-	margin-top: 2px;
-	border: 1px solid #ccc;
-	border-top: 0;
-	border-right: 0;
-}
-
-#gisText ul li a {
-	height: 100%;
-	padding-left: 4px;
-	color: #333;
-	text-decoration: none;
-	font-weight: normal;
-	display: block;
-}
-	#gisText ul li:hover {
-		background-color: #555;
-	}
-	#gisText ul li:active {
-		background-color: transparent;
-	}
-	#gisText ul li:hover a {
-		color: #fefefe;
-	}
-	#gisText ul li a:active {
-		color: orange;
-	}
-	#gisText ul li a.active {
-		color: orange;
-	}
-
-.gisMenu.grid {
-	position: absolute;
-	right: 0;
-	top: 4px;
-	float: right;
-	display: none;
-}
-  .gisMenu.grid.possible div {
-     background: url('{{site.baseurl}}/img/eye_black.png');
-     width: 20px;
-     height: 14px;
-  }
-  .gisMenu.grid.active div {
-     background: url('{{site.baseurl}}/img/eye_orange.png');
-  }
-
-
-
-/******************************* Text *******************************/
-    
 #text-container {
 	position: absolute;
 	background:rgba(250,247,243,0.96);
@@ -508,80 +452,162 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
 
-/******************************* Dashboard *******************************/
-.dashboard {
+/******************************* GIS *******************************/
+#gisText .description {
+	border-bottom: 3px solid #ccc;
+	padding-bottom: 12px;
+}
+
+#gisText ul {
+	margin: 0 14px 8px;
+}
+
+#gisText ul li {
 	position: relative;
-	margin-bottom: 30px;
+	height: 2em;
+	margin-top: 2px;
+	border: 1px solid #ccc;
+	border-top: 0;
+	border-right: 0;
 }
 
-.dashboard li {
-	position: relative;
-	border-bottom: 1px solid #ccc;
+#gisText ul li a {
+	height: 100%;
+	padding-left: 4px;
+	color: #333;
+	text-decoration: none;
+	font-weight: normal;
+	display: block;
 }
+	#gisText ul li:hover {
+		background-color: #555;
+	}
+	#gisText ul li:active {
+		background-color: transparent;
+	}
+	#gisText ul li:hover a {
+		color: #fefefe;
+	}
+	#gisText ul li a:active {
+		color: orange;
+	}
+	#gisText ul li a.active {
+		color: orange;
+	}
 
-.dashboard li .key {
+.gisMenu.grid {
 	position: absolute;
-	bottom: 0;
-	left: 0;
-	font-weight: bold;
-}
-
-.dashboard li .val {
-	position: absolute;
-	bottom: 0;
 	right: 0;
+	top: 4px;
+	float: right;
+	display: none;
+}
+  .gisMenu.grid.possible div {
+     background: url('{{site.baseurl}}/img/eye_black.png');
+     width: 20px;
+     height: 14px;
+  }
+  .gisMenu.grid.active div {
+     background: url('{{site.baseurl}}/img/eye_orange.png');
+  }
+
+
+/******************************* Dashboard *******************************/
+
+.dashboard {
+  font-family: 'Opensans', sans-serif;
+  font-size: 12px;
+  margin-bottom: 12px;
+  border-top: 3px solid #ccc;
 }
 
-	/* GDP/HDI & World Bank Stats */
-.majorStats, .wbStats {
-	height: 120px; 
-	float: left;
+.dashboard small {
+  font-size: 10px; 
 }
 
-.majorStats {
-	width: 45%;
-	padding-right: 4px;
-	border-right: 1px solid #ccc;
-	margin-right: 4px;
+.dashboard h1, .dashboard h2 {
+  text-align: center;
+  margin-top: 10px;
 }
 
-.wbStats {
-	width: 52%;
+.dashboard .minor {
+  position: relative;
+  bottom: -16px;
 }
 
-.majorStats li {
-	height: 50%;
+.dashboard .list ul {
+  margin-bottom: 6px;
+  border-bottom: 3px solid #ccc;
+}
+.dashboard .list.first ul {
+  padding-right: 4px;
+  border-right: 1px solid #ccc;
 }
 
-.wbStats li {
-	height: 25%;
+.dashboard .list.second ul {
+  padding-left: 4px;
 }
 
-.majorStats li .key {
-	font-size: 3.2em;
-	bottom: 11px;
-	letter-spacing: -0.1em;
+.dashboard div.one-wide {
+  float: left;
+  width: 100%;
 }
+  .dashboard div.two-wide {
+    float: left;
+    width: 50%;
+  }
 
-	/* EITI Stats */
-.eitiStats span.title {
-	letter-spacing: -0.1em;
-	bottom: -6px;
+.dashboard .list li {
+  border-bottom: 1px solid #ccc;
+  height: 20px;
+  /*margin: 0 4px;*/
+  padding: 2px 0;
 }
-
-.eitiStats span.key.title {
-	font-size: 1.6em;
-}
-
-.eitiStats {
-	clear: both;
-	height: 192px; /* 30 * n of li + bottom margin */
-}
-
-.eitiStats li {
-	height: 15%;
-}
-
+  .dashboard .list li:last-child {
+    border-bottom: 0;
+  }
+  .dashboard .list li span {
+  	display: inline-block;
+  	padding-top: 3px;
+  }
+  .dashboard .list li .key {
+    padding-left: 4px;
+    font-weight: bold;
+  }
+  .dashboard .list li .value {
+    float: right;
+    padding-right: 4px;
+  }
+  	.dashboard .list li .eiti-compliant {
+  	  color: #65C32D;
+  	  font-weight: bold;
+  	}
+  	.dashboard .list li .eiti-candidate {
+  	  color: #42ABD8;
+  	  font-weight: bold;
+  	}
+    .dashboard .list li .eiti-suspended {
+  	  color: #FF6600;
+  	  font-weight: bold;
+  	}
+  .dashboard .list li.skip {
+    border-bottom: 0;
+    margin-bottom: 1px;
+  }
+  .dashboard .list li.double {
+    height: 40px; /*li span *2 */
+    padding: 4px 0 5px 0;
+  }
+  .dashboard .list li.double span.key {
+    position: relative;
+    bottom: -14px;
+    font-size: 280%;
+    letter-spacing: -3px;
+  }
+  .dashboard .list li.double span.value {
+    position: relative;
+    bottom: -22px;
+  }
 
 /******************************* Tooltips *******************************/
 
