@@ -142,7 +142,7 @@ h3 {
   line-height:28px;
   margin:0 0 20px;
   }
-h4 {
+h4, span.details {
   font-size:18px;
   line-height:24px;
   margin:0 0 10px;
@@ -888,9 +888,9 @@ small {
 -------------------------------------*/
 .marker {
   background:transparent url(img/map-logo.png) no-repeat 0 0;
-  height:42px;
-  width:42px;
-  margin:-42px 0px 0px -21px;
+  height:22px;
+  width:22px;
+  margin:-22px 0px 0px -11px;
   display:block;
   pointer-events:auto;
   }

@@ -22,6 +22,12 @@ sections:
   - sectionid: development
     label: DEVELOPMENT
     layers:
+    - layerid: popDensity
+      label: Population
+      maps:
+        - mapid: helsinki.landscan
+          legend: populationLegend
+          text: developmentText
     - layerid: poverty
       label: Poverty
       maps:
@@ -148,6 +154,33 @@ sections:
 
 
 <!-- development Legends -->
+
+<!-- Pop Density Legend - horizontal graduated -->
+<div id='populationLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Population Density (persons / km<sup>2</sup>)</div>
+		<div class='legend-subtitle'>adjusted to match UN totals, '00</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FFFFB2;'></span>< 10</li>
+			<li><span style='background:#FED976;'></span>10 - 50</li>
+			<li><span style='background:#FEB24C;'></span>50 - 100</li>
+			<li><span style='background:#FD8D3C;'></span>100 - 200</li>
+			<li><span style='background:#F03B20;'></span>200 - 500</li>
+			<li><span style='background:#BD0026;'></span>500 - 1k</li>
+			<li><span style='background:#6600d8;'></span>1k - 6k</li>
+			<li><span style='background:#FFFFFF; border: 1px solid #dddddd;'></span>6k - 20k</li>
+		</ul>
+	</div>
+	<div class='legend-source'>Source: <a href="http://sedac.ciesin.columbia.edu/data/set/gpw-v3-population-count/data-download">Gridded Population of the World, v3</a>Columbia University, 2005</div>
+</div>
+</div>
+
+
+
+
 <!-- poverty Legends -->
 
 <!-- povLegend -->
@@ -468,19 +501,30 @@ sections:
 </div>>
 
 <div id='introText' style='display:none'>
-<div class='dashboard'><ul class='majorStats'><li><div><span class='key'>GDP</span><sub style='left: 66px; top: 40px;'><em>per cap</em></sub> <span class='val'>$1,344</span></div></li><li><div><span class='key'>HDI</span> <span class='val'>0.359 (177<sup>th</sup>)</span></div></li></ul><ul class='wbStats'><li style='border:0'><div><span></span> <span class='val'></span></div></li><li><div><span class='key'>EITI Status</span> <span class='val' style='color: #f42; font-weight: bold;'>Suspended</span></div></li><li><div><span class='key'>Government Revenue</span> <span class='val'>$7.6mil</span></div></li><li><div><span class='key'>Company Payments</span> <span class='val'>$8.27mil</span></div></li></ul><ul class='eitiStats'><li style='border: 0'><div><span class='key title'>Worldwide Governance Indicators</span><sup style='left: 282px; top:8px;'>â€ </sup></div></li><li><div><span class='key'>Voice & Accountability</span><span class='val'>40.8 / 100</span></div></li><li><div><span class='key'>Political Stability</span> <span class='val'>40.1 / 100</span></div></li><li><div><span class='key'>Government Effectiveness</span><span class='val'>10.0 / 100</span></div></li><li><div><span class='key'>Regulatory Quality</span> <span class='val'>26.1 / 100</span></div></li><li><div><span class='key'>Rule of Law</span> <span class='val'>22.5 / 100</span></div></li><li><div><span class='key'>Control of Corruption</span> <span class='val'>26.5 / 100</span></div></li></ul></div>
-<p>The development of the extractive sector has shaped Sierra Leone's recent history. Mismanagement and corruption in the sector in the 1970s and 1980s set the scene for the outbreak of the country's violent 11-year civil war, which began in 1991. The trade in smuggled conflict diamonds funded and prolonged the fighting. Control of the country's southeastern diamond fields became a strategic objective for both government forces and the rebel Revolutionary United Front.</p><p>More than a decade after the end of the civil war, the country's rich mineral reserves offer the promise of much-needed jobs and government revenue. Exports of minerals, in particular iron ore, accelerated economic growth in 2012 to 21.3%, one of the highest rates in the world. However, the government will need to carefully manage the sector to avoid many of the problems associated with the â€˜resource curse': currency appreciation, economic distortion and increased corruption</p><p>Use the tabs above to view the data that explores the complex dynamics of extractive industries in Sierra Leone: their developmental potential, their environmental impact , and their linkages to conflict and fragility.</p>
-</div>
-
-<div id="extractivesText" style="display:none">
-<p>More than a decade after the end of its civil war (1991-2002), mining is again driving Sierra Leone's economy. Major commodities include diamonds, rutile, bauxite, gold, and iron ore. Oil and natural gas have been found offshore and may be tapped in future. Mining accounted for 90% of export revenues and 30% of Sierra Leone's GDP in 2013.</p><p>Between 2011 and 2012 mineral exports more than tripled. That was largely the result of a significant increase in iron ore exports, which now account for 32.2 % of export revenue, contributing US$357 million to the economy. Sierra Leone is also the world's third-largest producer of rutile (a titanium sand used in many industrial functions) and tenth-largest producer of diamonds.</p><p>Conscious that mismanagement of the mining sector in the 1970s and 1980s helped to create the conditions for the civil war, and that â€˜blood diamonds' financed the fighting, the government is working to improve transparency and accountability in the extractives sector. The country is a participant in both the Extractive Industries Transparency Initiative (EITI) and the Kimberley Process Certification Scheme. In addition, in 2012 the Ministry of Mines and Mineral Resources launched an online repository that improved public access to information on industrial and artisanal mineral rights, including license and payment data. There is still much work to be done though; The EITI suspended Sierra Leone in February 2013 as a result of incomplete adherence to its auditing and reporting requirements.</p>
+<div class='dashboard'><ul class='majorStats'><li><div><span class='key'>GDP</span><sub style='left: 66px; top: 40px;'><em>per cap</em></sub> <span class='val'>$1,344</span></div></li><li><div><span class='key'>HDI</span> <span class='val'>0.359 (177<sup>th</sup>)</span></div></li></ul><ul class='wbStats'><li style='border:0'><div><span></span> <span class='val'></span></div></li><li><div><span class='key'>EITI Status</span> <span class='val' style='color: #f42; font-weight: bold;'>Suspended</span></div></li><li><div><span class='key'>Government Revenue</span> <span class='val'>$7.6mil</span></div></li><li><div><span class='key'>Company Payments</span> <span class='val'>$8.27mil</span></div></li></ul><ul class='eitiStats'><li style='border: 0'><div><span class='key title'>Worldwide Governance Indicators</span><sup style='left: 282px; top:8px;'></sup></div></li><li><div><span class='key'>Voice & Accountability</span><span class='val'>40.8 / 100</span></div></li><li><div><span class='key'>Political Stability</span> <span class='val'>40.1 / 100</span></div></li><li><div><span class='key'>Government Effectiveness</span><span class='val'>10.0 / 100</span></div></li><li><div><span class='key'>Regulatory Quality</span> <span class='val'>26.1 / 100</span></div></li><li><div><span class='key'>Rule of Law</span> <span class='val'>22.5 / 100</span></div></li><li><div><span class='key'>Control of Corruption</span> <span class='val'>26.5 / 100</span></div></li></ul></div>
+<p>The development of the extractive sector has shaped Sierra Leone's recent history. Mismanagement and corruption in the sector in the 1970s and 1980s set the scene for the outbreak of the country's violent 11-year civil war, which began in 1991. The trade in smuggled conflict diamonds funded and prolonged the fighting. Control of the country's southeastern diamond fields became a strategic objective for both government forces and the rebel Revolutionary United Front.</p>
+<p>More than a decade after the end of the civil war, the country's rich mineral reserves offer the promise of much-needed jobs and government revenue. Exports of minerals, in particular iron ore, accelerated economic growth in 2012 to 21.3%, one of the highest rates in the world. However, the government will need to carefully manage the sector to avoid many of the problems associated with the â€˜resource curse': currency appreciation, economic distortion and increased corruption</p>
+<p>Use the tabs above to view the data that explores the complex dynamics of extractive industries in Sierra Leone: their developmental potential, their environmental impact , and their linkages to conflict and fragility.</p>
 </div>
 
 <div id="developmentText" style="display:none">
-<p>Despite its mineral resources, Sierra Leone remains one of the poorest countries in the world, ranking 176th out of 186 countries in the 2013 Human Development Index (HDI). Ensuring that the country's mineral assets contribute to sustainable development will be a critical challenge for Sierra Leone in the coming years.</p><p>Absolute poverty is widespread: 53% of the population live on less than US $1.25 a day and average life expectancy was just 48.1 years in 2012. Poverty, health and education indicators are particularly bad in remote rural areas, which also host several large mining operations.</p><p>Other pressing issues include health concerns and access to safe water. Sierra Leone has the world's highest death rates from malaria. Meanwhile, 2012 saw the country's worst cholera outbreak in 15 years with over 19,000 reported cases and more than 270 deaths. Food insecurity is a major challenge facing many communities. A 2007 survey from the World Food Programme (WFP) found that, in some districts, up to 97% of rural households experienced serious problems producing or purchasing enough food in the previous year.</p>
+<h1>Development</h1>
+<p>Despite its mineral resources, Sierra Leone remains one of the poorest countries in the world, ranking 176th out of 186 countries in the 2013 Human Development Index (HDI). Ensuring that the country's mineral assets contribute to sustainable development will be a critical challenge for Sierra Leone in the coming years.</p>
+<p>Absolute poverty is widespread: 53% of the population live on less than US $1.25 a day and average life expectancy was just 48.1 years in 2012. Poverty, health and education indicators are particularly bad in remote rural areas, which also host several large mining operations.</p>
+<p>Other pressing issues include health concerns and access to safe water. Sierra Leone has the world's highest death rates from malaria. Meanwhile, 2012 saw the country's worst cholera outbreak in 15 years with over 19,000 reported cases and more than 270 deaths. Food insecurity is a major challenge facing many communities. A 2007 survey from the World Food Programme (WFP) found that, in some districts, up to 97% of rural households experienced serious problems producing or purchasing enough food in the previous year.</p>
+</div>
+
+<div id="extractivesText" style="display:none">
+<h1>Extractives</h1>
+<p>More than a decade after the end of its civil war (1991-2002), mining is again driving Sierra Leone's economy. Major commodities include diamonds, rutile, bauxite, gold, and iron ore. Oil and natural gas have been found offshore and may be tapped in future. Mining accounted for 90% of export revenues and 30% of Sierra Leone's GDP in 2013.</p>
+<p>Between 2011 and 2012 mineral exports more than tripled. That was largely the result of a significant increase in iron ore exports, which now account for 32.2 % of export revenue, contributing US$357 million to the economy. Sierra Leone is also the world's third-largest producer of rutile (a titanium sand used in many industrial functions) and tenth-largest producer of diamonds.</p>
+<p>Conscious that mismanagement of the mining sector in the 1970s and 1980s helped to create the conditions for the civil war, and that 'blood diamonds' financed the fighting, the government is working to improve transparency and accountability in the extractives sector. The country is a participant in both the Extractive Industries Transparency Initiative (EITI) and the Kimberley Process Certification Scheme. In addition, in 2012 the Ministry of Mines and Mineral Resources launched an online repository that improved public access to information on industrial and artisanal mineral rights, including license and payment data. There is still much work to be done though; The EITI suspended Sierra Leone in February 2013 as a result of incomplete adherence to its auditing and reporting requirements.</p>
 </div>
 
 <div id="conflictText" style="display:none">
-<p>More than a decade has elapsed since the 2002 end of Sierra Leone's 11-year civil war, and there have been three peaceful transfers of power. However, the war's impacts are still felt, particularly in terms of the major development needs and on-going fragility.</p><p>In the 1990s Sierra Leone become synonymous with the trade in â€˜blood diamonds', which was incentivizing and prolonging the conflict. The marginalization of rural youth who felt ignored by politicians in Freetown was another cause of the war. Today, with an estimated 70% of youth unemployed or underemployed, there are concerns that frustrations over the slow pace of development could lead to future instability.</p><p>So far, industrial mining operations have generated few jobs: just 13,891 people were directly employed in industrial mining operations in 2012 compared to an estimated 150,000-200,000 artisanal miners in the informal sector. The combination of high unemployment, difficult working conditions associated with mining activities, and persistent poverty represents a significant threat to stability.</p>
+<h1>Stresses</h1>
+<p>More than a decade has elapsed since the 2002 end of Sierra Leone's 11-year civil war, and there have been three peaceful transfers of power. However, the war's impacts are still felt, particularly in terms of the major development needs and on-going fragility.</p>
+<p>In the 1990s Sierra Leone become synonymous with the trade in 'blood diamonds', which was incentivizing and prolonging the conflict. The marginalization of rural youth who felt ignored by politicians in Freetown was another cause of the war. Today, with an estimated 70% of youth unemployed or underemployed, there are concerns that frustrations over the slow pace of development could lead to future instability.</p>
+<p>So far, industrial mining operations have generated few jobs: just 13,891 people were directly employed in industrial mining operations in 2012 compared to an estimated 150,000-200,000 artisanal miners in the informal sector. The combination of high unemployment, difficult working conditions associated with mining activities, and persistent poverty represents a significant threat to stability.</p>
 </div>
 

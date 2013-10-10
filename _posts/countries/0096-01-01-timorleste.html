@@ -22,6 +22,12 @@ sections:
   - sectionid: development
     label: DEVELOPMENT
     layers:
+    - layerid: popDensity
+      label: Population
+      maps:
+        - mapid: helsinki.landscan
+          legend: populationLegend
+          text: developmentText
     - layerid: poverty
       label: Poverty
       maps:
@@ -44,17 +50,102 @@ sections:
   - sectionid: extractives
     label: EXTRACTIVES
     layers:
-    - layerid: resources
-      label: Resources
+    - layerid: metallicResources
+      label: Metallic Resources
       maps:
-        - mapid: 'helsinki.TL_resources'
+        - mapid: helsinki.TL_Min_Gold
           text: extractivesText
+          htmlid: gold
+          label: Gold
+          legend: metallicResourceLegend
+        - mapid: helsinki.TL_Min_Silver
+          text: extractivesText
+          htmlid: silver
+          label: Silver
+          legend: metallicResourceLegend
+        - mapid: helsinki.TL_Min_Copper
+          text: extractivesText
+          htmlid: copper
+          label: Copper
+          legend: metallicResourceLegend
+        - mapid: helsinki.TL_Min_Manganese
+          text: extractivesText
+          htmlid: manganese
+          label: Manganese
+          legend: metallicResourceLegend
+        - mapid: helsinki.TL_Min_Chromite
+          text: extractivesText
+          htmlid: chromite
+          label: Chromite
+          legend: metallicResourceLegend
+    - layerid: industrialResources
+      label: Industrial Resources
+      maps:
+        - mapid: helsinki.TL_Min_SandGravel
+          text: extractivesText
+          htmlid: sandGravel
+          label: Sand and Gravel
+          legend: industrialResourceLegend
+        - mapid: helsinki.TL_Min_Clay
+          text: extractivesText
+          htmlid: clay
+          label: Clay
+          legend: industrialResourceLegend
+        - mapid: helsinki.TL_Min_LimeStone
+          text: extractivesText
+          htmlid: limestone
+          label: Limestone
+          legend: industrialResourceLegend
+        - mapid: helsinki.TL_Min_Marble
+          text: extractivesText
+          htmlid: marble
+          label: Marble
+          legend: industrialResourceLegend
+        - mapid: helsinki.TL_Min_Kaolin
+          text: extractivesText
+          htmlid: kaolin
+          label: Kaolin
+          legend: industrialResourceLegend
+        - mapid: helsinki.TL_Min_Bentonite
+          text: extractivesText
+          htmlid: bentonite
+          label: Bentonite
+          legend: industrialResourceLegend
+        - mapid: helsinki.TL_Min_Phosphate
+          text: extractivesText
+          htmlid: phosphate
+          label: Phosphate
+          legend: industrialResourceLegend
     - layerid: offshore
       label: Offshore
       maps:
         - mapid: 'helsinki.timor_offshore_simple'
           text: extractivesText
 ---
+
+
+<!-- Pop Density Legend - horizontal graduated -->
+<div id='populationLegend' style='display:none'>
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Population Density (persons / km<sup>2</sup>)</div>
+		<div class='legend-subtitle'>adjusted to match UN totals, '00</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FFFFB2;'></span>< 10</li>
+			<li><span style='background:#FED976;'></span>10 - 50</li>
+			<li><span style='background:#FEB24C;'></span>50 - 100</li>
+			<li><span style='background:#FD8D3C;'></span>100 - 200</li>
+			<li><span style='background:#F03B20;'></span>200 - 500</li>
+			<li><span style='background:#BD0026;'></span>500 - 1k</li>
+			<li><span style='background:#6600d8;'></span>1k - 6k</li>
+			<li><span style='background:#FFFFFF; border: 1px solid #dddddd;'></span>6k - 20k</li>
+		</ul>
+	</div>
+	<div class='legend-source'>Source: <a href="http://sedac.ciesin.columbia.edu/data/set/gpw-v3-population-count/data-download">Gridded Population of the World, v3</a>Columbia University, 2005</div>
+</div>
+</div>
 
 
 <!-- unemploymentLegend - vertical graduated -->
@@ -133,14 +224,45 @@ sections:
 </div>
 </div>
 
+
+<!-- metallicResourceLegend -->
+<div id='metallicResourceLegend' style='display:none'>
+	<div class='map-legendVerticalGraduated'>
+		<div class="legendAttribution">Source: UN Economic and Social Commission for Asia and the Pacific<br><a href='http://www.unescap.org/esd/publications/AMRS17.pdf' target="_blank">Atlas of Mineral Resources of the Escap Region, Vol. 17<br>Geology and Mineral Resources of Timor-Leste</a></div>
+	</div>
+</div>
+
+<!-- industrialResourceLegend -->
+<div id='industrialResourceLegend' style='display:none'>
+	<div class='map-legendVerticalGraduated'>
+		<div class="legendAttribution">Source: UN Economic and Social Commission for Asia and the Pacific<br><a href='http://www.unescap.org/esd/publications/AMRS17.pdf' target="_blank">Atlas of Mineral Resources of the Escap Region, Vol. 17<br>Geology and Mineral Resources of Timor-Leste</a></div>
+	</div>
+</div>
+
+
+
+
 <div id='introText' style='display:none'>
-<p>Timor-Leste is considered by many to be a poor country rich in natural resources. Natural gas forms the backbone of the country's economy with 95% of government spending sustained through their export. In 2011, the most recent year for which figures published by the Extractives Industries Transparency Initiative (EITI) are available, the country received close US$3.5 billion in natural resource revenues. The country also has proven onshore reserves of copper, gold and manganese in addition to non-metallic resources such marble, sand and stone. Onshore resources have only just begun to be exploited as the county continues to develop the necessary human resources and legal frameworks. In future these resources may be processed on land if the required infrastructure becomes available brining a boost in job creation and other associated benefits. In coming decades the country is expected to continue to benefit from oil and gas production with further onshore and offshore resource exploitation expected.</p><p>It has been a policy of successive Timorese governments to put to use the country's natural resources and revenues drawn from such resources in ways that seek to accrue wealth and through large scale public investment to spur economic growth, reduce poverty and establish strong foundations continued peaceful development.</p><p>Since 2008 Timor-Leste has seen an impressive turnaround, following years of occupation and cyclical instability. With well managed natural resources, combined with an ambitious development agenda, supported by development partners the country has been able to assert full ownership over its development trajectory. Timor-Leste has also demonstrated a commitment to its emergence from fragility and has managed to sustain this commitment while decreasing its reliance on aid.</p><p>Sustaining this shift, utilizing the countries oil wealth in ways that bring long term benefits to the country will be key if the country is to gradually see through its plan for to transform itself into an integrated, diversified and resilient post-conflict economy.</p>
+<div class='dashboard'><ul class='majorStats'><li><div><span class='key'>GDP</span><sub style='left: 66px; top: 40px;'><em>per cap</em></sub> <span class='val'>$1,344</span></div></li><li><div><span class='key'>HDI</span> <span class='val'>0.359 (177<sup>th</sup>)</span></div></li></ul><ul class='wbStats'><li style='border:0'><div><span></span> <span class='val'></span></div></li><li><div><span class='key'>EITI Status</span> <span class='val' style='color: #f42; font-weight: bold;'>Suspended</span></div></li><li><div><span class='key'>Government Revenue</span> <span class='val'>$7.6mil</span></div></li><li><div><span class='key'>Company Payments</span> <span class='val'>$8.27mil</span></div></li></ul><ul class='eitiStats'><li style='border: 0'><div><span class='key title'>Worldwide Governance Indicators</span><sup style='left: 282px; top:8px;'></sup></div></li><li><div><span class='key'>Voice & Accountability</span><span class='val'>40.8 / 100</span></div></li><li><div><span class='key'>Political Stability</span> <span class='val'>40.1 / 100</span></div></li><li><div><span class='key'>Government Effectiveness</span><span class='val'>10.0 / 100</span></div></li><li><div><span class='key'>Regulatory Quality</span> <span class='val'>26.1 / 100</span></div></li><li><div><span class='key'>Rule of Law</span> <span class='val'>22.5 / 100</span></div></li><li><div><span class='key'>Control of Corruption</span> <span class='val'>26.5 / 100</span></div></li></ul></div>
+<p>Timor-Leste is considered by many to be a poor country rich in natural resources. Natural gas forms the backbone of the country's economy with 95% of government spending sustained through their export. In 2011, the most recent year for which figures published by the Extractives Industries Transparency Initiative (EITI) are available, the country received close US$3.5 billion in natural resource revenues. The country also has proven onshore reserves of copper, gold and manganese in addition to non-metallic resources such marble, sand and stone. Onshore resources have only just begun to be exploited as the county continues to develop the necessary human resources and legal frameworks. In future these resources may be processed on land if the required infrastructure becomes available brining a boost in job creation and other associated benefits. In coming decades the country is expected to continue to benefit from oil and gas production with further onshore and offshore resource exploitation expected.</p>
+<p>It has been a policy of successive Timorese governments to put to use the country's natural resources and revenues drawn from such resources in ways that seek to accrue wealth and through large scale public investment to spur economic growth, reduce poverty and establish strong foundations continued peaceful development.</p>
+<p>Since 2008 Timor-Leste has seen an impressive turnaround, following years of occupation and cyclical instability. With well managed natural resources, combined with an ambitious development agenda, supported by development partners the country has been able to assert full ownership over its development trajectory. Timor-Leste has also demonstrated a commitment to its emergence from fragility and has managed to sustain this commitment while decreasing its reliance on aid.</p>
+<p>Sustaining this shift, utilizing the countries oil wealth in ways that bring long term benefits to the country will be key if the country is to gradually see through its plan for to transform itself into an integrated, diversified and resilient post-conflict economy.</p>
 </div>
 
 <div id='developmentText' style='display:none'>
-<p>Increases in levels of spending in the infrastructure sector may, in part, have contributed to high levels of inflation, currently 10.9%. Because the poor typically spend a greater percentage of their incomes on food items, high levels of inflation reduces the amount of goods a a poor household can purchase with their income. Inflation can also increase the cost of doing business for Timor-Leste's nascent private sector which will can have long term growth hampering potential.</p><p>In addition to the long-term growth hampering potential caused by high rates of inflation, other significant challenges remain. It has been acknowledged that both foreign assistance and oil wealth have benefited Timor-Leste's urban populations disproportionally and that rural subsistence agriculturalists, some 70% of the country's population, still face difficulty accessing markets due to the poor condition of rural roads.</p><p>Compounding this challenges, significant levels of underemployment, particularly amongst the country's youth, may pose a challenge to the current peace if new jobs cannot be created for them. Young people make up some 90% of the country's unemployed with an additional 15,000 new job seekers entering the market annually.</p><p>However, Timor-Leste's high rates of growth have had positive enabling effects in a variety of areas. For example, average non-oil per capita incomes increased from US$ 398 in 2007 to US$ 599 in 2009, a trend that is expected to have increased substantially in recent years benefiting from increased government spending in the infrastructure sector complimented by a gradual shift favouring the education, health and agriculture sectors.</p><p>Despite the withdrawal of the United Nations mission at the end of 2012, the services and formal sectors have also continued to expand. Recent estimates suggest that 10% of the working age population is now engaged in some form of business, showing a significant improvement on reports published around the time of the 2006 crisis which suggested just 400 formal economy jobs were being created each year.</p>
+<h1>Development</h1>
+<p>Increases in levels of spending in the infrastructure sector may, in part, have contributed to high levels of inflation, currently 10.9%. Because the poor typically spend a greater percentage of their incomes on food items, high levels of inflation reduces the amount of goods a a poor household can purchase with their income. Inflation can also increase the cost of doing business for Timor-Leste's nascent private sector which will can have long term growth hampering potential.</p>
+<p>In addition to the long-term growth hampering potential caused by high rates of inflation, other significant challenges remain. It has been acknowledged that both foreign assistance and oil wealth have benefited Timor-Leste's urban populations disproportionally and that rural subsistence agriculturalists, some 70% of the country's population, still face difficulty accessing markets due to the poor condition of rural roads.</p>
+<p>Compounding this challenges, significant levels of underemployment, particularly amongst the country's youth, may pose a challenge to the current peace if new jobs cannot be created for them. Young people make up some 90% of the country's unemployed with an additional 15,000 new job seekers entering the market annually.</p>
+<p>However, Timor-Leste's high rates of growth have had positive enabling effects in a variety of areas. For example, average non-oil per capita incomes increased from US$ 398 in 2007 to US$ 599 in 2009, a trend that is expected to have increased substantially in recent years benefiting from increased government spending in the infrastructure sector complimented by a gradual shift favouring the education, health and agriculture sectors.</p>
+<p>Despite the withdrawal of the United Nations mission at the end of 2012, the services and formal sectors have also continued to expand. Recent estimates suggest that 10% of the working age population is now engaged in some form of business, showing a significant improvement on reports published around the time of the 2006 crisis which suggested just 400 formal economy jobs were being created each year.</p>
 </div>
 
 <div id='extractivesText' style='display:none'>
-<p>Despite significant progress toward economic diversification, Timor-Leste remains the 2nd most oil and gas export reliant country in the world, second only to South Sudan. Timor-Leste's single commodity export reliance is best understood by comparing the oil and gas sector to the country's second largest export, coffee, which earned the country just US$ 13 million, but makes up 95% of the country's non-oil exports. Oil and gas exports, in comparison earned the country US$3.5 billion that same year.</p><p>Established in 2005, The Timor-Leste Petroleum Fund was designed to monitor and receive petroleum revenues in an open and transparent manner. The Petroleum Fund was designed initially as a savings instrument but is increasingly being used as an investment vehicle - guaranteeing sustainable income for the country for years to come. All money withdrawn from the Petroleum Fund must be approved by National Parliament after a transparent budget debate. The Fund's balance currently stands in excess of 13 billion USD and is ranked amongst the world's most transparent.</p><p>As oil wealth began to flow into the Petroleum Fund beginning in 2004, so to did the size of Timor-Leste's state budget. From 2006 to 2012 the General State Budget grew from US$ 262 to 1.6 billion, showing an average annual increase in excess of 30%. At the same time, aid to the country, while increasing in gross terms, declined as a percentage of the total budget. In 2012 aid accounted for just 10.7% of the overall Timor-Leste Combined General State Budget. This is compared to just 10 years previous where aid constituted a significant majority of resources available to the State.</p><p>Since revenues derived form the exploitation of the country's extractive resource wealth came online in 2005, the country has seen a dramatic shift from aid dependence to a reliance on oil and gas exports as a source of government expenditure. However, this is not to say that foreign assistance no longer plays a role in sustaining Timor-Leste's development. The provision of targeted, effective technical  assistance and complex infrastructure financing are just two examples where the country continues to benefit from foreign assistance.</p>
+<h1>Extractives</h1>
+<p>Despite significant progress toward economic diversification, Timor-Leste remains the 2nd most oil and gas export reliant country in the world, second only to South Sudan. Timor-Leste's single commodity export reliance is best understood by comparing the oil and gas sector to the country's second largest export, coffee, which earned the country just US$ 13 million, but makes up 95% of the country's non-oil exports. Oil and gas exports, in comparison earned the country US$3.5 billion that same year.</p>
+<p>Established in 2005, The Timor-Leste Petroleum Fund was designed to monitor and receive petroleum revenues in an open and transparent manner. The Petroleum Fund was designed initially as a savings instrument but is increasingly being used as an investment vehicle - guaranteeing sustainable income for the country for years to come. All money withdrawn from the Petroleum Fund must be approved by National Parliament after a transparent budget debate. The Fund's balance currently stands in excess of 13 billion USD and is ranked amongst the world's most transparent.</p>
+<p>As oil wealth began to flow into the Petroleum Fund beginning in 2004, so to did the size of Timor-Leste's state budget. From 2006 to 2012 the General State Budget grew from US$ 262 to 1.6 billion, showing an average annual increase in excess of 30%. At the same time, aid to the country, while increasing in gross terms, declined as a percentage of the total budget. In 2012 aid accounted for just 10.7% of the overall Timor-Leste Combined General State Budget. This is compared to just 10 years previous where aid constituted a significant majority of resources available to the State.</p>
+<p>Since revenues derived form the exploitation of the country's extractive resource wealth came online in 2005, the country has seen a dramatic shift from aid dependence to a reliance on oil and gas exports as a source of government expenditure. However, this is not to say that foreign assistance no longer plays a role in sustaining Timor-Leste's development. The provision of targeted, effective technical  assistance and complex infrastructure financing are just two examples where the country continues to benefit from foreign assistance.</p>
 </div>
