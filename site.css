@@ -560,10 +560,10 @@ small {
     z-index:10;
     }
   .section .title.down-arrow {
-  	background: url('{{site.baseurl}}/img/down_arrow.png') no-repeat center 38px;
+  	background: url('{{site.baseurl}}/img/down_arrow.png') no-repeat center 76px;
   }
   .section .title.down-arrow:hover {
-  	background: url('{{site.baseurl}}/img/down_arrow_orange.png') no-repeat center 38px;
+  	background: url('{{site.baseurl}}/img/down_arrow_orange.png') no-repeat center 76px;
   }
   .section .viewport {
     background:#101010;
