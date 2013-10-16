@@ -70,12 +70,24 @@ sections:
   - sectionid: extractives
     label: EXTRACTIVES
     layers:
-      - layerid: mineralogy
-        label: Mineralogy
+      - layerid: mineConcessions
+        label: Mines
         maps:
-          - mapid: 'helsinki.drc_mineralogy'
+          - mapid: 'helsinki.drc_concessions'
             text: 'mineralogyText'
-            legend: 'mineralogyLegend'
+            legend: 'concessionsLegend'
+      - layerid: oilConcessions
+        label: Oil  
+        maps:
+          - mapid: 'helsinki.drc_oil_concessions'
+            text: 'mineralogyText'
+            legend: 'concessionsLegend'
+      - layerid: forestConcessions
+        label: Forestry 
+        maps:
+          - mapid: 'helsinki.drc_forestry_concessions'
+            text: 'mineralogyText'
+            legend: 'concessionsLegend'
       - layerid: conflictMinerals
         label: Artisanal Mines   
         maps:

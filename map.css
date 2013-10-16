@@ -321,9 +321,13 @@ body { margin:0; padding:0; }
 	.switcher-box a:first-child div {
 		border-left: 0;
 	}
-	.menu a.two-line div,
 	.switcher-box a.two-line div {
 		line-height: 100%;
+	}
+	.menu a.two-line div {
+		height: 28px;
+		line-height: 18px;
+		margin-top: 6px;
 	}
 
 
